@@ -24,7 +24,10 @@
     border: 1px solid transparent;
     border-radius: 6px;
     transition: border-color 0.25s, background-color 0.35s;
-    -webkit-user-select: none;
+    -webkit-user-select: none; /* Vendor prefix for Safari */
+    -moz-user-select: none; /* Vendor prefix for Firefox */
+    -ms-user-select: none; /* Vendor prefix for Internet Explorer/Edge */
+    user-select: none; /* Standard property for compatibility */
     font-weight: normal;
     background-color: transparent; /* Ensure the button remains transparent by default */
 }
