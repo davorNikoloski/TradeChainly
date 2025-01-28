@@ -1,0 +1,38 @@
+:root {
+    --color--page-color: #060910;
+    --main-font: Mulish, sans-serif;
+    --pragraph-font: Inter, sans-serif;
+    --color--button-text: #cac4da;
+    --color--brand-color: #563EAF; /* Replaced #f66f14 */
+    --color--elements-bg: #2121214d;
+    --color--elements-stroke: #563EAF40; /* Adjusted opacity of #f7721826 */
+    --color--inner-shadow-color: #563EAF4D; /* Adjusted opacity of #f670142e */
+    --color--gradient-color-01: #563EAF; /* Replaced #ffad75 */
+    --color--hoved-color: #21212166;
+    --color--gradient-color-02: #563EAF00; /* Transparent variant of purple */
+}
+
+.nav-button {
+    font-family: var(--pragraph-font);
+    font-size: 15px;
+    line-height: 1.2;
+    color: #fff;
+    border: 1px solid #3B2A8E; 
+    border-radius: 15px;
+    background-color: var(--color--brand-color);
+    background-image: radial-gradient(circle farthest-corner at 50% 100%, var(--color--gradient-color-01), var(--color--gradient-color-02) 79%);
+    padding: 10px 14px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.375s, transform 0.575s cubic-bezier(.175, .885, .32, 1.275);
+    box-shadow: inset 0 2px 5px #0000, inset 0 2px 5px #0000, 0 0 30px #6845BA96; /* Adjusted shadow */
+}
+
+.nav-button:hover {
+    background-color: #563EAF; /* Replaced hover orange (#f66f14) */
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: inset 0 2px 5px #0000, inset 0 2px 5px #0000, 0 0 30px #6845BA96, 0 4px 10px rgba(0, 0, 0, 0.4); /* Kept shadow behavior */
+}

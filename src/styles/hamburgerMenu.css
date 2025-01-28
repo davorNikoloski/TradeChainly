@@ -1,0 +1,40 @@
+/* src/styles/hamburgerMenu.css */
+.hamburger-btn {
+    -webkit-text-size-adjust: 100%;
+    --color--page-color: #060910;
+    --main-font: Mulish, sans-serif;
+    --pragraph-font: Inter, sans-serif;
+    --color--button-text: #cac4da;
+    --color--brand-color: #563EAF; /* Updated purple */
+    --color--elements-bg: #2121214d;
+    --color--elements-stroke: #563EAF40; /* Adjusted opacity of purple */
+    --color--inner-shadow-color: #563EAF4D; /* Adjusted opacity of purple */
+    --color--gradient-color-01: #563EAF; /* Purple gradient */
+    --color--hoved-color: #21212166;
+    --color--gradient-color-02: #563EAF00; /* Transparent purple */
+    font-family: var(--main-font);
+    color: #fff;
+    font-size: 24px;
+    line-height: 1;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 13px 15px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    transition: border-color 0.25s, background-color 0.35s;
+    -webkit-user-select: none;
+    font-weight: normal;
+    background-color: transparent; /* Ensure the button remains transparent by default */
+}
+
+.hamburger-btn.active {
+    background-color: rgba(39, 37, 46, 0.2); /* Slightly darker purple, transparent fill when active */
+    border-color: #563EAF; /* Purple border when active */
+}
+
+.hamburger-btn svg {
+    width: 20px; /* Adjust the icon size */
+  height: 24px; /* Adjust the icon size */
+}

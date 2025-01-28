@@ -1,0 +1,14 @@
+/* Add this to your hamburgerMenu.css or global styles */
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .navbar-fade-in {
+    animation: fadeIn 3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
