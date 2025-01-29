@@ -5,39 +5,89 @@
     --main-font: Mulish, sans-serif;
     --pragraph-font: Inter, sans-serif;
     --color--button-text: #cac4da;
-    --color--brand-color: #563EAF; /* Updated purple */
+    --color--brand-color: #563EAF;
     --color--elements-bg: #2121214d;
-    --color--elements-stroke: #563EAF40; /* Adjusted opacity of purple */
-    --color--inner-shadow-color: #563EAF4D; /* Adjusted opacity of purple */
-    --color--gradient-color-01: #563EAF; /* Purple gradient */
+    --color--elements-stroke: #563EAF40;
+    --color--inner-shadow-color: #563EAF4D;
+    --color--gradient-color-01: #563EAF;
     --color--hoved-color: #21212166;
-    --color--gradient-color-02: #563EAF00; /* Transparent purple */
+    --color--gradient-color-02: #563EAF00;
     font-family: var(--main-font);
     color: #fff;
     font-size: 24px;
     line-height: 1;
     box-sizing: border-box;
-    display: flex;
     align-items: center;
     cursor: pointer;
     padding: 13px 15px;
     border: 1px solid transparent;
     border-radius: 6px;
     transition: border-color 0.25s, background-color 0.35s;
-    -webkit-user-select: none; /* Vendor prefix for Safari */
-    -moz-user-select: none; /* Vendor prefix for Firefox */
-    -ms-user-select: none; /* Vendor prefix for Internet Explorer/Edge */
-    user-select: none; /* Standard property for compatibility */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     font-weight: normal;
-    background-color: transparent; /* Ensure the button remains transparent by default */
+    background-color: transparent;
 }
 
 .hamburger-btn.active {
-    background-color: rgba(39, 37, 46, 0.2); /* Slightly darker purple, transparent fill when active */
-    border-color: #563EAF; /* Purple border when active */
+    background-color: rgba(39, 37, 46, 0.2);
+    border-color: #563EAF;
 }
 
 .hamburger-btn svg {
-    width: 20px; /* Adjust the icon size */
-  height: 24px; /* Adjust the icon size */
+    width: 20px;
+    height: 24px;
+}
+
+/* Mobile menu animations */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(6);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu .menu-container {
+  transform-origin: top;
+  opacity: 0;
+}
+
+.mobile-menu.open {
+  display: block;
+}
+
+.mobile-menu.open .menu-container {
+  animation: slideDown 0.4s ease-in-out forwards;
+}
+
+.mobile-menu.closing .menu-container {
+  animation: slideUp 0.4s ease-in-out forwards;
+}
+
+@media (min-width: 640px) {
+  .mobile-menu {
+    display: none !important;
+  }
 }
