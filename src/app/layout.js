@@ -5,6 +5,8 @@ import "../styles/globals.css";
 
 //COMPONENTS
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Cta from "@/components/Cta";
 
 const mulish = Mulish({
   subsets: ["latin"],
@@ -25,11 +27,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${mulish.variable} ${inter.variable}`}>
-      <body>
-        <div className="relative">
-          <Navbar />
-          {children}
+      <body className="min-h-screen flex flex-col">
+        <Navbar /> {/* Always at the top */}
+        <main className="flex-1">{children}</main> {/* Pushes footer down */}
+        <div className="pt-[100px]">
+          <Cta /> 
         </div>
+        <Footer /> 
       </body>
     </html>
   );
