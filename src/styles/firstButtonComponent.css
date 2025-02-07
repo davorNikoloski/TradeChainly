@@ -1,0 +1,60 @@
+.hero-button {
+  -webkit-text-size-adjust: 100%;
+  --color--page-color: #060910;
+  --main-font: Mulish, sans-serif;
+  --pragraph-font: Inter, sans-serif;
+  --color--button-text: #cac4da;
+  --color--brand-color: #010013;
+  --color--elements-bg: #01001300;
+  --color--elements-stroke: #ffffff26;
+  --color--inner-shadow-color: #ffffff2e;
+  --color--gradient-color-01: #ffffff;
+  --color--hoved-color: #21212166;
+  --color--gradient-color-02: #f66f1400;
+  line-height: 1.2;
+  box-sizing: border-box;
+  font-family: var(--pragraph-font);
+  color: #fff;
+  text-decoration: none;
+  max-width: 100%;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  border: 1px solid var(--color--elements-stroke);
+  background-color: var(--color--elements-bg);
+  box-shadow: inset 0 -8px 24px 0 var(--color--inner-shadow-color);
+  border-radius: 60px;
+  padding: 1px 16px 1px 1px;
+  font-size: 15px;
+  font-weight: 400;
+  display: flex;
+}
+
+.hero-button div {
+  padding: 4px 8px;
+}
+
+.custom-btn-left {
+  -webkit-text-size-adjust: 100%;
+  --color--page-color: #060910;
+  --main-font: Mulish, sans-serif;
+  --pragraph-font: Inter, sans-serif;
+  --color--button-text: #3c16a5;
+  --color--brand-color: #5E42BF;
+  --color--elements-bg: #2121214d;
+  --color--elements-stroke: #f7721826;
+  --color--inner-shadow-color: #f670142e;
+  --color--gradient-color-01: #7565b0;
+  --color--hoved-color: #21212166;
+  --color--gradient-color-02: #f66f1400;
+  line-height: 1.2;
+  font-family: var(--pragraph-font);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  box-sizing: border-box;
+  background-color: var(--color--brand-color);
+  background-image: radial-gradient(circle farthest-corner at 50% 100%, var(--color--gradient-color-01), var(--color--gradient-color-02) 59%);
+  border: 1px solid #c498ff66;
+  border-radius: 40px;
+  padding: 8px 14px;
+}

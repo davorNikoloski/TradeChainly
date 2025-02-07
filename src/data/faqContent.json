@@ -1,0 +1,25 @@
+{
+    "faqs": [
+      {
+        "question": "Does TradeChainly trade for me?",
+        "answer": "No, TradeChainly is not a trading platform. You execute trades on your preferred crypto exchange, then transfer the data into TradeChainly to track and analyze your trading performance."
+      },
+      {
+        "question": "How will TradeChainly help me as a trader?",
+        "answer": "TradeChainly follows a traders-first approach. Every feature is built around our core philosophy: how will this feature help traders? With simplicity, ease of use, and automation at the forefront, you can start using it immediately."
+      },
+      {
+        "question": "How do I connect my exchange to TradeChainly?",
+        "answer": "Simply connect your exchange to TradeChainly, and your trades will be automatically synced. You can also upload CSV files or manually enter trades. It’s quick, secure, and hassle-free."
+      },
+      {
+        "question": "How secure is TradeChainly?",
+        "answer": "Security is top priority to us. TradeChainly can never trade on your behalf, access your funds, or share your data, which stays private and under your control."
+      },
+      {
+        "question": "Can I cancel my subscription?",
+        "answer": "Yes, you can cancel your subscription at any time, and you won’t be charged for the next billing cycle."
+      }
+    ]
+  }
+       
