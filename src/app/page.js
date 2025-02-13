@@ -1,5 +1,6 @@
 import Hero from "@/components/homeComponents/Hero";
 import Features from "@/components/homeComponents/Features";
+import Integrations from "@/components/homeComponents/Integrations";
 
 import "../styles/home.css"; 
 
@@ -10,8 +11,11 @@ export default function Home() {
         <div className="w-full">
           <Hero />
         </div>
-        <div className="w-full">
+        <div className="w-full pb-[100px]">
           <Features />
+        </div>
+        <div className="w-full pt-[28px]">
+          <Integrations />
         </div>
       </div>
     </div>

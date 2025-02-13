@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import ProgressBar from "@/components/homeComponents/ProgressBar ";
 
-export default function FancyTitle() {
+export default function FancyTitle({title}) {
   const [progressWidth, setProgressWidth] = useState("40%");
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function FancyTitle() {
     <div className="w-full h-full">
       <div className="w-full flex flex-row justify-center items-center">
         <ProgressBar progress={100} width={progressWidth} direction="ltr" />
-        <h2 className="md:px-[4rem] px-[2rem] text-[18px]">Features</h2>
+        <h2 className="md:px-[4rem] px-[2rem] text-[18px]">{title}</h2>
         <ProgressBar progress={100} width={progressWidth} direction="rtl" />
       </div>
     </div>
