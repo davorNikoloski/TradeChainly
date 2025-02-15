@@ -1,0 +1,20 @@
+.gradient-circle {
+  position: relative;
+  background: radial-gradient(circle var(--radius, 20px) at center, #3D3D91 0%, #010013 100%);
+  transition: background 0.05s linear;
+}
+
+
+.image-cont {
+  margin: 0 auto;
+  background-color: rgba(27, 16, 68, 0.1); /* Semi-transparent background */
+  background-image: radial-gradient(circle at center, 
+      rgba(2, 0, 20, 0.3) 30%,  /* Deepest color in the center */
+      rgba(62, 49, 111, 0.3) 100%   /* Lighter color towards the edges */
+  );
+  box-shadow: 
+      inset 0 0 20px rgba(75, 50, 150, 0.5), 
+      inset 0 0 70px rgba(2, 0, 20, 0.3);
+  border: 2px solid #774AF1;
+  backdrop-filter: blur(1.5px); /* Optional: Adds slight blur effect */
+}
