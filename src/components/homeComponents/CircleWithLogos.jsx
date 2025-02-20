@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import "../../styles/circle.css";
 
@@ -14,60 +14,82 @@ const logos = [
   "/images/Exchanges_Logos/kraken.png",
   "/images/Exchanges_Logos/kucoin.png",
   "/images/Exchanges_Logos/OKX.png",
-
 ];
-
 
 const centerImage = "/images/App Logo/HQTransparent_Mark.png"; // Center image
 
 export default function CircleWithLogos() {
-  const [radius, setRadius] = useState(20);
-  const [growing, setGrowing] = useState(true);
+  const [circleRadius, setCircleRadius] = useState(200);
+  const [offset, setOffset] = useState(32); // Default offset value
+  const [offset2, setOffset2] = useState(32); // Default offset value
 
+  // Update radius and offset based on screen size
   useEffect(() => {
-    const interval = setInterval(() => {
-      setRadius((prevRadius) => {
-        if (prevRadius >= 220) setGrowing(false);
-        if (prevRadius <= 90) setGrowing(true);
-        return growing ? prevRadius + 1 : prevRadius - 1;
-      });
-    }, 36); // ~60 FPS for smooth animation
+    const updateValues = () => {
+      if (window.innerWidth < 640) {
+        setCircleRadius(160); // Smaller radius for mobile
+        setOffset(130); // Larger offset for mobile
+        setOffset2(160); // Larger offset for mobile
 
-    return () => clearInterval(interval);
-  }, [growing]);
+      } else if (window.innerWidth < 1024) {
+        setCircleRadius(220); // Medium radius for tablets
+        setOffset(90); // Medium offset for tablets
+        setOffset2(100); // Larger offset for mobile
+
+      } else {
+        setCircleRadius(270); // Default for larger screens
+        setOffset(32); // Default offset for larger screens
+        setOffset2(32); // Larger offset for mobile
+
+      }
+    };
+
+    updateValues();
+    window.addEventListener("resize", updateValues);
+    return () => window.removeEventListener("resize", updateValues);
+  }, []);
 
   return (
-    <div className="relative flex items-center justify-center w-full max-w-[600px] h-[600px] mx-auto">
+    <motion.div 
+      className="relative flex items-center justify-center w-full max-w-[600px] md:h-[600px] mx-auto"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
       {/* Dashed Circle */}
-      <div
-        className="absolute w-[90%] h-[90%] border-2 border-dashed border-gray-300 dark:border-white rounded-full gradient-circle"
-        style={{ "--radius": `${radius}px` }}
+      <motion.div
+        className="absolute w-[90%] md:h-[90%] h-[21rem] border-2 border-dashed border-gray-300 dark:border-white rounded-full gradient-circle"
+        animate={{ "--pulse-radius": ["5rem", "12rem", "5rem"] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       />
+
 
       {/* Center Image */}
       <div className="absolute w-[115px] h-[115px] p-[24px] bg-black bg-opacity-[50%] shadow-xl rounded-[24px] flex items-center justify-center">
         <Image
           src={centerImage}
-          alt="Binance Center Logo"
+          alt="Center Logo"
           width={60}
           height={60}
           className="object-contain"
         />
       </div>
 
-      {/* Logo Cards Positioned in a Circle */}
+      {/* Exchange Logos Positioned in a Circle */}
       {logos.map((logo, index) => {
-        const angle = (index * 360) / logos.length - 90; // Evenly space logos
-        const x = 300 + 270 * Math.cos((angle * Math.PI) / 180) - 32;
-        const y = 300 + 270 * Math.sin((angle * Math.PI) / 180) - 32;
+        const angle = (index * 360) / logos.length - 90; // Evenly spaced
+        const x = 300 + circleRadius * Math.cos((angle * Math.PI) / 180) - offset;
+        const y = 300 + circleRadius * Math.sin((angle * Math.PI) / 180) - offset2;
 
         return logo === "plus-icon" ? (
-          /* Plus Icon at the 5th Spot */
+          /* Plus Icon */
           <motion.div
             key="plus-icon"
             initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: index * 0.08 }}
+            viewport={{ once: true, amount: 0.2 }}
             className="absolute w-16 h-16 flex items-center justify-center rounded-full border-2 border-dashed border-[#a283f9] shadow-xl"
             style={{
               left: `${x}px`,
@@ -76,9 +98,7 @@ export default function CircleWithLogos() {
             }}
           >
             <div className="w-6 h-6 relative">
-              {/* Horizontal Line */}
               <div className="absolute w-full h-[3px] bg-[#a283f9] top-1/2 transform -translate-y-1/2"></div>
-              {/* Vertical Line */}
               <div className="absolute h-full w-[3px] bg-[#a283f9] left-1/2 transform -translate-x-1/2"></div>
             </div>
           </motion.div>
@@ -87,9 +107,10 @@ export default function CircleWithLogos() {
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: index * 0.08 }}
-            className="absolute w-[75px] h-[75px] image-cont shadow-lg rounded-xl flex items-center justify-center p-[14px]"
+            viewport={{ once: true, amount: 0.2 }}
+            className="absolute w-[75px] h-[75px] image-cont shadow-lg rounded-xl flex items-center justify-center md:p-[14px] p-[8px]"
             style={{ left: `${x}px`, top: `${y}px` }}
           >
             <Image
@@ -102,6 +123,6 @@ export default function CircleWithLogos() {
           </motion.div>
         );
       })}
-    </div>
+    </motion.div>
   );
 }

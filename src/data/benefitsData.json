@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "title": "Seamless Integration",
+      "description": "Effortlessly connect to your favorite crypto exchange with no hassle.",
+      "image": "/images/Landing Page/Benefits Section/Landing_Page_Benefits_Icon01.svg"
+    },
+    {
+      "id": 2,
+      "title": "Boost Performance",
+      "description": "Optimize your trading performance by focusing on what works.",
+      "image": "/images/Landing Page/Benefits Section/Landing_Page_Benefits_Icon02.svg"
+    },
+    {
+      "id": 3,
+      "title": "In-Depth Reports",
+      "description": "Explore detailed reports and drill down into key insights with ease.",
+      "image": "/images/Landing Page/Benefits Section/Landing_Page_Benefits_Icon03.svg"
+    },
+    {
+      "id": 4,
+      "title": "AI-Driven Forecasts",
+      "description": "Use AI-powered predictions to enhance your strategy.",
+      "image": "/images/Landing Page/Benefits Section/Landing_Page_Benefits_Icon04.svg"
+    },
+    {
+      "id": 5,
+      "title": "Tracking & Tagging",
+      "description": "Easily track and tag your trades to build a profitable trading system.",
+      "image": "/images/Landing Page/Benefits Section/Landing_Page_Benefits_Icon05.svg"
+    },
+    {
+      "id": 6,
+      "title": "Intuitive User Experience",
+      "description": "Get started quickly with a user-friendly, straightforward interface.",
+      "image": "/images/Landing Page/Benefits Section/Landing_Page_Benefits_Icon06.svg"
+    }
+  ]
+  

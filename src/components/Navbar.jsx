@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import GetStartedButton from './buttons/GetStartedButton';
+import LogInButton from './buttons/LogInButton';
+
 import '../styles/hamburgerMenu.css';
 import '../styles/navbar.css';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -59,8 +61,9 @@ export default function Navbar() {
               </ul>
             </div>
 
-            <div className="sm:block hidden">
-              <GetStartedButton href="/XXX" text="Get Started" />
+            <div className="sm:flex hidden gap-[1rem]">
+              <LogInButton href="/login" text="Log In" />
+              <GetStartedButton href="/getstarted" text="Get Started" />
             </div>
           </div>
         </div>
@@ -91,7 +94,7 @@ function NavItem({ href, text, pathname }) {
     <li className="flex items-center">
       <Link
         href={href}
-        className={`text-white text-[14px] font- font-normal leading-[1.2] ${
+        className={`text-[#cac4da] text-[14px] font- font-normal leading-[1.2] ${
           isActive ? "md:font-semibold font-[600] text-[#ffff]" : "md:font-normal font-[600] duration-700 text-[#cac4da]"
         } hover:text-[#ffff] transition-all duration-300`}
       >

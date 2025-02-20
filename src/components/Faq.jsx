@@ -47,7 +47,7 @@ export default function Faq({ faqData }) {
         <div className='faq-lower flex md:flex-row flex-col md:gap-[20rem] gap-[50px] items-start md:justify-between'>
           <div className='faq-left h-full w-auto md:min-w-[25%]'>
             <div className='left-cont bg-[#151424] flex flex-col items-center justify-center p-[32px] rounded-[14px] gap-[1.3rem]'>
-              <h2 className='text-[37px] font-normal leading-[1.2] text-center'>
+              <h2 className='text-[37px] font-normal leading-[1.2] text-center text-white'>
                 Still have questions?
               </h2>
               <p className="text-[16px] font-normal leading-[1.4] text-gray-400 mt-0 mb-[10px] text-center">

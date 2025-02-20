@@ -31,7 +31,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${mulish.variable} ${inter.variable}`}>
-      <body className="min-h-screen flex flex-col bg-[#010012]">
+      <body className="min-h-screen flex flex-col bg-[#010012] overflow-x-hidden">
         <div className="fixed w-full flex justify-center h-[69.4px] md:h-[63.6px] bg-opacity-40 backdrop-blur-lg z-[999]">
           <Navbar /> {/* Always at the top */}
         </div>

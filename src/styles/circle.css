@@ -1,8 +1,10 @@
 .gradient-circle {
   position: relative;
-  background: radial-gradient(circle var(--radius, 20px) at center, #3D3D91 0%, #010013 100%);
-  transition: background 0.05s linear;
+  background: radial-gradient(circle var(--pulse-radius, 12rem) at center, 
+    #3D3D91 0%, #010013 100%);
+  transition: background 5s linear;
 }
+
 
 
 .image-cont {
@@ -17,4 +19,13 @@
       inset 0 0 70px rgba(2, 0, 20, 0.3);
   border: 2px solid #774AF1;
   backdrop-filter: blur(1.5px); /* Optional: Adds slight blur effect */
+}
+
+
+
+@media (max-width: 768px) {
+  .image-cont {
+    width: 50px;
+    height: 50px;
+  }
 }

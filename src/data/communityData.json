@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "title": "Register",
+      "description": "Get started quickly and join a thriving community of traders.",
+      "image": "/images/Landing Page/Community Section/Landing_Page_Community_Icon01.svg"
+    },
+    {
+      "id": 2,
+      "title": "Collaborate",
+      "description": "Engage with fellow traders to share insights and inspire each other.",
+      "image": "/images/Landing Page/Community Section/Landing_Page_Community_Icon02.svg"
+    },
+    {
+      "id": 3,
+      "title": "Grow",
+      "description": "Build confidence and consistently level up your trading game.",
+      "image": "/images/Landing Page/Community Section/Landing_Page_Community_Icon03.svg"
+    }
+  ]
+  

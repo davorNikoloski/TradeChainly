@@ -1,39 +1,52 @@
 [
-    {
-      "title": "Why Choose Our Platform?",
-      "description": "We provide the best tracking solutions with cutting-edge technology.",
-      "features": [
-        "Real-time GPS tracking",
-        "Smooth navigation experience",
-        "Accurate speed validation"
-      ]
-    },
-    {
-      "title": "AI-Powered Insights",
-      "description": "Our AI-driven algorithms provide deep insights to help you make better trading decisions.",
-      "features": [
-        "Predictive market trends",
-        "Automated trading signals",
-        "Advanced risk management"
-      ]
-    },
-    {
-      "title": "User-Friendly Experience",
-      "description": "A seamless and intuitive interface designed to enhance your trading journey.",
-      "features": [
-        "Customizable dashboards",
-        "Easy-to-use mobile app",
-        "Multi-device synchronization"
-      ]
-    },
-    {
-      "title": "Robust Security",
-      "description": "State-of-the-art encryption and multi-layer security to protect your assets.",
-      "features": [
-        "End-to-end encryption",
-        "Multi-factor authentication",
-        "Real-time fraud detection"
-      ]
-    }
-  ]
-  
+  {
+    "title": "Gain Key Insights",
+    "description": "Stay on top of your traiding performance. Easily track progress, identify key trends, and gain valuable insights to refine your strategy and grow as a trader.",
+    "features": [
+      "Track your profitability across trades.",
+      "Identify patterns to refine your strategy.",
+      "Asses your risk-to-reward ratio."
+    ],
+    "image": "/images/Features Page/f1.png"
+  },
+  {
+    "title": "Automated Trade Journaling",
+    "description": "You focus on trading while we do the heavy lifting for you. With automated journaling, we simplify your process and help you boost your performance.",
+    "features": [
+      "Automatic day logging with no effor required.",
+      "Seamless note taking to keep you organized.",
+      "Track intraday performance for actionable insights."
+    ],
+    "image": "/images/Features Page/f2.png"
+  },
+  {
+    "title": "Comprehensive Trade Analysis",
+    "description": "Analyze every trade with ease. Tag your trades, set profit targets and stop losses, rate your pefrormance, and review your trade details - all in one place.",
+    "features": [
+      "Tag trades effortlessly to improve your strategy.",
+      "Fine-tune your profit target and stop loss.",
+      "Real-time analysis for deeper nisights."
+    ],
+    "image": "/images/Features Page/f3.png"
+  },
+  {
+    "title": "In-Depth Reports",
+    "description": "Gain a deeper understanding for your trading performance with in-depth reports. Use these insights to develop a robust trading plan and track your progress over time.",
+    "features": [
+      "Drill down into key insights effortlessly.",
+      "Uncover your strengths and weaknesses.",
+      "Make data-driven decisions for better performance."
+    ],
+    "image": "/images/Features Page/f4.png"
+  },
+  {
+    "title": "Powerful Price Forecast",
+    "description": "Leverage advanced price prediction models to validate your strategy and gain clarity on market direction. Stay ahead of the market with real-time insights.",
+    "features": [
+      "Validate your strategy with reliable predictions.",
+      "Gauge market trends with real-time insights.",
+      "Anticipate price movement and act confident."
+    ],
+    "image": "/images/Features Page/f5.png"
+  }
+]
