@@ -10,16 +10,15 @@ export default function BenefitsCards({ data }) {
       <div className="flex flex-wrap justify-center gap-6">
         {data.map((benefit) => (
           <motion.div
-          key={benefit.id}
-          className="flex-1 min-w-[220px] max-w-[320px] bg-opacity-0 border border-white/10 rounded-[14px] p-[8px] flex flex-col items-center justify-center text-center h-[24rem] box-border"
-          style={{ flexBasis: "calc(33.333% - 24px)" }}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.2 }}
-          whileHover={{ scale: 1.05 }} // Slight scaling instead of reducing padding
-        >
-        
+            key={benefit.id}
+            className="flex-1 min-w-[220px] max-w-[320px] bg-opacity-0 border border-white/10 rounded-[14px] p-[8px] flex flex-col items-center justify-center text-center h-[24rem]"
+            style={{ flexBasis: "calc(33.333% - 24px)" }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
+            whileHover={{ padding: "0px" }} // Smoothly reduces padding to 0px on hover
+          >
             {/* White Content Box Inside */}
             <div className="w-full h-full card-style flex flex-col items-center justify-center rounded-[14px] p-6">
               <Image src={benefit.image} alt={benefit.title} width={60} height={60} />
