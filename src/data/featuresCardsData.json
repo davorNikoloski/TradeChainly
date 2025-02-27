@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "title": "Profitable Strategy",
+      "description": "Take the guesswork out of your trading by sticking to a proven strategy that consistently builds long-term profits.",
+      "image": "/images/Features Page/icon01.svg"
+    },
+    {
+      "id": 2,
+      "title": "Track Performance",
+      "description": "Track your trading progress and identify what's holding you back, so you can turn your weaknesses into strengths.",
+      "image": "/images/Features Page/icon02.svg"
+    },
+    {
+      "id": 3,
+      "title": "Risk Mastery",
+      "description": "Take control of your trades and stop losing money with advanced risk management tools that protect your capital.",
+      "image": "/images/Features Page/icon03.svg"
+    },
+    {
+      "id": 4,
+      "title": "Trade Confidently",
+      "description": "Eliminate doubt and trade with confidence by using personalized journaling to empower your decision-making process.",
+      "image": "/images/Features Page/icon04.svg"
+    },
+    {
+      "id": 5,
+      "title": "Maximize Growth",
+      "description": "Focus on what works and identify areas for improvement with the tools and insights that help you grow as a trader.",
+      "image": "/images/Features Page/icon05.svg"
+    },
+    {
+      "id": 6,
+      "title": "Recover Quickly",
+      "description": "Losses are part of the journey. Recover quickly and come back stronger by staying accountable.",
+      "image": "/images/Features Page/icon05.svg"
+    }
+  ]
+  

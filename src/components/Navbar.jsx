@@ -16,6 +16,17 @@ export default function Navbar() {
   const [isClosing, setIsClosing] = useState(false);
   const pathname = usePathname();
 
+  // Close menu on initial render or when pathname changes
+  useEffect(() => {
+    if (isMenuOpen) {
+      setIsClosing(true);
+      setTimeout(() => {
+        setIsMenuOpen(false);
+        setIsClosing(false);
+      }, 300);
+    }
+  }, [pathname]); // Runs when `pathname` changes
+
   const toggleMenu = () => {
     if (isMenuOpen) {
       setIsClosing(true);
@@ -29,62 +40,62 @@ export default function Navbar() {
   };
 
   return (
-    <div className="nav-cont w-full mx-auto">
-      <nav className="main-nav navbar-fade-in h-[69.4px] md:h-[63.6px] flex items-center justify-center w-full px-[19px] md:px-[12px]  font-mulish ">
-        <div className="nav-items mx-auto flex items-center justify-center w-full h-full border-white/10 border-b md:border-hidden">
-          <div className="nav-items-sub flex items-center md:justify-around justify-between md:mx-auto md:py-[12px] pt-[9px] w-full md:border-white/10 md:border-b">
-            <Link href="/" className="text-lg font-bold inline-block max-w-full box-border align-middle">
-              <Image
-                src="/images/App Logo/HQTransparent_Logo_Hr_001.png"
-                alt="App Logo"
-                width={100}
-                height={100}
-                className="w-full"
-              />
-            </Link>
+    <div className="relative w-full mx-auto"> {/* This wrapper ensures positioning works */}
+  <nav className="main-nav fixed top-0 left-0 w-full z-[100] navbar-fade-in h-[69.4px] md:h-[63.6px] flex items-center justify-center px-[19px] md:px-[12px] font-mulish">
+    <div className="nav-items mx-auto flex items-center justify-center w-full h-full border-white/10 border-b md:border-hidden">
+      <div className="nav-items-sub flex items-center md:justify-around justify-between md:mx-auto md:py-[12px] pt-[9px] w-full md:border-white/10 md:border-b">
+        <Link href="/" className="text-lg font-bold inline-block max-w-full box-border align-middle">
+          <Image
+            src="/images/App Logo/HQTransparent_Logo_Hr_001.png"
+            alt="App Logo"
+            width={100}
+            height={100}
+            className="w-full"
+          />
+        </Link>
 
-            <button
-              className={`flex sm:hidden hamburger-btn ${isMenuOpen ? 'active' : ''}`}
-              onClick={toggleMenu}
-              aria-label="Toggle Menu"
-            >
-              <GiHamburgerMenu />
-            </button>
+        <button
+          className={`flex sm:hidden hamburger-btn ${isMenuOpen ? 'active' : ''}`}
+          onClick={toggleMenu}
+          aria-label="Toggle Menu"
+        >
+          <GiHamburgerMenu />
+        </button>
 
-            {/* Desktop menu */}
-            <div className="hidden sm:block">
-              <ul className="flex gap-[40px] text-[14px] leading-[1.2] items-center">
-                <NavItem href="/" text="Home" pathname={pathname} />
-                <NavItem href="/features" text="Features" pathname={pathname} />
-                <NavItem href="/pricing" text="Pricing" pathname={pathname} />
-                <NavItem href="/exchange-support" text="Exchange Support" pathname={pathname} />
-              </ul>
-            </div>
-
-            <div className="sm:flex hidden gap-[1rem]">
-              <LogInButton href="/login" text="Log In" />
-              <GetStartedButton href="/getstarted" text="Get Started" />
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Separate mobile menu */}
-      <div
-        className={`mobile-menu fixed top-[63.6px] left-0 right-0 sm:hidden  ${
-          isMenuOpen ? 'open' : ''
-        } ${isClosing ? 'closing' : ''}`}
-      >
-        <div className="menu-container">
-          <ul className="flex flex-col items-center gap-[20px] py-[20px] border border-[#563EAF4D] rounded-[12px] bg-[#060910] ">
-            <NavItem href="/" text="Home" pathname={pathname} isMenuOpen={isMenuOpen} />
-            <NavItem href="/features" text="Features" pathname={pathname} isMenuOpen={isMenuOpen} />
-            <NavItem href="/pricing" text="Pricing" pathname={pathname} isMenuOpen={isMenuOpen} />
-            <NavItem href="/exchange-support" text="Exchange Support" pathname={pathname} isMenuOpen={isMenuOpen} />
+        <div className="hidden sm:block">
+          <ul className="flex gap-[40px] text-[14px] leading-[1.2] items-center">
+            <NavItem href="/" text="Home" pathname={pathname} />
+            <NavItem href="/features" text="Features" pathname={pathname} />
+            <NavItem href="/pricing" text="Pricing" pathname={pathname} />
+            <NavItem href="/exchange-support" text="Exchange Support" pathname={pathname} />
           </ul>
+        </div>
+
+        <div className="sm:flex hidden gap-[1rem]">
+          <LogInButton href="/login" text="Log In" />
+          <GetStartedButton href="/getstarted" text="Get Started" />
         </div>
       </div>
     </div>
+  </nav>
+
+  {/* Mobile Menu - Now Positioned Correctly */}
+  <div
+    className={`mobile-menu sm:hidden ${
+      isMenuOpen ? 'open' : ''
+    } ${isClosing ? 'closing' : ''}`}
+  >
+    <div className="menu-container">
+      <ul className="flex flex-col items-center gap-[20px] py-[20px] border border-[#563EAF4D] rounded-[12px] bg-[#060910] ">
+        <NavItem href="/" text="Home" pathname={pathname} isMenuOpen={isMenuOpen} />
+        <NavItem href="/features" text="Features" pathname={pathname} isMenuOpen={isMenuOpen} />
+        <NavItem href="/pricing" text="Pricing" pathname={pathname} isMenuOpen={isMenuOpen} />
+        <NavItem href="/exchange-support" text="Exchange Support" pathname={pathname} isMenuOpen={isMenuOpen} />
+      </ul>
+    </div>
+  </div>
+</div>
+
   );
 }
 

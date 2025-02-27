@@ -2,15 +2,25 @@
 
 import { motion, useTransform, useSpring } from "framer-motion";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import "../styles/glowingBoxComponent.css";
 
 export default function GlowingBoxComponent({ width = 'full', maxWidth = '1200px', image, delayedScrollProgress }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect if the screen is mobile
+  useEffect(() => {
+    const checkScreenSize = () => setIsMobile(window.innerWidth < 768);
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  // Define scroll range based on screen size
+  const scrollRange = isMobile ? [0, 0.03] : [0.0186, 0.0652];
+
   // Define the scale animation based on scroll progress
-  const scale = useTransform(
-    delayedScrollProgress,
-    [0.0186, 0.0652], // Scroll range
-    [0.93, 1] // Scale from 93% to 100%
-  );
+  const scale = useTransform(delayedScrollProgress, scrollRange, [0.93, 1]);
 
   // Apply spring physics to the scale
   const springScale = useSpring(scale, {
@@ -20,11 +30,7 @@ export default function GlowingBoxComponent({ width = 'full', maxWidth = '1200px
   });
 
   // Define the position shift (from 3rem to 0rem)
-  const positionOffset = useTransform(
-    delayedScrollProgress,
-    [0.0186, 0.0652], // Scroll range
-    [48, 0] // Convert `rem` to `px` (3rem ≈ 48px)
-  );
+  const positionOffset = useTransform(delayedScrollProgress, scrollRange, [48, 0]);
 
   // Apply spring physics to the position offsets
   const springPosition = useSpring(positionOffset, {

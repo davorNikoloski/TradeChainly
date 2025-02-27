@@ -16,7 +16,7 @@ export default function Home() {
         <div className="w-full">
           <Hero />
         </div>
-        <div className="w-full pb-[100px] pt-[100px]">
+        <div className="w-full pb-[100px] ">
           <Features />
         </div>
         <div className="w-full pt-[28px]">

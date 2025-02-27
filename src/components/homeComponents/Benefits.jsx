@@ -4,6 +4,7 @@ import FancyTitle from "@/components/homeComponents/FancyTitle";
 import BenefitsCards from "@/components/homeComponents/homeHelper/BenefitsCards";
 import "../../styles/benefitsCard.css";
 import { motion } from "framer-motion";
+import benefitsData from "../../data/benefitsData.json";
 
   
 export default function Benefits() {
@@ -29,7 +30,7 @@ export default function Benefits() {
 
         {/* Features Sections (Dynamically Rendered) */}
         <div className="benefits-main pt-[40px] w-full h-full flex flex-col gap-[60px] gradient-bg-benefits">
-            <BenefitsCards />
+          <BenefitsCards data={benefitsData} />
         </div>
       </div>
     </div>
