@@ -3,12 +3,12 @@
     "id": 1,
     "title": "See where prices are headed",
     "description": "Anticipate market movements with accurate forecasts, empowering you to act decisively and stay ahead of the curve.",
-    "image": "/images/Features Page/Card_Image_02.png"
+    "image": "/images/Features Page/cards/12.png"
   },
   {
     "id": 2,
     "title": "Understand market dynamics",
     "description": "Break down and analyze the market from every angle to gauge its behavior effectively.",
-    "image": "/images/Features Page/Card_Image_03.png"
+    "image": "/images/Features Page/cards/13.png"
   }
 ]

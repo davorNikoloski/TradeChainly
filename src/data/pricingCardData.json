@@ -1,0 +1,24 @@
+{
+    "planTitle": "All-in-One Plan",
+    "planDescription": "Advanced tools to level up your trading.",
+    "pricing": {
+      "monthly": {
+        "price": "16",
+        "billingText": "Billed monthly."
+      },
+      "annual": {
+        "price": "13",
+        "billingText": "Billed in one annual payment."
+      }
+    },
+    "buttonText": "Get Started",
+    "featuresTitle": "What's included in the plan",
+    "features": [
+      "Seamless exchange integration",
+      "Automated trade journaling",
+      "Comprehensive trade analysis",
+      "Advanced tracking & reports",
+      "Powerful price forecast"
+    ]
+  }
+  

@@ -3,18 +3,18 @@
     "id": 1,
     "title": "Analyze every trade in detail",
     "description": "Leverage real-time analysis, set profit target and stop loss, and track key metrics to optimize your trades.",
-    "image": "/images/Features Page/Card_Image_06.png"
+    "image": "/images/Features Page/cards/6.png"
   },
   {
     "id": 2,
     "title": "Tag your trades with ease",
     "description": "Organize your trades efficiently by tagging them to identify key patterns and areas for improvement.",
-    "image": "/images/Features Page/Card_Image_07.png"
+    "image": "/images/Features Page/cards/7.png"
   },
   {
     "id": 3,
     "title": "Seamless note-taking for every trade",
     "description": "Easily jot down your thoughts and strategies, creating a valuable reference for continuous improvement over time.",
-    "image": "/images/Features Page/Card_Image_08.png"
+    "image": "/images/Features Page/cards/8.png"
   }
 ]

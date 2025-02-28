@@ -24,10 +24,10 @@ export default function SubCardsComponent({ data }) {
         transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
         viewport={{ once: true, amount: 0.2 }}
       >
-        <h3 className="text-[24px] font-normal text-white leading-[1.4]">
+        <h3 className="text-[22px] font-normal text-white leading-[1.4]">
           {data.title}
         </h3>
-        <p className="text-gray-400 text-[16px] leading-[1.4] font-[400]">
+        <p className="text-gray-300 text-[16px] leading-[1.4] font-[400]">
           {data.description}
         </p>
       </motion.div>
@@ -35,7 +35,7 @@ export default function SubCardsComponent({ data }) {
       {/* Motion Image */}
       <motion.div
         initial={{ left: "8rem", opacity: 0.8 }}
-        whileInView={{ left: "2rem", opacity: 1 }}
+        whileInView={{ left: "0rem", opacity: 1 }}
         transition={{ duration: 2, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.2 }}
         className="relative w-full h-full z-[1]"
@@ -43,9 +43,9 @@ export default function SubCardsComponent({ data }) {
         <Image 
           src={data.image} 
           alt={data.title} 
-          width={1200} 
-          height={1200} 
-          className="w-full h-full"
+          width={1800} 
+          height={1800} 
+          className="w-fit h-fit"
         />
       </motion.div>
     </motion.div>

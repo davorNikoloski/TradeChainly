@@ -3,18 +3,18 @@
     "id": 1,
     "title": "Dive deeper into your strategy",
     "description": "Unlock key metrics to refine your approach and optimize performance for more effective trading decisions.",
-    "image": "/images/Features Page/Card_Image_09.png"
+    "image": "/images/Features Page/cards/9.png"
   },
   {
     "id": 2,
     "title": "Understand your trading behaviors",
     "description": "Analyze patterns in your trades to gain insights into your decision-making and enhance consistency.",
-    "image": "/images/Features Page/Card_Image_10.png"
+    "image": "/images/Features Page/cards/10.png"
   },
   {
     "id": 3,
     "title": "Get a summary of what's working for you",
     "description": "Actionable summaries to highlight your strengths and weaknesses, making you stay on top of your game.",
-    "image": "/images/Features Page/Card_Image_01.png"
+    "image": "/images/Features Page/cards/11.png"
   }
 ]

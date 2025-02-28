@@ -2,13 +2,13 @@
   {
     "id": 1,
     "title": "Seamless integration with top exchanges",
-    "image": "/images/Features Page/Card_Image_04.png"
+    "image": "/images/Features Page/cards/4.png"
     
   },
   {
     "id": 2,
     "title": "Automated Day Logging",
     "description": "See your daily trades and intraday performance effortlessly, with automated tracking that keeps everything at your fingertips.",
-    "image": "/images/Features Page/Card_Image_05.png"
+    "image": "/images/Features Page/cards/5.png"
   }
 ]

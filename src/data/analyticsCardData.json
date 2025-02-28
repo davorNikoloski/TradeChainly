@@ -3,19 +3,19 @@
       "id": 1,
       "title": "Gain key insights quickly",
       "description": "Easily digest key stats at a glance, uncovering performance trends and opportunities for improvement.",
-      "image": "/images/Features Page/Card_Image_01.png"
+      "image": "/images/Features Page/cards/1.png"
     },
     {
       "id": 2,
       "title": "Analyze tag performance",
       "description": "See what's working for you and refine your strategy by easily tracking the performance of your tags.",
-      "image": "/images/Features Page/Card_Image_02.png"
+      "image": "/images/Features Page/cards/2.png"
     },
     {
       "id": 3,
       "title": "Dissect your data with filters",
       "description": "Crunch your data with customizable filters in any way you like to stay on top of your trading game.",
-      "image": "/images/Features Page/Card_Image_03.png"
+      "image": "/images/Features Page/cards/3.png"
     }
   ]
   
