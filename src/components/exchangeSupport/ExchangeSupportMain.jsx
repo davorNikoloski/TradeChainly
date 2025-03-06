@@ -4,15 +4,12 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import "../../styles/exchangeSupport.css";
 import Image from "next/image";
-import GetStartedButton from '../buttons/GetStartedButton';
-
-
+import GetStartedButton from "../buttons/GetStartedButton";
 import FancyTitle from "@/components/homeComponents/FancyTitle";
-import PricingCard from "@/components/pricingComponents/PricingCard";
-import PricingButton from "@/components/pricingComponents/PricingButton";
-import PricingList from "@/components/pricingComponents/PricingList";
-import pricingListData from "../../data/pricingListData.json";
-import pricingCardData from "../../data/pricingCardData.json";
+import ExchangeCards from "@/components/exchangeSupport/ExchangeCards";
+
+// Import exchange cards data here
+import exchangeCardsData from "../../data/exchangeCards.json";
 
 export default function ExchangeSupportMain() {
   const [isAnnual, setIsAnnual] = useState(false);
@@ -49,7 +46,6 @@ export default function ExchangeSupportMain() {
           </motion.p>
           <GetStartedButton href="/XXX" text="Get Started" width="100%" />
 
-
           <motion.div
             initial={{ opacity: 0, y: "1.5rem" }}
             animate={{ opacity: 1, y: "0rem" }}
@@ -65,6 +61,8 @@ export default function ExchangeSupportMain() {
               className="w-full h-full object-contain"
               priority
             />
+            {/* Pass exchangeCardsData as a prop to ExchangeCards */}
+            <ExchangeCards data={exchangeCardsData} />
           </motion.div>
         </motion.div>
       </div>
