@@ -67,7 +67,7 @@ export default function Navbar() {
             <NavItem href="/" text="Home" pathname={pathname} />
             <NavItem href="/features" text="Features" pathname={pathname} />
             <NavItem href="/pricing" text="Pricing" pathname={pathname} />
-            <NavItem href="/exchange-support" text="Exchange Support" pathname={pathname} />
+            <NavItem href="/exchangeSupport" text="Exchange Support" pathname={pathname} />
           </ul>
         </div>
 
@@ -90,7 +90,7 @@ export default function Navbar() {
         <NavItem href="/" text="Home" pathname={pathname} isMenuOpen={isMenuOpen} />
         <NavItem href="/features" text="Features" pathname={pathname} isMenuOpen={isMenuOpen} />
         <NavItem href="/pricing" text="Pricing" pathname={pathname} isMenuOpen={isMenuOpen} />
-        <NavItem href="/exchange-support" text="Exchange Support" pathname={pathname} isMenuOpen={isMenuOpen} />
+        <NavItem href="/exchangeSupport" text="Exchange Support" pathname={pathname} isMenuOpen={isMenuOpen} />
       </ul>
     </div>
   </div>
