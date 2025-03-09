@@ -1,0 +1,42 @@
+[
+    {
+      "title": "Establishing Connection",
+      "items": [
+        "Log in to your Binance account, hover over the account icon in the top-right corner, and select API Management from the dropdown menu.",
+        "Enter a name or label for your API key, then click Create API.",
+        "Click on Edit Restrictions and disable all permissions except Enable Reading (only Enable Reading should be selected).",
+        "Keep the IP access unrestricted.",
+        "Save your permissions, then copy your API Key and Secret Key here.",
+        "Click on Sync."
+      ]
+    },
+    {
+      "title": "Spot File Upload",
+      "items": [
+        "Log in to your Binance account.",
+        "Click on the profile image in the top-right menu.",
+        "Click on Orders.",
+        "Select Spot Orders.",
+        "Click on Trade History.",
+        "Click on Export Recent Trade History.",
+        "Select the desired range.",
+        "Click on Export.",
+        "Upload the exported file here."
+      ]
+    },
+    {
+      "title": "Futures File Upload",
+      "items": [
+        "Log in to your Binance account.",
+        "Click on the profile image in the top-right menu.",
+        "Click on Orders.",
+        "Select Futures Orders.",
+        "Click on Trade History.",
+        "Click on Export Trade History.",
+        "Select the desired range.",
+        "Click on Export.",
+        "Upload the exported file here."
+      ]
+    }
+  ]
+  

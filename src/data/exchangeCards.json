@@ -1,86 +1,58 @@
 [
-    {
+  {
       "id": 1,
       "name": "Binance",
-      "features": {
-        "auto_sync": true,
-        "file_upload": true,
-        "manual_entry": true
-      },
-      "spot": "Flat-to-Crypto",
-      "pairs": "All Pairs",
+      "features": ["Auto Sync", "File Upload", "Manual Entry"],
+      "features_display": ["All Pairs", "All Pairs", "All Pairs"],
+      "spot": ["Flat-to-Crypto", "Flat-to-Crypto", "All Pairs"],
       "image": "/images/Exchanges_Logos/binance.png"
-    },
-    {
+  },
+  {
       "id": 2,
       "name": "Bybit",
-      "features": {
-        "auto_sync": true,
-        "file_upload": true,
-        "manual_entry": true
-      },
-      "spot": "Flat-to-Crypto",
-      "pairs": "All Pairs",
+      "features": ["Auto Sync", "File Upload", "Manual Entry"],
+      "features_display": ["All Pairs", "All Pairs", "All Pairs"],
+      "spot": ["Flat-to-Crypto", "Flat-to-Crypto", "All Pairs"],
       "image": "/images/Exchanges_Logos/bybit.png"
-    },
-    {
+  },
+  {
       "id": 3,
       "name": "Coinbase",
-      "features": {
-        "auto_sync": true,
-        "file_upload": true,
-        "manual_entry": true
-      },
-      "spot": "Flat-to-Crypto",
-      "pairs": "All Pairs",
+      "features": ["Auto Sync", "File Upload", "Manual Entry"],
+      "features_display": ["All Pairs", "All Pairs", "All Pairs"],
+      "spot": ["Flat-to-Crypto", "Flat-to-Crypto", "All Pairs"],
       "image": "/images/Exchanges_Logos/coinbase.png"
-    },
-    {
+  },
+  {
       "id": 4,
       "name": "Crypto.com",
-      "features": {
-        "auto_sync": true,
-        "file_upload": true,
-        "manual_entry": true
-      },
-      "spot": "Flat-to-Crypto",
-      "pairs": "All Pairs",
+      "features": ["Auto Sync", "File Upload", "Manual Entry"],
+      "features_display": ["All Pairs", "All Pairs", "All Pairs"],
+      "spot": ["Flat-to-Crypto", "Flat-to-Crypto", "All Pairs"],
       "image": "/images/Exchanges_Logos/cryptocom.png"
-    },
-    {
+  },
+  {
       "id": 5,
       "name": "Kraken",
-      "features": {
-        "auto_sync": true,
-        "file_upload": true,
-        "manual_entry": true
-      },
-      "spot": "Flat-to-Crypto",
-      "pairs": "All Pairs",
+      "features": ["Auto Sync", "File Upload", "Manual Entry"],
+      "features_display": ["All Pairs", "All Pairs", "All Pairs"],
+      "spot": ["Flat-to-Crypto", "Flat-to-Crypto", "All Pairs"],
       "image": "/images/Exchanges_Logos/kraken.png"
-    },
-    {
+  },
+  {
       "id": 6,
       "name": "KuCoin",
-      "features": {
-        "auto_sync": true,
-        "file_upload": false,
-        "manual_entry": true
-      },
-      "spot": "Flat-to-Crypto",
-      "pairs": "All Pairs",
+      "features": ["Auto Sync", "File Upload", "Manual Entry"],
+      "features_display": [false, false, "All Pairs"],
+      "spot": ["Flat-to-Crypto", "Flat-to-Crypto", "All Pairs"],
       "image": "/images/Exchanges_Logos/kucoin.png"
-    },
-    {
+  },
+  {
       "id": 7,
       "name": "OKX",
-      "features": {
-        "auto_sync": true,
-        "file_upload": true,
-        "manual_entry": true
-      },
-      "spot": "Flat-to-Crypto",
-      "pairs": "All Pairs",
+      "features": ["Auto Sync", "File Upload", "Manual Entry"],
+      "features_display": ["All Pairs", "All Pairs", "All Pairs"],
+      "spot": ["Flat-to-Crypto", "Flat-to-Crypto", "All Pairs"],
       "image": "/images/Exchanges_Logos/okx.png"
-    }
+  }
 ]
