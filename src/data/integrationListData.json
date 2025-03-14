@@ -1,4 +1,5 @@
-[
+{
+  "Binance": [
     {
       "title": "Establishing Connection",
       "items": [
@@ -18,10 +19,10 @@
         "Click on Orders.",
         "Select Spot Orders.",
         "Click on Trade History.",
-        "Click on Export Recent Trade History.",
-        "Select the desired range.",
-        "Click on Export.",
-        "Upload the exported file here."
+        "Click on the Export Recent Trade History button located in the top-right.",
+        "Select your desired time range.",
+        "Choose Excel as the export format.",
+        "Click on Export."
       ]
     },
     {
@@ -32,11 +33,203 @@
         "Click on Orders.",
         "Select Futures Orders.",
         "Click on Trade History.",
-        "Click on Export Trade History.",
-        "Select the desired range.",
-        "Click on Export.",
+        "Click on the Export button located in the top-right.",
+        "Select your desired time range.",
+        "Click on Export."
+      ]
+    }
+  ],
+  "Coinbase": [
+    {
+      "title": "Establishing Connection",
+      "items": [
+        "Log in to your Coinbase account. On the left, click on the API button in the side menu.",
+        "For Spot trading: On the right, click Create API Key. Name your API key and leave the portfolio as Default. Ensure only the View (read-only) permission is checked. Do not add an IP whitelist. Click Create & Download.",
+        "For Futures trading: On the right, click Create API Key. Name your API key and change the portfolio to Perpetuals. Ensure only the View (read-only) permission is checked. Do not add an IP whitelist. Click Create & Download.",
+        "Copy your API Key and API Secret here.",
+        "Click on Sync."
+      ]
+    },
+    {
+      "title": "File Upload",
+      "items": [
+        "Log in to your Coinbase account.",
+        "On the left side menu, click on the Orders button.",
+        "In the Orders tab, click on the Visit Statements button on the right side.",
+        "On the Statements page, leave the options as All assets and All transactions. Choose your desired Date range and select CSV format.",
+        "Generate the file. It will download automatically.",
+        "Upload the downloaded file here."
+      ]
+    }
+  ],
+  "Bybit": [
+    {
+      "title": "Establishing Connection",
+      "items": [
+        "Log in to your Bybit account, then click on the profile button in the top-right corner and select API from the dropdown menu.",
+        "Click on Create New Key, then choose System-generate API Key.",
+        "Set a name for your key and select Read-Only.",
+        "Check the Unified Trading option.",
+        "Ensure that Orders, Positions, USDC Derivatives Trading, and Trade are all checked under the Read-Only permissions.",
+        "Click Submit.",
+        "Copy your API Key and Secret Key here.",
+        "Click on Sync."
+      ]
+    },
+    {
+      "title": "Spot File Upload",
+      "items": [
+        "Log in to your Bybit account.",
+        "In the top-right corner, click on the Orders menu.",
+        "From the dropdown, select Unified Trading Center.",
+        "Click on Spot Orders.",
+        "Choose the Trade History tab.",
+        "Click on the Export button located in the top-right.",
+        "Adjust the date range if needed.",
+        "Click on the Export Now button.",
+        "Upload the exported file here."
+      ]
+    },
+    {
+      "title": "Futures File Upload",
+      "items": [
+        "Log in to your Bybit account.",
+        "In the top-right corner, click on the Orders menu.",
+        "From the dropdown, select Unified Trading Center.",
+        "Click on either USDT Perpetual or USDC Perpetual.",
+        "Choose the Trade History tab.",
+        "Click on the Export button located in the top-right.",
+        "Adjust the date range if needed.",
+        "Click on the Export Now button.",
+        "Upload the exported file here."
+      ]
+    }
+  ],
+  "Crypto.com": [
+    {
+      "title": "Establishing Connection",
+      "items": [
+        "Log in to your Crypto.com account, then click on the profile button in the top-right corner and select your email.",
+        "On the left side of the screen, scroll down and click on Settings, then select API Keys.",
+        "Click on Create a new API key, enter a label, and in the API restrictions, ensure that only Can Read is checked.",
+        "Copy your API Key and Secret Key here.",
+        "Click on Sync."
+      ]
+    },
+    {
+      "title": "File Upload",
+      "items": [
+        "Log in to your Crypto.com account.",
+        "On the exchange homepage, click on the Wallet button in the top-right corner.",
+        "On the left side, open the Orders menu.",
+        "Go to the Trade History tab, adjust the date range as needed, and leave the other options as they are.",
+        "Export the data to CSV.",
+        "Upload the exported file here."
+      ]
+    }
+  ],
+  "Kraken": [
+    {
+      "title": "Establishing Connection",
+      "items": [
+        "Log in to your Kraken account, click on the profile button in the top-right corner, then go to Settings and select API.",
+        "For Spot trading: Under Spot Trading API, click Create API key. Then, in the Orders and trades tab, select only the Query open orders & trades and Query closed orders & trades radio buttons. Click Generate API.",
+        "For Futures trading: Under Futures Trading API, click Create API key. Then, in the General API tab, select Read Only, and in the Withdrawal API section, select No access. Click Generate API.",
+        "Copy your API Key and Secret Key here.",
+        "Click on Sync."
+      ]
+    },
+    {
+      "title": "Spot File Upload",
+      "items": [
+        "Log in to your Kraken account.",
+        "In the top-right corner, click on your profile picture button and select Documents.",
+        "Select the Documents tab and click the Create export button.",
+        "From the dropdown, select Trades, choose your time period, and check Select All from the field checkbox.",
+        "Ensure 'Trades' is selected from the dropdown and not 'Ledgers'.",
+        "Set the Format to CSV.",
+        "Click on Generate, wait a few seconds, and in the Exports section, download your file.",
+        "Unzip the file and upload the CSV file here."
+      ]
+    },
+    {
+      "title": "Futures File Upload",
+      "items": [
+        "Log in to your Kraken account.",
+        "In the top-right corner, click on your profile picture button and select Documents.",
+        "Select the Documents tab and click the Create export button.",
+        "From the dropdown, select Ledger, then choose Futures.",
+        "Ensure 'Ledger' is selected from the dropdown.",
+        "Set the Format to CSV.",
+        "Click on Generate, wait a few seconds, and download your file.",
+        "Unzip the file and upload the CSV file here."
+      ]
+    }
+  ],
+  "KuCoin": [
+    {
+      "title": "Establishing Connection",
+      "items": [
+        "Log in to your KuCoin account, click on the profile button in the top-right corner, hover over it, and select API Management.",
+        "Click on Create API, enter a name for your API and your API passphrase. Under API Restriction, ensure General (Read-only) is selected. Click Next and then Create.",
+        "Copy your API Key and Secret Key here.",
+        "Click on Sync."
+      ]
+    },
+    {
+      "title": "Spot File Upload",
+      "items": [
+        "Log in to your KuCoin account.",
+        "In the top-right menu, click on Orders and select Spot Trade History.",
+        "Click on the Trade History tab.",
+        "Choose a time period from the dropdown and click on Save as CSV.",
+        "Confirm the export.",
+        "Wait for the CSV to be generated.",
+        "Click on the Download button.",
+        "Upload the CSV file here."
+      ]
+    },
+    {
+      "title": "Futures File Upload",
+      "items": [
+        "Log in to your KuCoin account.",
+        "In the top-right menu, click on Futures Orders.",
+        "Click on the Trade History tab.",
+        "In the upper-right corner, click on Export.",
+        "Under Market Futures Orders, select the Filled Orders radio button.",
+        "Choose the desired time period range.",
+        "Set the Time Zone to UTC-0 (Europe/Greenwich).",
+        "Select CSV as the file type.",
+        "Click on Confirm to export.",
+        "Once the file is generated, download it.",
+        "Upload the CSV file here."
+      ]
+    }
+  ],
+  "OKX": [
+    {
+      "title": "Establishing Connection",
+      "items": [
+        "Log in to your OKX account, click on the profile button in the top-right corner, hover over it, and select API.",
+        "Click on Create APIs, enter a name for your API, and under Permission, select only READ.",
+        "Fill in a passphrase and generate the API key.",
+        "Copy your API Key and Secret Key here.",
+        "Click on Sync."
+      ]
+    },
+    {
+      "title": "File Upload",
+      "items": [
+        "Log in to your OKX account.",
+        "Go to the homepage and click on the Assets dropdown in the top-right corner.",
+        "From the dropdown, select Order Center.",
+        "Open the Trading History tab.",
+        "Click on the Download button located in the top-right.",
+        "Select your desired date range.",
+        "Set the Time zone to UTC+0 (important).",
+        "Click on the Export button and wait for the download link.",
         "Upload the exported file here."
       ]
     }
   ]
-  
+}

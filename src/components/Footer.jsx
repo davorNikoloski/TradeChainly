@@ -29,10 +29,10 @@ export default function Footer() {
           {/* Main Pages */}
           <div>
             <div className="flex flex-col mt-2 gap-[12px]">
-              <Link href="/" className="text-gray-400 hover:text-white transition-colors duration-500">Features</Link>
-              <Link href="/about" className="text-gray-400 hover:text-white transition-colors duration-500">Pricing</Link>
-              <Link href="/features" className="text-gray-400 hover:text-white transition-colors duration-500">Exchange Support</Link>
-              <Link href="/blog" className="text-gray-400 hover:text-white transition-colors duration-500">Contact Us</Link>
+              <Link href="/features" className="text-gray-400 hover:text-white transition-colors duration-500">Features</Link>
+              <Link href="/pricing" className="text-gray-400 hover:text-white transition-colors duration-500">Pricing</Link>
+              <Link href="/exchangeSupport" className="text-gray-400 hover:text-white transition-colors duration-500">Exchange Support</Link>
+              <Link href="/contact" className="text-gray-400 hover:text-white transition-colors duration-500">Contact Us</Link>
 
             </div>
           </div>
@@ -40,8 +40,8 @@ export default function Footer() {
           {/* Social Media */}
           <div>
             <div className="flex flex-col mt-2 gap-[12px]">
-              <Link href="term-and-conditions" className="text-gray-400 hover:text-white transition-colors duration-500">Terms & Conditions</Link>
-              <Link href="privacy-policy" className="text-gray-400 hover:text-white transition-colors duration-500">Privacy Policy</Link>
+              <Link href="termsAndConditions" className="text-gray-400 hover:text-white transition-colors duration-500">Terms & Conditions</Link>
+              <Link href="privacyPolicy" className="text-gray-400 hover:text-white transition-colors duration-500">Privacy Policy</Link>
               <div className="media-icons flex gap-2 mt-4">
                 <Link href="https://facebook.com" target="_blank" className="p-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors duration-500">
                     <Facebook size={16} color="#ffffff" fill="#ffffff" />

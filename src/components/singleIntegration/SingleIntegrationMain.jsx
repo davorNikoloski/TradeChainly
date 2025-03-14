@@ -122,7 +122,7 @@ export default function SingleIntegration() {
               <p className="text-white text-lg">Exchange not found.</p>
             )}
 
-            <IntegrationList data={integrationListData} />
+            <IntegrationList data={integrationListData} selectedExchange={exchangeName} />
           </motion.div>
         </motion.div>
       </div>

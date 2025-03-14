@@ -13,7 +13,7 @@
       "features": ["Auto Sync", "File Upload", "Manual Entry"],
       "features_display": ["All Pairs", "All Pairs", "All Pairs"],
       "spot": ["Flat-to-Crypto", "Flat-to-Crypto", "All Pairs"],
-      "image": "/images/Exchanges_Logos/bybit.png"
+      "image": "/images/Exchanges_Logos/bybitclear.png"
   },
   {
       "id": 3,
@@ -53,6 +53,6 @@
       "features": ["Auto Sync", "File Upload", "Manual Entry"],
       "features_display": ["All Pairs", "All Pairs", "All Pairs"],
       "spot": ["Flat-to-Crypto", "Flat-to-Crypto", "All Pairs"],
-      "image": "/images/Exchanges_Logos/okx.png"
+      "image": "/images/Exchanges_Logos/okxclear.png"
   }
 ]
