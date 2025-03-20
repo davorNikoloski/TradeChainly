@@ -25,7 +25,7 @@ export default function BenefitsCards({ data }) {
               <h2 className="text-[18px] font-[600] text-white mt-4 pt-[16px]">
                 {benefit.title}
               </h2>
-              <p className="text-[16px] text-white mt-2 w-[80%]">
+              <p className="text-[16px] text-gray-400 mt-2 max-w-[200px]">
                 {benefit.description}
               </p>
             </div>

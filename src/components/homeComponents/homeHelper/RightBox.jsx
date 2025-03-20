@@ -5,6 +5,8 @@ import "../../../styles/glowingBoxComponent.css";
 
 export default function RightBox({ width = "100%", minWidth = "100%", image, isEven }) {
   const [isMobile, setIsMobile] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -26,13 +28,23 @@ export default function RightBox({ width = "100%", minWidth = "100%", image, isE
             left: isMobile ? "0rem" : isEven ? "3rem" : "-3rem",
           }}
           animate={{
-            top: isMobile ? "0rem" : "3rem",
-            left: isMobile ? "0rem" : isEven ? "3rem" : "-3rem",
+            top: isHovering || isAnimating ? "0rem" : isMobile ? "0rem" : "3rem",
+            left: isHovering || isAnimating ? "0rem" : isMobile ? "0rem" : isEven ? "3rem" : "-3rem",
           }}
-          whileHover={{ top: "0rem", left: "0rem" }}
           transition={{ duration: 0.3, ease: "easeOut" }}
           className="absolute w-full h-full"
           style={{ borderRadius: "16px" }}
+          onMouseEnter={() => {
+            setIsHovering(true);
+            setIsAnimating(true); // Start the transition immediately
+          }} 
+          onMouseLeave={() => {
+            if (!isHovering) {
+              setIsAnimating(false); // Return back to original position only when not hovering
+            }
+            setIsHovering(false);
+          }} 
+          onAnimationComplete={() => setIsAnimating(false)} // Reset state after animation completes
         >
           <Image
             src={image.src}

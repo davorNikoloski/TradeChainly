@@ -6,6 +6,7 @@ import FeatruesSections from "@/components/homeComponents/FeatruesSections";
 import featuresData from "../../data/featuresData.json";
 import CircleWithLogos from "@/components/homeComponents/CircleWithLogos";
 import { motion } from "framer-motion";
+import { FiArrowRight } from 'react-icons/fi';
 
 export default function Integrations() {
   return (
@@ -13,7 +14,7 @@ export default function Integrations() {
       <div className="integrations-sub flex flex-col gap-[1rem] h-full justify-between items-center">
         {/* Header Section */}
         <motion.div 
-          className="integrations-title w-full flex items-center justify-center flex-col gap-[12px]"
+          className="integrations-title w-full flex items-center justify-center flex-col gap-[14px]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -27,7 +28,7 @@ export default function Integrations() {
             Connect effortlessly with the leading crypto exchanges to sync your trades, journal your activity, and stay organized—all in one place.
           </p>
           <a href="" className="text-[16px] font-normal leading-[1.4] text-center flex items-center justify-center text-white">
-            See All &gt;
+            See All <FiArrowRight className="ml-2 h-[18px]" />
           </a>
         </motion.div>
 

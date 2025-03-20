@@ -12,12 +12,14 @@ export default function Hero() {
   const { scrollYProgress } = useScroll();
   const [isScrolling, setIsScrolling] = useState(false);
   const delayedScrollProgress = useMotionValue(0); // Use a motion value for delayed scroll progress
+  const scrollProgress = useMotionValue(0);
+  const [enableSpring, setEnableSpring] = useState(false);
 
-  // Track scroll progress and introduce a 1-second delay
+  // Track scroll progress and introduce a 100ms delay
   useEffect(() => {
     const unsubscribe = scrollYProgress.onChange((latest) => {
       setIsScrolling(true);
-
+      scrollProgress.set(latest);
       // Introduce a 100ms delay before updating the delayedScrollProgress
       const timeout = setTimeout(() => {
         delayedScrollProgress.set(latest); // Update the motion value
@@ -25,6 +27,9 @@ export default function Hero() {
 
       return () => clearTimeout(timeout);
     });
+
+    // Sync the initial scroll position
+    delayedScrollProgress.set(scrollYProgress.get());
 
     return () => unsubscribe();
   }, [scrollYProgress, delayedScrollProgress]);
@@ -41,25 +46,25 @@ export default function Hero() {
   const springContentY = useSpring(contentY, {
     stiffness: 100, // Controls the rigidity of the spring
     damping: 10, // Controls the bounciness (lower = more bouncy)
-    mass: 0.5, // Controls the weight of the object
+    mass: 0.6, // Controls the weight of the object
   });
 
   const springContentOpacity = useSpring(contentOpacity, {
     stiffness: 100,
     damping: 10,
-    mass: 0.5,
+    mass: 0.6,
   });
 
   const springImageY = useSpring(imageY, {
     stiffness: 100,
     damping: 10,
-    mass: 0.5,
+    mass: 0.6,
   });
 
   const springImageOpacity = useSpring(imageOpacity, {
     stiffness: 100,
     damping: 10,
-    mass: 0.5,
+    mass: 0.6,
   });
 
   return (
@@ -69,16 +74,13 @@ export default function Hero() {
         {/* Hero Content Section (Faster Movement) */}
         <motion.div 
           className="hero-content flex flex-col gap-[1rem] items-center justify-center"
-          initial={{ opacity: 0, y: "1.5rem" }} 
-          animate={{ opacity: 1, y: "0rem" }} 
-          transition={{ duration: 0.8, ease: "easeOut" }} // Updated transition
           style={{ y: springContentY, opacity: springContentOpacity }} // Apply spring animations
         >
           <motion.div 
             initial={{ opacity: 0, y: "1.5rem" }} 
             animate={{ opacity: 1, y: "0rem" }} 
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} // Updated transition
-            className="btns-first w-full md:w-auto"
+            className="btns-first w-full md:w-auto mb-[0.2rem] mt-[0.8rem]"
           >
             <FirstButtonComponent />
           </motion.div>
@@ -87,7 +89,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: "1.5rem" }} 
             animate={{ opacity: 1, y: "0rem" }} 
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} // Updated transition
-            className="title-content flex flex-col items-center md:w-[75%] gap-[22px]"
+            className="title-content flex flex-col items-center md:w-[900px] gap-[22px]"
           >
             <h1 className="font-[500] md:text-[65px] text-[35px] md:text-center text-start font-mulish text-white md:leading-[5rem] leading-10">
               All-in-One Crypto Journal to Find Your Trading Edge
@@ -98,7 +100,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: "1.5rem" }} 
             animate={{ opacity: 1, y: "0rem" }} 
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} // Updated transition
-            className="text-[#9e9e9e] font-[400] text-[18px] md:w-[70%] md:text-center text-start"
+            className="text-[#BAB7C6] font-[400] text-[18px] md:text-center text-start max-w-[600px] "
           >
             Unlock your potential with powerful journaling tools and insights to make smarter, data-driven trading decisions.
           </motion.p>
@@ -117,9 +119,12 @@ export default function Hero() {
         <motion.div 
           initial={{ opacity: 0, y: "14rem" }} 
           animate={{ opacity: 1, y: "0rem" }} 
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} // Updated transition
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} 
           className="hero-image flex items-center"
-          style={{ y: springImageY, opacity: springImageOpacity }} // Apply spring animations
+          onAnimationComplete={() => {
+            setEnableSpring(true); // Start applying spring animation after initial animation
+          }}
+          style={{ opacity: springImageOpacity, y: enableSpring ? springImageY : "0rem" }} // Only apply spring when enabled
         >
           <Image
             src="/images/Landing Page/Hero Section/Landing_Page_Bull.svg"
@@ -131,7 +136,12 @@ export default function Hero() {
         </motion.div>
 
         {/* Glowing Box Section */}
-        <div className="image flex items-center justify-center relative top-[-8.5rem] w-full">
+        <motion.div 
+          initial={{ opacity: 0.5, y: "4rem" }} 
+          animate={{ opacity: 1, y: "0rem" }} 
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }} // Slightly delayed
+          className="image flex items-center justify-center relative top-[-5rem] w-full"
+        >
           <GlowingBoxComponent  
             image={{
               src: "/images/Landing Page/Features Section/1.png",
@@ -140,9 +150,9 @@ export default function Hero() {
               height: 1200,
               className: "custom-image-class",
             }}
-            delayedScrollProgress={delayedScrollProgress} // Pass the motion value
+            delayedScrollProgress={scrollProgress} 
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

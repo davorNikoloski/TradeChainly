@@ -16,7 +16,7 @@ export default function FeaturesLeftSection({ title, description, features }) {
       <div className="flex flex-col">
         {/* Top Section */}
         <div className="top-sec flex flex-col gap-[16px] mt-[24px] mb-[32px]">
-          <h1 className="text-[34px] font-[500] text-white w-[85%]">{title}</h1>
+          <h1 className="text-[34px] font-[450] text-white w-[85%]">{title}</h1>
           <p className="text-[#9e9e9e] text-[16px] font-[400] w-[75%]">
             {description}
           </p>
@@ -33,7 +33,7 @@ export default function FeaturesLeftSection({ title, description, features }) {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="flex flex-row items-center gap-[6px]"
+              className="flex flex-row items-center gap-[12px]"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}

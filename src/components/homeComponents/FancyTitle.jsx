@@ -28,7 +28,7 @@ export default function FancyTitle({ title }) {
     >
       <div className="w-full flex flex-row justify-center items-center">
         <ProgressBar progress={100} width={progressWidth} direction="ltr" />
-        <h2 className="md:px-[4rem] px-[2rem] text-[18px] text-white">{title}</h2>
+        <h2 className="md:px-[4rem] px-[2rem] text-[16px] text-[#D7D5DE]">{title}</h2>
         <ProgressBar progress={100} width={progressWidth} direction="rtl" />
       </div>
     </motion.div>

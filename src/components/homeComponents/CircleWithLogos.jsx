@@ -7,13 +7,13 @@ import "../../styles/circle.css";
 
 const logos = [
   "/images/Exchanges_Logos/binance.png",
-  "/images/Exchanges_Logos/bybit.png",
+  "/images/Exchanges_Logos/bybitclear.png",
   "/images/Exchanges_Logos/coinbase.png",
   "/images/Exchanges_Logos/cryptocom.png",
   "plus-icon", // Placeholder for the plus icon at index 4
   "/images/Exchanges_Logos/kraken.png",
   "/images/Exchanges_Logos/kucoin.png",
-  "/images/Exchanges_Logos/OKX.png",
+  "/images/Exchanges_Logos/OKXclear.png",
 ];
 
 const centerImage = "/images/App Logo/HQTransparent_Mark.png"; // Center image

@@ -2,7 +2,7 @@
 
 import { motion, useTransform, useSpring } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import "../styles/glowingBoxComponent.css";
 
 export default function GlowingBoxComponent({ width = 'full', maxWidth = '1200px', image, delayedScrollProgress }) {
@@ -17,15 +17,15 @@ export default function GlowingBoxComponent({ width = 'full', maxWidth = '1200px
   }, []);
 
   // Define scroll range based on screen size
-  const scrollRange = isMobile ? [0, 0.03] : [0.0186, 0.0652];
+  const scrollRange = useMemo(() => isMobile ? [0, 0.03] : [0.0186, 0.0652], [isMobile]);
 
   // Define the scale animation based on scroll progress
   const scale = useTransform(delayedScrollProgress, scrollRange, [0.93, 1]);
 
   // Apply spring physics to the scale
   const springScale = useSpring(scale, {
-    stiffness: 100,
-    damping: 10,
+    stiffness: 150, // Increased stiffness for a snappier feel
+    damping: 20,    // Increased damping to reduce overshoot
     mass: 0.5,
   });
 
@@ -34,14 +34,14 @@ export default function GlowingBoxComponent({ width = 'full', maxWidth = '1200px
 
   // Apply spring physics to the position offsets
   const springPosition = useSpring(positionOffset, {
-    stiffness: 100,
-    damping: 10,
+    stiffness: 150, // Increased stiffness for a snappier feel
+    damping: 20,    // Increased damping to reduce overshoot
     mass: 0.5,
   });
 
   return (
     <motion.div
-      className="gb-container bg-[#010012] w-full md:h-[690px] h-fit mx-auto rounded-[16px] p-[9px] relative flex items-center justify-center overflow-visible"
+      className="gb-container bg-[#010012] w-full md:h-[690px] h-fit mx-auto rounded-[16px] p-[0px] relative flex items-center justify-center overflow-visible"
       style={{ 
         width, 
         maxWidth,
@@ -67,6 +67,7 @@ export default function GlowingBoxComponent({ width = 'full', maxWidth = '1200px
               objectFit: "contain",
               borderRadius: "16px",
             }}
+            priority // Ensure the image is loaded with high priority
           />
         </motion.div>
       )}

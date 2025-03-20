@@ -13,7 +13,7 @@ export default function Community() {
         
         {/* Header Section */}
         <motion.div 
-          className="community-title w-full flex items-center justify-center flex-col gap-[12px]"
+          className="community-title w-full flex items-center justify-center flex-col gap-[14px]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}

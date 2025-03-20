@@ -12,7 +12,7 @@ export default function Features() {
       <div className="features-sub flex flex-col gap-[1rem] h-full justify-between items-center">
         {/* Header Section with motion */}
         <motion.div 
-          className="features-title w-full flex items-center justify-center flex-col gap-[12px]"
+          className="features-title w-full flex items-center justify-center flex-col gap-[14px]"
           initial={{ opacity: 0, y: 20 }} 
           whileInView={{ opacity: 1, y: 0 }} 
           transition={{ duration: 1, ease: "easeOut" }}
