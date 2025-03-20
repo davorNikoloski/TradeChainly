@@ -28,7 +28,7 @@ export default function Analytics() {
         </motion.div>
 
         {/* Features Sections (Dynamically Rendered) */}
-        <div className="analytics-main pt-[40px] w-full h-full flex md:flex-row flex-col gap-[38px] items-center justify-center md:p-0">
+        <div className="analytics-main pt-[40px] w-full h-full flex md:flex-row flex-col gap-[38px] items-center justify-center ">
             {analyticsCardData.map((item) => (
                 <SubCardsComponent key={item.id} data={item} />
             ))}

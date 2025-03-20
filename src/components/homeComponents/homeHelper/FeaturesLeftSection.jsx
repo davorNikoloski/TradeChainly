@@ -17,7 +17,7 @@ export default function FeaturesLeftSection({ title, description, features }) {
         {/* Top Section */}
         <div className="top-sec flex flex-col gap-[16px] mt-[24px] mb-[32px]">
           <h1 className="text-[34px] font-[450] text-white w-[85%]">{title}</h1>
-          <p className="text-[#9e9e9e] text-[16px] font-[400] w-[75%]">
+          <p className="text-[#9ca3af] text-[16px] font-[400] w-[75%]">
             {description}
           </p>
           <GetStartedButton

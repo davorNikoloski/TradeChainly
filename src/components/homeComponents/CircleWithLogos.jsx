@@ -30,17 +30,14 @@ export default function CircleWithLogos() {
         setCircleRadius(160); // Smaller radius for mobile
         setOffset(130); // Larger offset for mobile
         setOffset2(160); // Larger offset for mobile
-
       } else if (window.innerWidth < 1024) {
         setCircleRadius(220); // Medium radius for tablets
         setOffset(90); // Medium offset for tablets
         setOffset2(100); // Larger offset for mobile
-
       } else {
         setCircleRadius(270); // Default for larger screens
         setOffset(32); // Default offset for larger screens
         setOffset2(32); // Larger offset for mobile
-
       }
     };
 
@@ -59,11 +56,26 @@ export default function CircleWithLogos() {
     >
       {/* Dashed Circle */}
       <motion.div
-        className="absolute w-[90%] md:h-[90%] h-[21rem] border-2 border-dashed border-gray-300 dark:border-white rounded-full gradient-circle"
-        animate={{ "--pulse-radius": ["5rem", "12rem", "5rem"] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute w-[90%] md:h-[90%] h-[21rem] border-2 border-dashed border-gray-300 dark:border-white rounded-full "
       />
+      <div className="absolute w-[10rem] h-[10rem] bg-purple-500 rounded-full opacity-50 blur-xl"></div>
 
+      {/* Pulsating Circles */}
+      {[1, 2, 3].map((i) => (
+        <motion.div
+          key={i}
+          className="absolute w-[10rem] h-[10rem] bg-purple-500 rounded-full blur-xl"
+          initial={{ scale: 1, opacity: 0.5 / i }} // Decreasing opacity for each pulse
+          animate={{ scale: 3, opacity: 0 }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            repeatDelay: 0.5,
+            delay: i * 0.2,
+            ease: "easeOut",
+          }}
+        />
+      ))}
 
       {/* Center Image */}
       <div className="absolute w-[115px] h-[115px] p-[24px] bg-black bg-opacity-[50%] shadow-xl rounded-[24px] flex items-center justify-center">
