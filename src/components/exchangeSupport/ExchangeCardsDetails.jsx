@@ -18,33 +18,33 @@ export default function ExchangeCardsDetails({ data }) {
           viewport={{ once: true, amount: 0.2 }}
           whileHover={{ padding: "0px" }}
         >
-          <div className="flex flex-col exchange-card-style rounded-[14px] h-full py-[2rem] space-y-[1.4rem]">
+          <div className="flex flex-col exchange-card-style rounded-[14px] h-full py-[2rem] ">
             {/* Top Section: Image Left, Name Right */}
             <div className="flex items-center justify-center p-[1.3rem] gap-[1.2rem]">
               {/* Left - Exchange Logo */}
-              <div className="w-[60px] h-[60px] flex-shrink-0 border-2 rounded-[8px] border-[#7D4DFF] p-[8px]">
-                <Image src={exchange.image} alt={exchange.name} width={60} height={60} />
+              <div className="w-[76px] h-[76px] flex-shrink-0 border-2 rounded-[8px] border-[#7D4DFF] p-[10px]">
+                <Image src={exchange.image} alt={exchange.name} width={76} height={76} />
               </div>
 
               {/* Right - Exchange Name */}
               <div className="flex flex-col items-center justify-center gap-[0.6rem]">
                 <h2 className="text-[18px] font-[600] text-white">{exchange.name}</h2>
                 <GetStartedButton href={`/singleIntegration/${exchange.name.toLowerCase().replace(/\s+/g, '-')}`} text="Get Started" width="100%" />
-                </div>
+              </div>
             </div>
 
             {/* Bottom Section with Three Columns */}
-            <div className="flex flex-col p-[1.3rem] gap-8 ">
+            <div className="flex flex-col p-[1.3rem] gap-[1rem]">
               {/* Column Headers */}
               <div className="flex flex-row w-full gap-4 items-center justify-between">
                 <div className="flex flex-col gap-2">
                   <h3 className="text-transparent select-none">Placeholder</h3> {/* Invisible text for spacing */}
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h3 className="text-white/80 text-[16px] font-[500]">Spot</h3>
+                  <h3 className="text-white text-[16px] font-[500]">Spot</h3>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h3 className="text-white/80 text-[16px] font-[500]">Features</h3>
+                  <h3 className="text-white text-[16px] font-[500]">Features</h3>
                 </div>
               </div>
 
@@ -53,21 +53,36 @@ export default function ExchangeCardsDetails({ data }) {
                 {/* Column 1: Feature Names */}
                 <div className="flex flex-col gap-2 items-center justify-between w-[24%] h-full">
                   {exchange.features.map((feature, index) => (
-                    <span key={index} className="text-[#9e9e9e]">{feature.replace(/_/g, ' ')}</span>
+                    <span 
+                      key={index} 
+                      className="text-white"
+                    >
+                      {feature.replace(/_/g, ' ')}
+                    </span>
                   ))}
                 </div>
 
                 {/* Column 2: Spot Information */}
-                <div className="flex flex-col gap-2 items-center justify-between h-full">
+                <div className="flex flex-col gap-[1rem] items-center justify-center h-full">
                   {exchange.spot.map((spot, index) => (
-                    <span key={index} className="text-[#9e9e9e] ">{spot}</span>
+                    <span 
+                      key={index} 
+                      className="text-gray-400"
+                    >
+                      {spot}
+                    </span>
                   ))}
                 </div>
 
                 {/* Column 3: Features Display */}
-                <div className="flex flex-col gap-2 items-center justify-between h-full">
+                <div className="flex flex-col gap-[1rem] items-center justify-center h-full">
                   {exchange.features_display.map((display, index) => (
-                    <span key={index} className="text-[#9e9e9e]">{display}</span>
+                    <span 
+                      key={index} 
+                      className="text-gray-400"
+                    >
+                      {display}
+                    </span>
                   ))}
                 </div>
               </div>

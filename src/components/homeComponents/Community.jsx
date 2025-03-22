@@ -32,10 +32,10 @@ export default function Community() {
         </motion.div>
 
         {/* Main Content Section */}
-        <div className="community-main pt-[40px] w-full h-full flex flex-col gap-[60px] items-center px-[4rem]">
+        <div className="community-main pt-[40px] w-full h-full flex flex-col gap-[60px] items-center md:px-[4rem]">
           {/* Image with motion */}
           <motion.div 
-            initial={{ opacity: 0, x: "5rem" }}  // Starts 3rem to the right
+            initial={{ opacity: 0, x: "6rem" }}  // Starts 3rem to the right
             whileInView={{ opacity: 1, x: "0rem" }}  // Moves to original position
             transition={{ duration: 0.75, ease: "easeOut" }}  // Smooth 0.3s transition
             viewport={{ once: true, amount: 0.3 }}

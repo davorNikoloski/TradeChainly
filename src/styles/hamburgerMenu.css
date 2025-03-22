@@ -66,17 +66,15 @@
 }
 
 /* Mobile menu styles */
+/* Mobile menu styles */
 .mobile-menu {
   display: none;
-  position: absolute;
+  position: fixed; /* Changed from absolute to fixed */
   top: 69.4px; /* Set exactly below navbar */
   left: 0;
   right: 0;
-  z-index: 50; /* Lower than navbar but above content */
+  z-index: 999; /* Ensure it's above other content */
 }
-
-
-
 
 .mobile-menu .menu-container {
   transform-origin: top;

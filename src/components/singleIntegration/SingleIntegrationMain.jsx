@@ -27,7 +27,7 @@ export default function SingleIntegration() {
     <div className="w-full h-full signleIntegration-container overflow-visible md:p-[0px] px-[14px]">
       <div className="signleIntegration-sub flex flex-col gap-[1rem] h-full justify-between items-center">
         <motion.div
-          className="signleIntegration-content flex flex-col gap-[1rem] items-center justify-center"
+          className="signleIntegration-content flex flex-col gap-[1rem] items-center justify-center w-full"
           initial={{ opacity: 0, y: "1.5rem" }}
           animate={{ opacity: 1, y: "0rem" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -71,10 +71,10 @@ export default function SingleIntegration() {
                 <motion.div
                     key={exchange.id}
                     className="flex flex-col border border-white/10 rounded-[14px] p-[8px] text-center w-full max-w-[360px] h-full "
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
-                    viewport={{ once: true, amount: 0.2 }}
+                    viewport={{ once: true, amount: 0.1 }}
                     whileHover={{ padding: "0px" }}
                 >
                     <div className="flex flex-col exchange-card-style rounded-[14px] h-full p-[2rem] space-y-[1.4rem]">

@@ -18,7 +18,7 @@ export default function ExchangeSupportMain() {
     <div className="w-full h-full exchangeS-container overflow-visible md:p-[0px] px-[14px]">
       <div className="exchangeS-sub flex flex-col gap-[1rem] h-full justify-between items-center">
         <motion.div
-          className="exchangeS-content flex flex-col gap-[1rem] items-center justify-center"
+          className="exchangeS-content flex flex-col gap-[1rem] md:items-center items-start justify-center w-full"
           initial={{ opacity: 0, y: "1.5rem" }}
           animate={{ opacity: 1, y: "0rem" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -46,13 +46,21 @@ export default function ExchangeSupportMain() {
           >
             Easily connect your exchange to sync your trades or upload your trade data - we've got you covered.
           </motion.p>
-          <GetStartedButton href="/XXX" text="Get Started" width="100%" />
+
+           <motion.div
+            initial={{ opacity: 0, y: "1.5rem" }}
+            animate={{ opacity: 1, y: "0rem" }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            className="w-full md:w-fit"
+          >
+            <GetStartedButton href="/XXX" text="Get Started" width="100%" />
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: "1.5rem" }}
             animate={{ opacity: 1, y: "0rem" }}
             transition={{ duration: 0.75, ease: "easeOut", delay: 0.3 }}
-            className="pricing-main pt-[100px] w-screen h-full flex flex-col items-center justify-center overflow-visible gap-[54px] max-w-[1200px]"
+            className="pricing-main pt-[100px] w-full h-full flex flex-col items-center justify-center overflow-visible gap-[54px] max-w-[1200px]"
           >
             {/* Next.js Image Component */}
             <Image

@@ -1,8 +1,5 @@
 .gradient-circle {
   position: relative;
-  background: radial-gradient(circle var(--pulse-radius, 12rem) at center, 
-    #3D3D91 0%, #010013 100%);
-  transition: background 5s linear;
 }
 
 

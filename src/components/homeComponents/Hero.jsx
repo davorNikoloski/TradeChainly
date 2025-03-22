@@ -68,7 +68,7 @@ export default function Hero() {
   });
 
   return (
-    <div className="w-full h-full hero-container overflow-visible md:p-[0px] px-[14px]">
+    <div className="w-full h-full hero-container md:overflow-visible overflow-x-hidden md:p-[0px] px-[28px]">
       <div className="hero-sub flex flex-col gap-[1rem] h-full justify-between items-center">
         
         {/* Hero Content Section (Faster Movement) */}

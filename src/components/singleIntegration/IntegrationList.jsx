@@ -38,20 +38,26 @@ export default function IntegrationList({ data = {}, selectedExchange }) {
             {section.items.map((item, index) => (
               <motion.div
                 key={index}
-                className="flex items-center gap-4 w-full p-[0.7rem] rounded-lg"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}
+                className="flex items-center justify-between w-full text-white text-[18px] font-[400] pb-[24px] mb-[24px] border-b border-[#637792]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                viewport={{ once: true, amount: 0.2 }}
               >
+                {/* Left Side - Instruction Text */}
+                <div className="text-left">{item}</div>
+
                 {/* Numbered Circle */}
-                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center border-2 border-[#7247E7] bg-[#7247E7]/5 rounded-[8px] shadow-[inset_0_0_5px_#9B70FF]">
+                <motion.div
+                  className="w-12 h-12 flex-shrink-0 flex items-center justify-center border-2 border-[#7247E7] bg-[#7247E7]/5 rounded-[8px] shadow-[inset_0_0_5px_#9B70FF]"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <span className="text-white font-semibold text-[18px]">
                     {index + 1}
                   </span>
-                </div>
-
-                {/* List Text */}
-                <p className="text-white text-lg">{item}</p>
+                </motion.div>
               </motion.div>
             ))}
           </div>

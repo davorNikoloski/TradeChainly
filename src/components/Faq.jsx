@@ -36,7 +36,7 @@ export default function Faq({ faqData }) {
   }, []);
 
   return (
-    <div className='main-faq md:p-[2rem] p-[14px] mx-auto max-w-[1200px]'>
+    <div className='main-faq md:p-[2rem] p-[28px] mx-auto max-w-[1200px]'>
       <div className='faq-cont w-full h-full md:pt-[100px] flex flex-col md:gap-[6rem] gap-[50px]'>
         <div className="faq-title flex md:items-center md:justify-center">
           <h1 className="md:text-[47px] text-[28px] font-[600] leading-[1.2] text-transparent bg-gradient-to-l from-white/35 via-white to-white/90 bg-clip-text m-0">

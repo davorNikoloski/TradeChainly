@@ -5,17 +5,14 @@ import "../../../styles/glowingBoxComponent.css";
 
 export default function RightBox({ width = "100%", minWidth = "100%", image, isEven }) {
   const [isMobile, setIsMobile] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // Adjust breakpoint as needed
+      setIsMobile(window.innerWidth < 768);
     };
 
-    handleResize(); // Set initial state
+    handleResize();
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -24,27 +21,17 @@ export default function RightBox({ width = "100%", minWidth = "100%", image, isE
       {image && (
         <motion.div
           initial={{
-            top: isMobile ? "0rem" : "3rem",
-            left: isMobile ? "0rem" : isEven ? "3rem" : "-3rem",
+            top: isMobile ? "3rem" : "6rem",
+            left: isMobile ? "0rem" : isEven ? "6rem" : "-6rem",
           }}
-          animate={{
-            top: isHovering || isAnimating ? "0rem" : isMobile ? "0rem" : "3rem",
-            left: isHovering || isAnimating ? "0rem" : isMobile ? "0rem" : isEven ? "3rem" : "-3rem",
+          whileInView={{
+            top: "0rem",
+            left: "0rem",
           }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.1 }} // Triggers when 20% of the element is in view
           className="absolute w-full h-full"
           style={{ borderRadius: "16px" }}
-          onMouseEnter={() => {
-            setIsHovering(true);
-            setIsAnimating(true); // Start the transition immediately
-          }} 
-          onMouseLeave={() => {
-            if (!isHovering) {
-              setIsAnimating(false); // Return back to original position only when not hovering
-            }
-            setIsHovering(false);
-          }} 
-          onAnimationComplete={() => setIsAnimating(false)} // Reset state after animation completes
         >
           <Image
             src={image.src}

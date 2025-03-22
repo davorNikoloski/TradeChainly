@@ -42,49 +42,49 @@ export default function Navbar() {
   return (
     <div className="relative w-full flex items-center justify-center align-center">
       {/* Main Navbar */}
-      <nav className="main-nav top-0 left-0 w-full z-[100] navbar-fade-in h-[69.4px] md:h-[63.6px] flex items-center justify-between px-[19px] md:px-[12px] font-mulish max-w-[1200px]">
-        {/* Left: Logo */}
-        <div className="relative">
-          <Link href="/" className="text-lg font-bold inline-block max-w-full box-border align-middle relative">
-            <div className="w-[175px] min-w-[120px] min-h-[48px]"></div> {/* Placeholder to prevent shifting */}
-            <Image
-              src="/images/App Logo/HQTransparent_Logo_Hr_001.png"
-              alt="App Logo"
-              width={1200}
-              height={1200}
-              className="absolute top-0 left-0 w-auto h-full object-contain"
-            />
-          </Link>
-        </div>
+      <nav className="main-nav fixed top-0 left-0 w-full z-[1000] navbar-fade-in h-[69.4px] md:h-[63.6px] flex items-center justify-between px-[19px] md:px-[12px] font-mulish max-w-[1200px]">
+  {/* Left: Logo */}
+  <div className="relative">
+    <Link href="/" className="text-lg font-bold inline-block max-w-full box-border align-middle relative">
+      <div className="w-[175px] min-w-[120px] min-h-[48px]"></div> {/* Placeholder to prevent shifting */}
+      <Image
+        src="/images/App Logo/HQTransparent_Logo_Hr_001.png"
+        alt="App Logo"
+        width={1200}
+        height={1200}
+        className="absolute top-0 left-0 w-auto h-full object-contain"
+      />
+    </Link>
+  </div>
 
-        {/* Center: Desktop Menu */}
-        <div className="hidden sm:block absolute left-1/2 transform -translate-x-1/2">
-          <ul className="flex gap-[40px] text-[14px] leading-[1.2] items-center">
-            <NavItem href="/" text="Home" pathname={pathname} />
-            <NavItem href="/features" text="Features" pathname={pathname} />
-            <NavItem href="/pricing" text="Pricing" pathname={pathname} />
-            <NavItem href="/exchangeSupport" text="Exchange Support" pathname={pathname} />
-          </ul>
-        </div>
+  {/* Center: Desktop Menu */}
+  <div className="hidden sm:block absolute left-1/2 transform -translate-x-1/2">
+    <ul className="flex gap-[40px] text-[14px] leading-[1.2] items-center">
+      <NavItem href="/" text="Home" pathname={pathname} />
+      <NavItem href="/features" text="Features" pathname={pathname} />
+      <NavItem href="/pricing" text="Pricing" pathname={pathname} />
+      <NavItem href="/exchangeSupport" text="Exchange Support" pathname={pathname} />
+    </ul>
+  </div>
 
-        {/* Right: Buttons & Mobile Menu Toggle */}
-        <div className="flex items-center gap-[1rem]">
-          {/* Mobile Menu Toggle */}
-          <button
-            className={`flex sm:hidden hamburger-btn ${isMenuOpen ? 'active' : ''}`}
-            onClick={toggleMenu}
-            aria-label="Toggle Menu"
-          >
-            <GiHamburgerMenu />
-          </button>
+  {/* Right: Buttons & Mobile Menu Toggle */}
+  <div className="flex items-center gap-[1rem]">
+    {/* Mobile Menu Toggle */}
+    <button
+      className={`flex sm:hidden hamburger-btn ${isMenuOpen ? 'active' : ''}`}
+      onClick={toggleMenu}
+      aria-label="Toggle Menu"
+    >
+      <GiHamburgerMenu />
+    </button>
 
-          {/* Desktop Buttons */}
-          <div className="hidden sm:flex gap-[1rem]">
-            <LogInButton href="/login" text="Log In" />
-            <GetStartedButton href="/getstarted" text="Get Started" />
-          </div>
-        </div>
-      </nav>
+    {/* Desktop Buttons */}
+    <div className="hidden sm:flex gap-[1rem]">
+      <LogInButton href="/login" text="Log In" />
+      <GetStartedButton href="/getstarted" text="Get Started" />
+    </div>
+  </div>
+</nav>
 
       {/* Mobile Menu */}
       <div className={`mobile-menu sm:hidden ${isMenuOpen ? 'open' : ''} ${isClosing ? 'closing' : ''}`}>

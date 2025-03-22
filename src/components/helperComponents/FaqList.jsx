@@ -3,10 +3,14 @@ import { PlusCircle, XCircle } from "lucide-react";
 import { useState } from 'react';
 
 export default function FaqList({ faqData }) {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndices, setOpenIndices] = useState([]);
 
   const toggleFaq = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+    setOpenIndices((prevIndices) =>
+      prevIndices.includes(index)
+        ? prevIndices.filter((i) => i !== index) // Remove index if it's already in the array
+        : [...prevIndices, index] // Add index if it's not in the array
+    );
   };
 
   return (
@@ -22,14 +26,14 @@ export default function FaqList({ faqData }) {
                 <motion.div
                   className="flex justify-center items-center w-6 h-6"
                   animate={{
-                    rotate: openIndex === index ? 300 : 0, // 5 full rotations (360° * 5)
+                    rotate: openIndices.includes(index) ? 300 : 0, // 5 full rotations (360° * 5)
                   }}
                   transition={{
                     duration: 0.6, // 600ms duration for smooth rotation
                     ease: "easeInOut", // Smooth ease-in and ease-out
                   }}
                 >
-                  {openIndex === index ? (
+                  {openIndices.includes(index) ? (
                     <XCircle className="text-[#7649EC] w-6 h-6" />
                   ) : (
                     <PlusCircle className="text-[#7649EC] w-6 h-6" />
@@ -40,7 +44,7 @@ export default function FaqList({ faqData }) {
               <motion.div
                 className="overflow-hidden w-full"
                 initial={{ height: 0, opacity: 0 }}
-                animate={openIndex === index ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
+                animate={openIndices.includes(index) ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
                 transition={{ duration: 0.3 }}
               >
                 <p className="text-[#bdbdbdb3] pt-[8px] text-[16px] leading-[1.4]">{faq.answer}</p>

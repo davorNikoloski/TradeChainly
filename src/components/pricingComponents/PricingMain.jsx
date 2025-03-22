@@ -18,7 +18,7 @@ export default function PricingMain() {
     <div className="w-full h-full pricingMain-container overflow-visible md:p-[0px] px-[14px]">
       <div className="pricingMain-sub flex flex-col gap-[1rem] h-full justify-between items-center">
         <motion.div
-          className="pricingMain-content flex flex-col gap-[1rem] items-center justify-center"
+          className="pricingMain-content flex flex-col gap-[1rem] md:items-center items-start justify-center w-full"
           initial={{ opacity: 0, y: "1.5rem" }}
           animate={{ opacity: 1, y: "0rem" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -46,7 +46,16 @@ export default function PricingMain() {
           >
             One plan designed to meet all your trading needs, helping you grow and stay ahead in the market.
           </motion.p>
-          <GetStartedButton href="/XXX" text="Get Started" width="100%" />
+
+          <motion.div
+            initial={{ opacity: 0, y: "1.5rem" }}
+            animate={{ opacity: 1, y: "0rem" }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            className="w-full md:w-fit"
+          >
+            <GetStartedButton href="/XXX" text="Get Started" width="100%" />
+          </motion.div>
+
 
           <div className="pt-[100px] w-full flex items-center justify-center pb-[3rem]">
             <PricingButton onSelect={(plan) => setIsAnnual(plan === "Annually")} />
@@ -55,7 +64,7 @@ export default function PricingMain() {
             initial={{ opacity: 0, y: "1.5rem" }}
             animate={{ opacity: 1, y: "0rem" }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="pricing-main w-screen h-full flex flex-col items-center justify-center overflow-visible gap-[54px]"
+            className="pricing-main w-full h-full flex flex-col items-center justify-center overflow-visible gap-[54px]"
           >
             <PricingCard data={pricingCardData} isAnnual={isAnnual} />
             <h1 className="font-[500] md:text-[65px] text-[35px] md:text-center text-start pt-[2rem] font-mulish md:leading-[5rem] md:w-[60%] leading-[1.2] text-transparent bg-gradient-to-l from-white/35 via-white to-white/90 bg-clip-text">

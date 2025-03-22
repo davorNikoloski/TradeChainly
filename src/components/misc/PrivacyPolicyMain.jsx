@@ -47,21 +47,33 @@ export default function PrivacyPolicyMain({ data }) {
             initial={{ opacity: 0, y: "1.5rem" }}
             animate={{ opacity: 1, y: "0rem" }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="privacyPolicy-main pt-[1rem] w-screen h-full flex flex-col items-center justify-center overflow-visible gap-[7rem]"
+            className="privacyPolicy-main pt-[1rem] w-full h-full flex flex-col items-center justify-center overflow-visible gap-[7rem]"
           >
             {/* Display the Introduction */}
-            <div className="introduction md:w-[80%] text-[#BAB7C6] text-[18px] text-center">
+            <div className="introduction md:w-[80%] text-[18px] text-center" style={{ color: "rgb(156, 163, 175)" }}>
               {/* Render introduction text with line breaks */}
               {renderTextWithBreaks(data.introduction)}
             </div>
 
-            {/* Display Privacy Policies */}
+            {/* Display Privacy Policies with Numbering */}
             <div className="policies w-full flex flex-col gap-[7rem] items-center">
-              {data.policies.map((policy) => (
+              {data.policies.map((policy, index) => (
                 <div key={policy.id} className="policy-card w-full md:w-[80%] text-center space-y-[20px]">
-                  <h2 className="text-[28px] font-[500]">{policy.policy}</h2>
-                  <p className="text-[#9e9e9e] text-[18px] font-[400]">
-                    {/* Render the description with line breaks */}
+                  <div className="flex items-center justify-center gap-[1rem]">
+                    {/* Numbered Circle */}
+                    <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center border-2 border-[#7247E7] bg-[#7247E7]/5 rounded-[8px] shadow-[inset_0_0_5px_#9B70FF]">
+                      <span className="text-white font-semibold text-[18px]">
+                        {index + 1}
+                      </span>
+                    </div>
+
+                    {/* Policy Title */}
+                    <h2 className="text-[28px] font-[500] text-white">{policy.policy}</h2>
+                  </div>
+
+                  {/* Policy Description */}
+                  <p className="text-[18px] font-[400]" style={{ color: "rgb(156, 163, 175)" }}>
+                    {/* Render description text with line breaks */}
                     {renderTextWithBreaks(policy.description)}
                   </p>
                 </div>

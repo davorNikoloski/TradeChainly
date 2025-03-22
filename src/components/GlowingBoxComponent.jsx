@@ -17,7 +17,7 @@ export default function GlowingBoxComponent({ width = 'full', maxWidth = '1200px
   }, []);
 
   // Define scroll range based on screen size
-  const scrollRange = useMemo(() => isMobile ? [0, 0.03] : [0.0186, 0.0652], [isMobile]);
+  const scrollRange = useMemo(() => isMobile ? [0, 0] : [0.0186, 0.0652], [isMobile]);
 
   // Define the scale animation based on scroll progress
   const scale = useTransform(delayedScrollProgress, scrollRange, [0.93, 1]);
@@ -45,7 +45,7 @@ export default function GlowingBoxComponent({ width = 'full', maxWidth = '1200px
       style={{ 
         width, 
         maxWidth,
-        scale: springScale, // Apply spring-based scale
+        scale: isMobile ? 1 : springScale, // Apply spring-based scale only if not mobile
       }}
     >
       {image && (
@@ -53,8 +53,8 @@ export default function GlowingBoxComponent({ width = 'full', maxWidth = '1200px
           className="relative z-[50] overflow-hidden w-full"
           style={{
             borderRadius: "16px",
-            top: springPosition,  // Apply spring-based `top`
-            left: springPosition, // Apply spring-based `left`
+            top: isMobile ? 0 : springPosition,  // Apply spring-based `top` only if not mobile
+            left: isMobile ? 0 : springPosition, // Apply spring-based `left` only if not mobile
           }}
         >
           <Image

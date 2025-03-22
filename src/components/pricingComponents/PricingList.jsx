@@ -12,7 +12,7 @@ export default function PricingList({ data = [] }) {
   }
 
   return (
-    <div className="pricing-list w-full px-[8rem] pt-[2rem]">
+    <div className="pricing-list w-full md:px-[8rem] pt-[2rem]">
       <div className="flex flex-col">
         {data.map((item, index) => (
           <motion.div
@@ -21,7 +21,7 @@ export default function PricingList({ data = [] }) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             {/* Left Side - Feature Text */}
             <div className="text-left">{item.feature}</div>
@@ -35,12 +35,10 @@ export default function PricingList({ data = [] }) {
             >
               {item.value ? (
                 <span className="text-[rgb(123,76,253)] text-[16px] drop-shadow-[0_0_6px_rgb(90,50,200)]">
-                {item.value}
-              </span>
-              
-              
+                  {item.value}
+                </span>
               ) : (
-              <CheckCheck className="w-4 h-4 text-[rgb(123,76,253)] drop-shadow-[0_0_6px_rgb(90,50,200)]" />
+                <CheckCheck className="w-[1.5rem] h-[1.5rem] text-[rgb(123,76,253)] drop-shadow-[0_0_6px_rgb(90,50,200)]" />
               )}
             </motion.div>
           </motion.div>
