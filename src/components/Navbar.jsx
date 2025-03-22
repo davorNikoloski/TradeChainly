@@ -42,7 +42,7 @@ export default function Navbar() {
   return (
     <div className="relative w-full flex items-center justify-center align-center">
       {/* Main Navbar */}
-      <nav className="main-nav fixed top-0 left-0 w-full z-[1000] navbar-fade-in h-[69.4px] md:h-[63.6px] flex items-center justify-between px-[19px] md:px-[12px] font-mulish max-w-[1200px]">
+      <nav className="main-nav top-0 left-0 w-full z-[100] navbar-fade-in h-[69.4px] md:h-[63.6px] flex items-center justify-between px-[19px] md:px-[12px] font-mulish max-w-[1200px]">
   {/* Left: Logo */}
   <div className="relative">
     <Link href="/" className="text-lg font-bold inline-block max-w-full box-border align-middle relative">
