@@ -28,8 +28,9 @@ export default function PrivacyPolicyMain({ data }) {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {/* FancyTitle Component for Policy */}
-          <FancyTitle title="Policy" />
-
+          <div className="max-w-[700px] w-full">
+            <FancyTitle title="Policy" />
+          </div>
           <motion.div
             initial={{ opacity: 0, y: "1.5rem" }}
             animate={{ opacity: 1, y: "0rem" }}
@@ -37,7 +38,7 @@ export default function PrivacyPolicyMain({ data }) {
             className="title-content flex flex-col items-center md:w-[75%] gap-[22px]"
           >
             {/* Display Privacy Policy Title */}
-            <h1 className="font-[500] md:text-[65px] text-[35px] md:text-center text-start font-mulish md:leading-[5rem] md:w-[80%] leading-[1.2] text-transparent bg-gradient-to-l from-white/35 via-white to-white/90 bg-clip-text">
+            <h1 className="font-[500] md:text-[65px] text-[35px] md:text-center text-start font-mulish text-white md:leading-[5rem] leading-10">
               {data.title}
             </h1>
           </motion.div>
@@ -49,7 +50,7 @@ export default function PrivacyPolicyMain({ data }) {
             className="privacyPolicy-main pt-[1rem] w-screen h-full flex flex-col items-center justify-center overflow-visible gap-[7rem]"
           >
             {/* Display the Introduction */}
-            <div className="introduction md:w-[80%] text-[#9e9e9e] text-[18px] text-center">
+            <div className="introduction md:w-[80%] text-[#BAB7C6] text-[18px] text-center">
               {/* Render introduction text with line breaks */}
               {renderTextWithBreaks(data.introduction)}
             </div>

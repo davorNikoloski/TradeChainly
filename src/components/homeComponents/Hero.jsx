@@ -82,7 +82,10 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} // Updated transition
             className="btns-first w-full md:w-auto mb-[0.2rem] mt-[0.8rem]"
           >
-            <FirstButtonComponent />
+            <FirstButtonComponent 
+              leftText="Whats New" 
+              rightText="Ease Update v1.0" 
+            />
           </motion.div>
 
           <motion.div 

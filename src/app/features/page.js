@@ -15,7 +15,7 @@ export default function Features() {
 
       </div>
       <div className="home-cont w-full h-full pt-[100px] flex flex-col max-w-[1200px] items-center justify-start">
-        <div className="w-full h-[68vh] md:pt-[3rem]">
+        <div className="w-full  ">
           <FeaturesMain />
         </div>
         <div className="w-full">

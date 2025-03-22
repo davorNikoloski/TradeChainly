@@ -54,9 +54,9 @@ export default function FeaturesMain() {
             initial={{ opacity: 0, y: "1.5rem" }} 
             animate={{ opacity: 1, y: "0rem" }} 
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} // Updated transition
-            className="title-content flex flex-col items-center md:w-[900px] gap-[22px]"
+            className="title-content flex flex-col items-center md:w-[700px] gap-[22px]"
           >
-            <h1 className="font-[500] md:text-[65px] text-[35px] md:text-center text-start font-mulish md:leading-[5rem] md:w-[80%] leading-[1.2] text-transparent bg-gradient-to-l from-white/35 via-white to-white/90 bg-clip-text">
+            <h1 className="font-[500] md:text-[65px] text-[35px] md:text-center text-start font-mulish text-white md:leading-[5rem] leading-10">
                 Everything You Need to Trade Smarter
             </h1>
           </motion.div>
@@ -76,7 +76,10 @@ export default function FeaturesMain() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} // Updated transition
             className="btns-second md:w-fit w-full m-[0.8rem]"
           >
-            <GetStartedButton href="/XXX" text="Get Started" width="100%" />
+            <FirstButtonComponent 
+              leftText="Whats New" 
+              rightText="Smarter Journaling" 
+            />
           </motion.div>
         </motion.div>       
         

@@ -16,10 +16,13 @@ export default function Community() {
           className="community-title w-full flex items-center justify-center flex-col gap-[14px]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 0.75, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          <FancyTitle title="Community" />
+          <div className="max-w-[700px] w-full">
+            <FancyTitle title="Community" />
+          </div>
+
           <h1 className="md:text-[47px] text-[28px] font-[600] leading-[1.2] text-transparent bg-gradient-to-l from-white/35 via-white to-white/90 bg-clip-text m-0">
             Collaborate, Learn, Improve
           </h1>
@@ -32,10 +35,10 @@ export default function Community() {
         <div className="community-main pt-[40px] w-full h-full flex flex-col gap-[60px] items-center px-[4rem]">
           {/* Image with motion */}
           <motion.div 
-            initial={{ opacity: 0, x: "3rem" }}  // Starts 3rem to the right
+            initial={{ opacity: 0, x: "5rem" }}  // Starts 3rem to the right
             whileInView={{ opacity: 1, x: "0rem" }}  // Moves to original position
-            transition={{ duration: 2.5, ease: "easeOut" }}  // Smooth 0.3s transition
-            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.75, ease: "easeOut" }}  // Smooth 0.3s transition
+            viewport={{ once: true, amount: 0.3 }}
           >
             <Image
               src="/images/Landing Page/Community Section/Landing_Page_ConnectionBull.png"

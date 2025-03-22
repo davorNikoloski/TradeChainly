@@ -7,8 +7,8 @@ import "../../styles/contactCard.css";
 
 export default function ContactCardSection() {
   return (
-    <div className='main-faq md:p-[2rem] p-[14px] mx-auto max-w-[1200px]'>
-      <div className='faq-cont w-full h-full md:pt-[100px] flex flex-col md:gap-[6rem] gap-[50px]'>
+    <div className='main-faq pt-[100px] p-[14px] mx-auto max-w-[1200px]'>
+      <div className='faq-cont w-full h-full flex flex-col md:gap-[6rem] gap-[50px]'>
         <div className='faq-lower flex md:flex-row flex-col md:gap-[30%] gap-[50px] items-center md:justify-center'>
 
           {/* Left Section */}

@@ -24,23 +24,24 @@ export default function SingleIntegration() {
   }, [exchangeName]);
 
   return (
-    <div className="w-full h-full pricingMain-container overflow-visible md:p-[0px] px-[14px]">
-      <div className="pricingMain-sub flex flex-col gap-[1rem] h-full justify-between items-center">
+    <div className="w-full h-full signleIntegration-container overflow-visible md:p-[0px] px-[14px]">
+      <div className="signleIntegration-sub flex flex-col gap-[1rem] h-full justify-between items-center">
         <motion.div
-          className="pricingMain-content flex flex-col gap-[1rem] items-center justify-center"
+          className="signleIntegration-content flex flex-col gap-[1rem] items-center justify-center"
           initial={{ opacity: 0, y: "1.5rem" }}
           animate={{ opacity: 1, y: "0rem" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <FancyTitle title="Integration" />
-
+          <div className="max-w-[700px] w-full">
+            <FancyTitle title="Integration" />
+          </div>
           <motion.div
             initial={{ opacity: 0, y: "1.5rem" }}
             animate={{ opacity: 1, y: "0rem" }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="title-content flex flex-col items-center md:w-[75%] gap-[22px]"
+            className="title-content flex flex-col items-center max-w-[1050px] gap-[22px]"
           >
-            <h1 className="font-[500] md:text-[65px] text-[35px] md:text-center text-start font-mulish md:leading-[5rem] md:w-[80%] leading-[1.2] text-transparent bg-gradient-to-l from-white/35 via-white to-white/90 bg-clip-text">
+            <h1 className="font-[500] md:text-[65px] text-[35px] md:text-center text-start font-mulish text-white md:leading-[5rem] leading-10">
               Integrating With {exchange?.name || "Exchange"}
             </h1>
           </motion.div>
@@ -49,11 +50,11 @@ export default function SingleIntegration() {
             initial={{ opacity: 0, y: "1.5rem" }}
             animate={{ opacity: 1, y: "0rem" }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="pricing-main pt-[6rem] w-screen h-full flex flex-col items-center justify-center overflow-visible gap-[54px] max-w-[1200px] "
+            className="signleIntegration-main pt-[100px] w-screen h-full flex flex-col items-center justify-center overflow-visible gap-[54px] max-w-[1200px] "
           >
             {/* Exchange Details Section */}
             {exchange ? (
-              <div className="tab flex flex-col w-fit h-full p-[2rem] rounded-lg ">
+              <div className="tab flex flex-col w-fit h-full p-[2rem] pt-[0px] rounded-lg ">
                 <div className="flex items-center justify-center p-[1.3rem] gap-[2.2rem]">
                   {/* Exchange Logo */}
                   <div className="w-[60px] h-[60px] flex-shrink-0 border-2 rounded-[8px] border-[#7D4DFF] p-[8px]">

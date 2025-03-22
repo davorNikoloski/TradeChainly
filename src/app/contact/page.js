@@ -11,7 +11,7 @@ export default function Contact() {
 
       </div>
       <div className="home-cont w-full h-full pt-[100px] flex flex-col max-w-[1200px] items-center justify-start">
-        <div className="w-full  md:pt-[3rem]">
+        <div className="w-full">
           <ContactMain />
         </div>
         <div className="w-full">

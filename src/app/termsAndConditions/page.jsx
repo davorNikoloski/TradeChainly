@@ -9,7 +9,7 @@ export default function TermsAndConditions() {
 
       </div>
       <div className="terms&conditions-cont w-full h-full pt-[100px] flex flex-col max-w-[1200px] items-center justify-start">
-        <div className="w-full  md:pt-[3rem]">
+        <div className="w-full ">
           <TermsAndConditionsMain data={termsAndConditionsData} />
         </div>
       </div>

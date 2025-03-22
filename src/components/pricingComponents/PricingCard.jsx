@@ -27,9 +27,10 @@ export default function PricingCard({ data, isAnnual }) {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="text-[48px] font-[500] text-white pt-[24px] pb-[6px]"
+            className="text-[48px] font-[500] text-white pt-[24px] pb-[6px] leading-none"
           >
             ${pricing.price}
+            <sup className="text-[16px] font-normal text-white align-super">99</sup>
             <span className="text-[16px] font-normal text-white">
               per {isAnnual ? "year" : "month"}
             </span>
@@ -55,7 +56,9 @@ export default function PricingCard({ data, isAnnual }) {
 
         {/* Features Section */}
         <div className="w-full">
-          <h3 className="text-[18px] font-[500] text-white py-[24px] text-start">{data.featuresTitle}</h3>
+          <h3 className="text-[18px] font-[500] text-white py-[24px] text-start">
+            {data.featuresTitle}
+          </h3>
 
           <ul className="text-white space-y-[12px] text-start w-full">
             {data.features.map((feature, index) => (

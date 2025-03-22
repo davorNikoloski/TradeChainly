@@ -18,7 +18,10 @@ export default function Features() {
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          <FancyTitle title="Features" />
+          <div className="max-w-[700px] w-full">
+            <FancyTitle title="Features" />
+          </div>
+
           <h1 className="md:text-[47px] text-[28px] font-[600] leading-[1.2] text-transparent bg-gradient-to-l from-white/35 via-white to-white/90 bg-clip-text m-0">
             Powerful Features
           </h1>
