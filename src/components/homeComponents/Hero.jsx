@@ -115,7 +115,7 @@ export default function Hero() {
             className="btns-second md:w-fit w-full"
           >
             <div className="mt-[0.6rem]">
-              <GetStartedButton href="/XXX" text="Get Started" width="100%" />
+              <GetStartedButton href="https://app.tradechainly.website/" text="Get Started" width="100%" />
             </div>
           </motion.div>
         </motion.div>

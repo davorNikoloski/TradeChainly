@@ -2,7 +2,7 @@ import NotFound from "@/components/notFound/notFound"; // Import your NotFound c
 
 export default function NotFoundPage() {
   return (
-    <div className="home m-[2rem] pb-[0px] mx-auto w-full h-auto bg-opacity-0 flex items-center justify-center overflow-visible relative z-1">
+    <div className="home m-[2rem] pb-[0px] mx-auto w-full h-auto bg-opacity-0 flex items-center justify-center overflow-visible relative z-1 px-[14px]">
       <div className="absolute w-full h-[130vh] gradient-bg top-0 z-[-1]">
         {/* Optional: Add any background or gradient here */}
       </div>

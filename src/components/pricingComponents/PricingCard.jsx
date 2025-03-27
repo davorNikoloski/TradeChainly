@@ -47,7 +47,7 @@ export default function PricingCard({ data, isAnnual }) {
           </motion.p>
 
           <div className="py-[32px] text-center w-full">
-            <GetStartedButton href="/getstarted" text="Get Started" width="285px" />
+            <GetStartedButton href="https://app.tradechainly.website/" text="Get Started" width="285px" />
           </div>
         </div>
 

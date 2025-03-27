@@ -53,7 +53,7 @@ export default function ExchangeSupportMain() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             className="w-full md:w-fit mt-[0.6rem]"
           >
-            <GetStartedButton href="/XXX" text="Get Started" width="100%" />
+            <GetStartedButton href="https://app.tradechainly.website/" text="Get Started" width="100%" />
           </motion.div>
 
           <motion.div

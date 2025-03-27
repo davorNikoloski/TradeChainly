@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 import GetStartedButton from "../buttons/GetStartedButton";
 
 export default function NotFound() {
@@ -13,13 +13,8 @@ export default function NotFound() {
       <p className="text-gray-400 mt-2 max-w-lg">
         The Page you are looking for doesn’t exist or has been removed by the owner! Try Again later for the update in page.
       </p>
-      <div className='pt-[2rem]'>
-        <GetStartedButton
-            href="/"
-            text="Back To Home"
-            showArrow={true}
-            width="200px"
-        />
+      <div className="pt-[2rem]">
+        <GetStartedButton href="/" text="Back To Home" showArrow={true} width="200px" />
       </div>
     </div>
   );
