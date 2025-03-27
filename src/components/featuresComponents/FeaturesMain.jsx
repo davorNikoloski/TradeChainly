@@ -36,7 +36,7 @@ export default function FeaturesMain() {
         
         {/* featuresMain Content Section (Faster Movement) */}
         <motion.div 
-          className="featuresMain-content flex flex-col gap-[1rem] items-center justify-center"
+          className="featuresMain-content flex flex-col gap-[1rem] items-center justify-center w-full"
           initial={{ opacity: 0, y: "1.5rem" }} 
           animate={{ opacity: 1, y: "0rem" }} 
           transition={{ duration: 0.8, ease: "easeOut" }} // Updated transition
@@ -45,7 +45,7 @@ export default function FeaturesMain() {
             initial={{ opacity: 0, y: "1.5rem" }} 
             animate={{ opacity: 1, y: "0rem" }} 
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} // Updated transition
-            className="btns-first w-full "
+            className="btns-first w-full max-w-[1200px]"
           >
             <FancyTitle title="Features" />
           </motion.div>
@@ -74,12 +74,9 @@ export default function FeaturesMain() {
             initial={{ opacity: 0, y: "1.5rem" }} 
             animate={{ opacity: 1, y: "0rem" }} 
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} // Updated transition
-            className="btns-second md:w-fit w-full m-[0.8rem]"
+            className="btns-second md:w-fit w-full m-[0.6rem]"
           >
-            <FirstButtonComponent 
-              leftText="Whats New" 
-              rightText="Smarter Journaling" 
-            />
+              <GetStartedButton href="/XXX" text="Get Started" width="100%" />
           </motion.div>
         </motion.div>       
         

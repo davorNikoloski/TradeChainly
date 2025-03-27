@@ -7,7 +7,7 @@ import communityData from "../../../data/communityData.json";
 export default function CommunityItems() {
   return (
     <motion.div
-      className="w-full px-[2rem] pt-[1rem]"
+      className="w-full md:px-[2rem] pt-[1rem]"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -17,7 +17,7 @@ export default function CommunityItems() {
         {communityData.map((item, index) => (
           <motion.div
             key={item.id}
-            className="flex-1 min-w-[220px] max-w-[300px] bg-opacity-0 p-[8px] flex flex-col items-center justify-center text-center"
+            className="flex-1 min-w-[220px] md:max-w-[300px] bg-opacity-0 p-[8px] flex flex-col items-center justify-center text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: index * 0.15, ease: "easeOut" }}

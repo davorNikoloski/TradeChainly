@@ -4,7 +4,7 @@ import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <div className="max-w-[1200px] mx-auto p-[28px] pb-[56px] text-white relative">
+    <div className="max-w-[1200px] mx-auto p-[14px] px-[14px] md:px-[28px] pb-[56px] text-white relative">
       <div className="footer-wrapper flex flex-col md:flex-row md:gap-8 gap-[70px] items-center justify-between">
         {/* Brand Section */}
         <div className="flex flex-col items-start md:max-w-[40%] gap-[18px]">
@@ -40,8 +40,8 @@ export default function Footer() {
           {/* Social Media */}
           <div>
             <div className="flex flex-col mt-2 gap-[12px]">
-              <Link href="termsAndConditions" className="text-gray-400 hover:text-white transition-colors duration-500">Terms & Conditions</Link>
-              <Link href="privacyPolicy" className="text-gray-400 hover:text-white transition-colors duration-500">Privacy Policy</Link>
+              <Link href="/termsAndConditions" className="text-gray-400 hover:text-white transition-colors duration-500">Terms & Conditions</Link>
+              <Link href="/privacyPolicy" className="text-gray-400 hover:text-white transition-colors duration-500">Privacy Policy</Link>
               <div className="media-icons flex gap-2 mt-4">
                 <Link href="https://facebook.com" target="_blank" className="p-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors duration-500">
                     <Facebook size={16} color="#ffffff" fill="#ffffff" />

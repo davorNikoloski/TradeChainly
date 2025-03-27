@@ -29,7 +29,7 @@ export default function IntegrationList({ data = {}, selectedExchange }) {
       {filteredData.map((section, sectionIndex) => (
         <div key={sectionIndex} className="w-full flex flex-col gap-[3rem]">
           {/* Section Title */}
-          <h1 className="font-[500] md:text-[65px] text-[35px] md:text-center text-start font-mulish md:leading-[5rem] w-full leading-[1.2] text-transparent bg-gradient-to-l from-white/35 via-white to-white/90 bg-clip-text">
+          <h1 className="font-[500] md:text-[65px] text-[35px] md:text-center text-center font-mulish md:leading-[5rem] w-full leading-[1.2] text-transparent bg-gradient-to-l from-white/35 via-white to-white/90 bg-clip-text">
             {section.title}
           </h1>
 
@@ -38,14 +38,13 @@ export default function IntegrationList({ data = {}, selectedExchange }) {
             {section.items.map((item, index) => (
               <motion.div
                 key={index}
-                className="flex items-center justify-between w-full text-white text-[18px] font-[400] pb-[24px] mb-[24px] border-b border-[#637792]"
+                className="flex items-center md:justify-start w-full text-white text-[18px] font-[400] pb-[24px] mb-[24px] border-b border-[#637792] gap-[1rem]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 viewport={{ once: true, amount: 0.2 }}
               >
                 {/* Left Side - Instruction Text */}
-                <div className="text-left">{item}</div>
 
                 {/* Numbered Circle */}
                 <motion.div
@@ -58,6 +57,9 @@ export default function IntegrationList({ data = {}, selectedExchange }) {
                     {index + 1}
                   </span>
                 </motion.div>
+
+                <div className="text-left">{item}</div>
+
               </motion.div>
             ))}
           </div>

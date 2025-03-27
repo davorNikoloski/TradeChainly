@@ -36,13 +36,13 @@ export default function RootLayout({ children }) {
           <Navbar /> {/* Always at the top */}
         </div>
         <main className="flex-1">{children}</main> 
-        <div className="pt-[60px]">
+        <div className="pt-[100px]">
           <FaqServer /> 
         </div>
-        <div className="pt-[100px] pb-[28px]">
+        <div className="pt-[100px]">
           <Cta /> 
         </div>
-        <div className="pt-[28px]">
+        <div className="pt-[100px]">
           <Footer /> 
         </div>
       </body>

@@ -6,12 +6,12 @@ import "../../../styles/benefitsCard.css";
 
 export default function BenefitsCards({ data }) {
   return (
-    <div className="w-full px-[2rem]">
+    <div className="w-full">
       <div className="flex flex-wrap justify-center gap-6">
         {data.map((benefit) => (
           <motion.div
             key={benefit.id}
-            className="flex-1 min-w-[220px] max-w-[320px] bg-opacity-0 border border-white/10 rounded-[14px] p-[8px] flex flex-col items-center justify-center text-center h-[24rem]"
+            className="flex-1 min-w-[220px] md:max-w-[320px] bg-opacity-0 border border-white/10 rounded-[14px] p-[8px] flex flex-col items-center justify-center text-center md:h-[24rem] h-[26rem]"
             style={{ flexBasis: "calc(33.333% - 24px)" }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -25,7 +25,7 @@ export default function BenefitsCards({ data }) {
               <h2 className="text-[18px] font-[600] text-white mt-4 pt-[16px]">
                 {benefit.title}
               </h2>
-              <p className="text-[16px] text[#9ca3af] mt-2 max-w-[200px]">
+              <p className="text-[16px] text-[#9ca3af] mt-2 max-w-[200px]">
                 {benefit.description}
               </p>
             </div>

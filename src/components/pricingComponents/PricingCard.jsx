@@ -15,7 +15,7 @@ export default function PricingCard({ data, isAnnual }) {
       whileInView={{ opacity: 1, y: 0 }}
       whileHover={{ padding: 0 }} // Animate padding on hover
       transition={{ duration: 0.3, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.1 }}
     >
       <div className="flex-1 flex flex-col items-center justify-center text-center card-style p-[26px] rounded-[14px]">
         <div className="flex flex-col items-start w-full justify-center">

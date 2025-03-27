@@ -6,7 +6,7 @@ export default function FeatruesSections({ title, description, features, image, 
   const isEven = index % 2 === 0; // Check if the index is even
 
   return (
-    <div className="main-features-section md:p-[2rem] p-[14px] px-[] pt-[0px] max-w-[1200px] md:max-h-[676px]">
+    <div className="main-features-section md:p-[2rem] p-[0px] pt-[0px] max-w-[1200px] md:max-h-[676px]">
       <div className={`features-section-cont w-full h-full flex flex-col md:flex-row gap-[50px] items-center justify-between ${
         isEven ? "md:flex-row" : "md:flex-row-reverse"
       }`}>

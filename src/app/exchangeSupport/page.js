@@ -1,10 +1,4 @@
 import ExchangeSupportMain from "@/components/exchangeSupport/ExchangeSupportMain";
-import FeaturesCards from "@/components/featuresComponents/FeaturesCards";
-import Analytics from "@/components/featuresComponents/Analytics";
-import Automation from "@/components/featuresComponents/Automation";
-import Analysis from "@/components/featuresComponents/Analysis";
-import Reporting from "@/components/featuresComponents/Reporting";
-import Forecast from "@/components/featuresComponents/Forecast";
 
 import "../../styles/features.css"; 
 

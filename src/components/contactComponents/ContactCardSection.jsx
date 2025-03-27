@@ -30,8 +30,8 @@ export default function ContactCardSection() {
           </motion.div>
 
           {/* Right Section (Card) */}
-          <div className='faq-right h-auto w-auto'>
-            <div className='left-cont contact-card-style flex flex-col items-center justify-center p-[6rem] rounded-[14px] gap-[1.3rem]'>
+          <div className='faq-right h-auto md:w-auto w-full'>
+            <div className='left-cont contact-card-style flex flex-col items-center justify-center md:p-[6rem] p-[5rem] rounded-[14px] gap-[1.3rem]'>
 
               {/* Animated Content Inside Card */}
               <motion.div

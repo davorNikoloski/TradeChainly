@@ -12,7 +12,7 @@ export default function PricingList({ data = [] }) {
   }
 
   return (
-    <div className="pricing-list w-full md:px-[8rem] pt-[2rem]">
+    <div className="pricing-list w-full md:px-[28px] pt-[2rem]">
       <div className="flex flex-col">
         {data.map((item, index) => (
           <motion.div

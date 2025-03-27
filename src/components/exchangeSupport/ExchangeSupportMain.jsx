@@ -15,7 +15,7 @@ export default function ExchangeSupportMain() {
   const [isAnnual, setIsAnnual] = useState(false);
 
   return (
-    <div className="w-full h-full exchangeS-container overflow-visible md:p-[0px] px-[14px]">
+    <div className="w-full h-full exchangeS-container overflow-visible md:p-[0px] px-[14px] md:px-[28px]">
       <div className="exchangeS-sub flex flex-col gap-[1rem] h-full justify-between items-center">
         <motion.div
           className="exchangeS-content flex flex-col gap-[1rem] md:items-center items-start justify-center w-full"
@@ -23,7 +23,7 @@ export default function ExchangeSupportMain() {
           animate={{ opacity: 1, y: "0rem" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="max-w-[700px] w-full">
+          <div className="max-w-[1200px] w-full">
             <FancyTitle title="Integration" />
           </div>
 
@@ -51,7 +51,7 @@ export default function ExchangeSupportMain() {
             initial={{ opacity: 0, y: "1.5rem" }}
             animate={{ opacity: 1, y: "0rem" }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="w-full md:w-fit"
+            className="w-full md:w-fit mt-[0.6rem]"
           >
             <GetStartedButton href="/XXX" text="Get Started" width="100%" />
           </motion.div>

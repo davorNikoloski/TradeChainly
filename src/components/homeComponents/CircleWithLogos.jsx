@@ -10,144 +10,210 @@ const logos = [
   "/images/Exchanges_Logos/bybit.png",
   "/images/Exchanges_Logos/coinbase.png",
   "/images/Exchanges_Logos/cryptocom.png",
-  "plus-icon", // Placeholder for the plus icon at index 4
+  "plus-icon",
   "/images/Exchanges_Logos/kraken.png",
   "/images/Exchanges_Logos/kucoin.png",
   "/images/Exchanges_Logos/OKX.png",
 ];
 
-const centerImage = "/images/App Logo/HQTransparent_Mark.png"; // Center image
+const centerImage = "/images/App Logo/HQTransparent_Mark.png";
 
 export default function CircleWithLogos() {
-  const [circleRadius, setCircleRadius] = useState(200);
-  const [offset, setOffset] = useState(32); // Default offset value
-  const [offset2, setOffset2] = useState(32); // Default offset value
-  const [glowSize, setGlowSize] = useState(10); // Default glow size in rem
-  const [glowOpacity, setGlowOpacity] = useState(0.5); // Default glow opacity
+  const [dimensions, setDimensions] = useState({
+    container: 600,
+    circle: 500,
+    logo: 75,
+    center: 115,
+    offset: 32,
+    glowSize: 10, // in rem
+    glowOpacity: 0.5
+  });
 
-  // Update radius, offset, and glow based on screen size
   useEffect(() => {
-    const updateValues = () => {
+    const updateDimensions = () => {
+      let newDimensions;
       if (window.innerWidth < 640) {
-        setCircleRadius(160); // Smaller radius for mobile
-        setOffset(130); // Larger offset for mobile
-        setOffset2(160); // Larger offset for mobile
-        setGlowSize(6); // Smaller glow size for mobile
-        setGlowOpacity(0.3); // Lower opacity for mobile
+        newDimensions = {
+          container: 330,
+          circle: 300,
+          logo: 60,
+          center: 90,
+          offset: 30,
+          glowSize: 6,
+          glowOpacity: 0.3
+        };
       } else if (window.innerWidth < 1024) {
-        setCircleRadius(220); // Medium radius for tablets
-        setOffset(90); // Medium offset for tablets
-        setOffset2(100); // Larger offset for mobile
-        setGlowSize(8); // Medium glow size for tablets
-        setGlowOpacity(0.4); // Medium opacity for tablets
+        newDimensions = {
+          container: 450,
+          circle: 400,
+          logo: 70,
+          center: 100,
+          offset: 28,
+          glowSize: 8,
+          glowOpacity: 0.4
+        };
       } else {
-        setCircleRadius(270); // Default for larger screens
-        setOffset(32); // Default offset for larger screens
-        setOffset2(32); // Larger offset for mobile
-        setGlowSize(10); // Default glow size for larger screens
-        setGlowOpacity(0.5); // Default opacity for larger screens
+        newDimensions = {
+          container: 600,
+          circle: 500,
+          logo: 75,
+          center: 115,
+          offset: 32,
+          glowSize: 10,
+          glowOpacity: 0.5
+        };
       }
+  
+      setDimensions((prev) => 
+        JSON.stringify(prev) !== JSON.stringify(newDimensions) ? newDimensions : prev
+      );
     };
-
-    updateValues();
-    window.addEventListener("resize", updateValues);
-    return () => window.removeEventListener("resize", updateValues);
+  
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
   }, []);
+  
+  const getLogoPosition = (index) => {
+    const angle = (index * (360 / logos.length)) - 90;
+    const radian = angle * (Math.PI / 180);
+    const radius = dimensions.circle / 2;
+    return {
+      x: radius * Math.cos(radian) - dimensions.offset,
+      y: radius * Math.sin(radian) - dimensions.offset
+    };
+  };
 
+  
   return (
-    <motion.div 
-      className="relative flex items-center justify-center w-full max-w-[600px] md:h-[600px] mx-auto"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.2 }}
-    >
-      {/* Dashed Circle */}
-      <motion.div
-        className="absolute w-[90%] md:h-[90%] h-[21rem] border-2 border-dashed border-gray-300 dark:border-white rounded-full gradient-circle"
-      />
-      <div className="absolute w-[10rem] h-[10rem] bg-[#774af1] rounded-full opacity-50 blur-xl"></div>
-
-      {/* Pulsating Circles */}
-      {[1, 2, 3].map((i) => (
-        <motion.div
-          key={i}
-          className="absolute rounded-full blur-xl"
-          initial={{ scale: 1, opacity: glowOpacity / i }} // Use dynamic opacity
-          animate={{ scale: 3, opacity: 0 }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            repeatDelay: 0.5,
-            delay: i * 0.2,
-            ease: "easeOut",
-          }}
+    <div className="flex justify-center items-center w-full py-12">
+      <motion.div 
+        className="relative mx-auto"
+        style={{
+          width: `${dimensions.container}px`,
+          height: `${dimensions.container}px`
+        }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        {/* Static Glow - Now Perfectly Centered */}
+        <div 
+          className="absolute w-[10rem] h-[10rem] bg-[#774af1] rounded-full opacity-50 blur-xl"
           style={{
-            backgroundColor: "#774af1", // Updated to use the new color
-            width: `${glowSize}rem`, 
-            height: `${glowSize}rem`
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%)'
           }}
         />
-      ))}
 
-      {/* Center Image */}
-      <div className="absolute w-[115px] h-[115px] p-[24px] bg-black bg-opacity-[50%] shadow-xl rounded-[24px] flex items-center justify-center">
-        <Image
-          src={centerImage}
-          alt="Center Logo"
-          width={60}
-          height={60}
-          className="object-contain"
-        />
-      </div>
-
-      {/* Exchange Logos Positioned in a Circle */}
-      {logos.map((logo, index) => {
-        const angle = (index * 360) / logos.length - 90; // Evenly spaced
-        const x = 300 + circleRadius * Math.cos((angle * Math.PI) / 180) - offset;
-        const y = 300 + circleRadius * Math.sin((angle * Math.PI) / 180) - offset2;
-
-        return logo === "plus-icon" ? (
-          /* Plus Icon */
+        {/* Pulsating Glow Effect */}
+        {[1, 2, 3].map((i) => (
           <motion.div
-            key="plus-icon"
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: index * 0.08 }}
-            viewport={{ once: true, amount: 0.2 }}
-            className="absolute w-16 h-16 flex items-center justify-center rounded-full border-2 border-dashed border-[#774af1] shadow-xl"
+            key={i}
+            className="absolute rounded-full blur-xl"
             style={{
-              left: `${x}px`,
-              top: `${y}px`,
-              background: "radial-gradient(circle at center, #3D3D91 0%, #010013 100%)",
+              backgroundColor: "#774af1",
+              width: `${dimensions.glowSize}rem`,
+              height: `${dimensions.glowSize}rem`,
+              left: `calc(50% - ${dimensions.glowSize/2}rem)`,
+              top: `calc(50% - ${dimensions.glowSize/2}rem)`
             }}
-          >
-            <div className="w-6 h-6 relative">
-              <div className="absolute w-full h-[3px] bg-[#774af1] top-1/2 transform -translate-y-1/2"></div>
-              <div className="absolute h-full w-[3px] bg-[#774af1] left-1/2 transform -translate-x-1/2"></div>
-            </div>
-          </motion.div>
-        ) : (
-          /* Exchange Logos */
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: index * 0.08 }}
-            viewport={{ once: true, amount: 0.2 }}
-            className="absolute w-[75px] h-[75px] image-cont shadow-lg rounded-xl flex items-center justify-center md:p-[14px] p-[8px]"
-            style={{ left: `${x}px`, top: `${y}px` }}
-          >
-            <Image
-              src={logo}
-              alt={`Exchange Logo ${index + 1}`}
-              width={48}
-              height={48}
-              className="object-contain"
-            />
-          </motion.div>
-        );
-      })}
-    </motion.div>
+            initial={{ scale: 1, opacity: dimensions.glowOpacity / i }}
+            animate={{ scale: 3, opacity: 0 }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              repeatDelay: 0.5,
+              delay: i * 0.2,
+              ease: "easeOut",
+            }}
+          />
+        ))}
+
+        {/* Dotted Circle */}
+        <div 
+          className="absolute border-2 border-dashed border-gray-300 dark:border-white rounded-full gradient-circle"
+          style={{
+            width: `${dimensions.circle}px`,
+            height: `${dimensions.circle}px`,
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%)'
+          }}
+        />
+
+        {/* Center Logo */}
+        <div 
+          className="absolute bg-black bg-opacity-50 shadow-xl rounded-[24px] flex items-center justify-center"
+          style={{
+            width: `${dimensions.center}px`,
+            height: `${dimensions.center}px`,
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%)',
+            padding: '24px'
+          }}
+        >
+          <Image
+            src={centerImage}
+            alt="Center Logo"
+            width={60}
+            height={60}
+            className="object-contain w-full h-full"
+          />
+        </div>
+
+        {/* Logos Around Circle */}
+        {logos.map((logo, index) => {
+        const { x, y } = getLogoPosition(index);
+
+
+          return (
+            <motion.div
+              key={index}
+              className="absolute flex items-center justify-center"
+              style={{
+                width: `${dimensions.logo}px`,
+                height: `${dimensions.logo}px`,
+                left: `calc(50% + ${x}px)`,
+                top: `calc(50% + ${y}px)`,
+                transform: 'translate(-50%, -50%)'
+              }}
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              {logo === "plus-icon" ? (
+                <div className="w-full h-full rounded-full border-2 border-dashed border-[#774af1] flex items-center justify-center "
+                style={{
+                  left: `${x}px`,
+                  top: `${y}px`,
+                  background: "radial-gradient(circle at center, #3D3D91 0%, #010013 100%)",
+                }}
+                >
+                  <div className="w-6 h-6 relative">
+                    <div className="absolute w-full h-[3px] bg-[#774af1] top-1/2 -translate-y-1/2" />
+                    <div className="absolute h-full w-[3px] bg-[#774af1] left-1/2 -translate-x-1/2" />
+                  </div>
+                </div>
+              ) : (
+                <div className="w-full h-full image-cont shadow-lg rounded-xl p-3">
+                  <Image
+                    src={logo}
+                    alt={`Exchange Logo ${index + 1}`}
+                    width={48}
+                    height={48}
+                    className="object-contain w-full h-full"
+                  />
+                </div>
+              )}
+            </motion.div>
+          );
+        })}
+      </motion.div>
+    </div>
   );
 }

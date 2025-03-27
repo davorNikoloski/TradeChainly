@@ -12,7 +12,7 @@ export default function Forecast() {
       <div className="analytics-sub flex flex-col gap-[1rem] h-full justify-between items-center">
         {/* Header Section with motion */}
         <motion.div 
-          className="analytics-title w-full flex items-center justify-center flex-col gap-[12px]"
+          className="analytics-title w-full flex items-center justify-center flex-col gap-[12px] text-center"
           initial={{ opacity: 0, y: 20 }} 
           whileInView={{ opacity: 1, y: 0 }} 
           transition={{ duration: 1, ease: "easeOut" }}
@@ -22,7 +22,7 @@ export default function Forecast() {
           <h1 className="md:text-[47px] text-[28px] font-[600] leading-[1.2] text-transparent bg-gradient-to-l from-white/35 via-white to-white/90 bg-clip-text m-0">
             Reliable Price Forecasting
           </h1>
-          <p className="text-[16px] font-normal leading-[1.4] text-gray-400 mt-0 mb-[10px] text-center md:w-[40%]">
+          <p className="text-[16px] font-normal leading-[1.4] text-[#9ca3af] mt-0 mb-[10px] text-center md:w-[40%]">
             Validate your strategy with cutting-edge price predictions and market metrics. Gain clarity on market direction and make data-driven decisions with ease.
           </p>
         </motion.div>

@@ -18,7 +18,7 @@ export default function TermsAndConditionsMain({ data }) {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {/* FancyTitle Component for Terms of Service */}
-          <div className="max-w-[700px] w-full">
+          <div className="max-w-[1200px] w-full">
             <FancyTitle title="T&C" />
           </div>
           <motion.div

@@ -28,7 +28,7 @@ export default function PrivacyPolicyMain({ data }) {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {/* FancyTitle Component for Policy */}
-          <div className="max-w-[700px] w-full">
+          <div className="max-w-[1200px] w-full">
             <FancyTitle title="Policy" />
           </div>
           <motion.div

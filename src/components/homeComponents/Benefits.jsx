@@ -13,20 +13,20 @@ export default function Benefits() {
       <div className="integrations-sub flex flex-col gap-[1rem] h-full justify-between items-center">
         {/* Header Section */}
         <motion.div 
-          className="benefits-title w-full flex items-center justify-center flex-col gap-[14px]"
+          className="benefits-title w-full flex items-center justify-center flex-col gap-[14px] text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          <div className="max-w-[700px] w-full">
+          <div className="max-w-[1200px] w-full">
             <FancyTitle title="Benefits" />
           </div>
 
           <h1 className="md:text-[47px] text-[28px] font-[600] leading-[1.2] text-transparent bg-gradient-to-l from-white/35 via-white to-white/90 bg-clip-text m-0">
             Why Traders Love TradeChainly
           </h1>
-          <p className="text-[16px] font-normal leading-[1.4] text-gray-400 mt-0 mb-[10px] text-center md:w-[50%]">
+          <p className="text-[16px] font-normal leading-[1.4] text-[#9ca3af] mt-0 mb-[10px] text-center md:w-[50%]">
             Built with a deep understanding of traders' needs, TradeChainly keeps you organized and guides you to smarter choices every step of the way.
           </p>
         </motion.div>

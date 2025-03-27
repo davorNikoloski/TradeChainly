@@ -23,7 +23,7 @@ export default function PricingMain() {
           animate={{ opacity: 1, y: "0rem" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="max-w-[700px] w-full">
+          <div className="max-w-[1200px] w-full">
             <FancyTitle title="Pricing" />
           </div>
 
@@ -51,7 +51,7 @@ export default function PricingMain() {
             initial={{ opacity: 0, y: "1.5rem" }}
             animate={{ opacity: 1, y: "0rem" }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="w-full md:w-fit"
+            className="w-full md:w-fit mt-[0.6rem]"
           >
             <GetStartedButton href="/XXX" text="Get Started" width="100%" />
           </motion.div>
@@ -63,7 +63,7 @@ export default function PricingMain() {
           <motion.div
             initial={{ opacity: 0, y: "1.5rem" }}
             animate={{ opacity: 1, y: "0rem" }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            transition={{ duration: 0.75, ease: "easeOut", delay: 0.2 }}
             className="pricing-main w-full h-full flex flex-col items-center justify-center overflow-visible gap-[54px]"
           >
             <PricingCard data={pricingCardData} isAnnual={isAnnual} />

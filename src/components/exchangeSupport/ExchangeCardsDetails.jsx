@@ -7,7 +7,7 @@ import GetStartedButton from "../buttons/GetStartedButton";
 
 export default function ExchangeCardsDetails({ data }) {
   return (
-    <div className="w-full px-[2rem] flex flex-wrap justify-center gap-6">
+    <div className="w-full md:px-[2rem] flex flex-wrap justify-center gap-6">
       {data.map((exchange) => (
         <motion.div
           key={exchange.id}
@@ -63,7 +63,7 @@ export default function ExchangeCardsDetails({ data }) {
                 </div>
 
                 {/* Column 2: Spot Information */}
-                <div className="flex flex-col gap-[1rem] items-center justify-center h-full">
+                <div className="flex flex-col gap-[1rem] items-center justify-around h-full">
                   {exchange.spot.map((spot, index) => (
                     <span 
                       key={index} 
@@ -75,7 +75,7 @@ export default function ExchangeCardsDetails({ data }) {
                 </div>
 
                 {/* Column 3: Features Display */}
-                <div className="flex flex-col gap-[1rem] items-center justify-center h-full">
+                <div className="flex flex-col gap-[1rem] items-center justify-around h-full">
                   {exchange.features_display.map((display, index) => (
                     <span 
                       key={index} 

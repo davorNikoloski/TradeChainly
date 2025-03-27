@@ -36,7 +36,7 @@ export default function Cta() {
   }, [hasAnimated]);
 
   return (
-    <div className="px-[2rem] mx-auto max-w-[1200px]">
+    <div className="px-[14px] md:px-[28px] mx-auto max-w-[1200px]">
       <div className="cta-container mx-auto w-full md:h-[649.46px] p-[19px] md:p-[29px] md:pr-[0px] rounded-[16px] bg-[#010012] overflow-hidden">
         <div className="w-full h-full flex justify-between items-center flex-col md:flex-row gap-[32px]">
           <div className="cta-content flex flex-col items-center justify-center md:gap-[28px] gap-[2px]">

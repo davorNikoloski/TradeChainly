@@ -9,6 +9,7 @@ import "../../styles/exchangeCards.css";
 import FancyTitle from "@/components/homeComponents/FancyTitle";
 import exchangeCardsData from "../../data/exchangeCards.json";
 import integrationListData from "../../data/integrationListData.json";
+import GetStartedButton from '../buttons/GetStartedButton';
 
 import IntegrationList from "@/components/singleIntegration/IntegrationList";
 
@@ -24,7 +25,7 @@ export default function SingleIntegration() {
   }, [exchangeName]);
 
   return (
-    <div className="w-full h-full signleIntegration-container overflow-visible md:p-[0px] px-[14px]">
+    <div className="w-full h-full signleIntegration-container overflow-visible md:p-[0px] px-[14px] md:px-[28px]">
       <div className="signleIntegration-sub flex flex-col gap-[1rem] h-full justify-between items-center">
         <motion.div
           className="signleIntegration-content flex flex-col gap-[1rem] items-center justify-center w-full"
@@ -32,7 +33,7 @@ export default function SingleIntegration() {
           animate={{ opacity: 1, y: "0rem" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="max-w-[700px] w-full">
+          <div className="max-w-[1200px] w-full">
             <FancyTitle title="Integration" />
           </div>
           <motion.div
@@ -46,6 +47,15 @@ export default function SingleIntegration() {
             </h1>
           </motion.div>
 
+          <motion.div 
+            initial={{ opacity: 0, y: "1.5rem" }} 
+            animate={{ opacity: 1, y: "0rem" }} 
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} // Updated transition
+            className="btns-second md:w-fit w-full m-[0.6rem]"
+          >
+              <GetStartedButton href="/XXX" text="Get Started" width="100%" />
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: "1.5rem" }}
             animate={{ opacity: 1, y: "0rem" }}
@@ -54,11 +64,11 @@ export default function SingleIntegration() {
           >
             {/* Exchange Details Section */}
             {exchange ? (
-              <div className="tab flex flex-col w-fit h-full p-[2rem] pt-[0px] rounded-lg ">
+              <div className="tab flex flex-col w-fit h-full md:p-[2rem] pt-[0px] rounded-lg ">
                 <div className="flex items-center justify-center p-[1.3rem] gap-[2.2rem]">
                   {/* Exchange Logo */}
-                  <div className="w-[60px] h-[60px] flex-shrink-0 border-2 rounded-[8px] border-[#7D4DFF] p-[8px]">
-                    <Image src={exchange.image} alt={exchange.name} width={60} height={60} />
+                  <div className="w-[76px] h-[76px] flex-shrink-0 border-2 rounded-[8px] border-[#7D4DFF] p-[8px]">
+                    <Image src={exchange.image} alt={exchange.name} width={76} height={76} />
                   </div>
 
                   {/* Exchange Name & Button */}
@@ -79,15 +89,15 @@ export default function SingleIntegration() {
                 >
                     <div className="flex flex-col exchange-card-style rounded-[14px] h-full p-[2rem] space-y-[1.4rem]">
                     <div className="flex flex-row w-full gap-4 items-center justify-between h-full">
-                        <div className="flex flex-col gap-2">
-                        <h3 className="text-transparent select-none">Placeholder</h3>
-                        </div>
-                        <div className="flex flex-col gap-2">
-                        <h3 className="text-white/80 text-[16px] font-[500]">Spot</h3>
-                        </div>
-                        <div className="flex flex-col gap-2">
-                        <h3 className="text-white/80 text-[16px] font-[500]">Features</h3>
-                        </div>
+                      <div className="flex flex-col gap-2">
+                        <h3 className="text-transparent select-none">Placeholder</h3> {/* Invisible text for spacing */}
+                      </div>
+                      <div className="flex flex-col gap-2">
+                        <h3 className="text-white text-[16px] font-[500]">Spot</h3>
+                      </div>
+                      <div className="flex flex-col gap-2">
+                        <h3 className="text-white text-[16px] font-[500]">Features</h3>
+                      </div>
                     </div>
 
                     {/* Data Rows */}
@@ -95,21 +105,21 @@ export default function SingleIntegration() {
                         {/* Features */}
                         <div className="flex flex-col gap-2 items-center justify-between w-[24%] h-full">
                         {exchange.features.map((feature, index) => (
-                            <span key={index} className="text-[#9e9e9e]">
+                            <span key={index} className="text-white">
                             {feature.replace(/_/g, " ")}
                             </span>
                         ))}
                         </div>
 
                         {/* Spot Information */}
-                        <div className="flex fle flex-col gap-2 items-center justify-between h-[10rem]">
+                        <div className="flex fle flex-col gap-2 items-center justify-around h-[10rem]">
                         {exchange.spot.map((spot, index) => (
                             <span key={index} className="text-[#9e9e9e]">{spot}</span>
                         ))}
                         </div>
 
                         {/* Features Display */}
-                        <div className="flex flex-col gap-2 items-center justify-between h-[10rem]">
+                        <div className="flex flex-col gap-2 items-center justify-around h-[10rem]">
                         {exchange.features_display.map((display, index) => (
                             <span key={index} className="text-[#9e9e9e]">{display}</span>
                         ))}

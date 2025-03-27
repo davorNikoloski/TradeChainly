@@ -20,7 +20,7 @@ export default function FancyTitle({ title }) {
 
   return (
     <motion.div
-      className="w-full h-full"
+      className="w-full h-full px-[14px]"
       initial={{ opacity: 0, y: 20 }} // Starts 20px BELOW
       whileInView={{ opacity: 1, y: 0 }} // Moves UP to normal position
       transition={{ duration: 1, ease: "easeOut" }}

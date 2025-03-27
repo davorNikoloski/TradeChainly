@@ -8,7 +8,7 @@ import "../styles/home.css";
 
 export default function Home() {
   return (
-    <div className="home m-[2rem] pb-[0px] mx-auto w-full h-auto bg-opacity-0 flex items-center justify-center overflow-visible relative z-1">
+    <div className="home m-[2rem] pb-[0px] mx-auto w-full h-auto bg-opacity-0 flex items-center justify-center overflow-visible relative z-1 overflow-x-clip">
       <div className="absolute w-full h-[10%] gradient-bg top-0 z-[-1]">
 
       </div>
@@ -16,16 +16,16 @@ export default function Home() {
         <div className="w-full">
           <Hero />
         </div>
-        <div className="w-full pb-[100px] ">
+        <div className="w-full pt-[50px] ">
           <Features />
         </div>
-        <div className="w-full pt-[28px]">
+        <div className="w-full pt-[100px]">
           <Integrations />
         </div>
-        <div className="w-full pt-[128px]">
+        <div className="w-full pt-[100px]">
           <Benefits />
         </div>
-        <div className="w-full pt-[128px]">
+        <div className="w-full pt-[100px]">
           <Community />
         </div>
       </div>

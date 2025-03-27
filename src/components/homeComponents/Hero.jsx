@@ -68,7 +68,7 @@ export default function Hero() {
   });
 
   return (
-    <div className="w-full h-full hero-container md:overflow-visible overflow-x-hidden md:p-[0px] px-[28px]">
+    <div className="w-full h-full hero-container md:overflow-visible overflow-x-hidden md:p-[0px] px-[14px]">
       <div className="hero-sub flex flex-col gap-[1rem] h-full justify-between items-center">
         
         {/* Hero Content Section (Faster Movement) */}
@@ -80,11 +80,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: "1.5rem" }} 
             animate={{ opacity: 1, y: "0rem" }} 
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} // Updated transition
-            className="btns-first w-full md:w-auto mb-[0.2rem] mt-[0.8rem]"
+            className="btns-first w-full md:w-auto  "
           >
             <FirstButtonComponent 
               leftText="Whats New" 
-              rightText="Ease Update v1.0" 
+              rightText="Smarter Journaling" 
             />
           </motion.div>
 
@@ -114,7 +114,9 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} // Updated transition
             className="btns-second md:w-fit w-full"
           >
-            <GetStartedButton href="/XXX" text="Get Started" width="100%" />
+            <div className="mt-[0.6rem]">
+              <GetStartedButton href="/XXX" text="Get Started" width="100%" />
+            </div>
           </motion.div>
         </motion.div>
 
