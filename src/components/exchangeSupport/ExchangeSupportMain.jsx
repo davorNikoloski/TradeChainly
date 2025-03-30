@@ -42,7 +42,7 @@ export default function ExchangeSupportMain() {
             initial={{ opacity: 0, y: "1.5rem" }}
             animate={{ opacity: 1, y: "0rem" }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="text-[#BAB7C6] font-[400] text-[18px] max-w-[600px] md:text-center text-start pb-[26px]"
+            className="text-[#BAB7C6] font-[400] text-[18px] max-w-[600px] md:text-center text-start "
           >
             Easily connect your exchange to sync your trades or upload your trade data - we've got you covered.
           </motion.p>

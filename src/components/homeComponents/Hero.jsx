@@ -83,7 +83,7 @@ export default function Hero() {
             className="btns-first w-full md:w-auto  "
           >
             <FirstButtonComponent 
-              leftText="Whats New" 
+              leftText="What's New" 
               rightText="Smarter Journaling" 
             />
           </motion.div>

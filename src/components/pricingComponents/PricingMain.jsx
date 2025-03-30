@@ -12,7 +12,7 @@ import pricingCardData from "../../data/pricingCardData.json";
 import GetStartedButton from '../buttons/GetStartedButton';
 
 export default function PricingMain() {
-  const [isAnnual, setIsAnnual] = useState(false);
+  const [isAnnual, setIsAnnual] = useState(true); // Changed default to true
 
   return (
     <div className="w-full h-full pricingMain-container overflow-visible md:p-[0px] px-[14px]">
@@ -56,9 +56,8 @@ export default function PricingMain() {
             <GetStartedButton href="https://app.tradechainly.website/" text="Get Started" width="100%" />
           </motion.div>
 
-
           <div className="pt-[100px] w-full flex items-center justify-center pb-[3rem]">
-            <PricingButton onSelect={(plan) => setIsAnnual(plan === "Annually")} />
+            <PricingButton onSelect={(plan) => setIsAnnual(plan === "Annually")} defaultSelected="Annually" />
           </div>
           <motion.div
             initial={{ opacity: 0, y: "1.5rem" }}

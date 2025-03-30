@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6"; // This is the new X logo
 import "../../styles/contactCard.css";
 
 export default function ContactCardSection() {
@@ -22,7 +23,7 @@ export default function ContactCardSection() {
             <h1 className="font-[500] md:text-[55px] text-[34px] font-mulish md:leading-[5rem] leading-[1.2] text-transparent bg-gradient-to-l from-white/35 via-white to-white/90 bg-clip-text">
               Contact Us
             </h1>
-            <p className='text-[#9e9e9e] text-[16px] font-[400]'>
+            <p className='text-[#9ca4af] text-[16px] font-[400]'>
               You can contact us at Support@example.com <br />
               if you have any questions. <br />
               Please give us 24-48 hours to get back to you.
@@ -42,7 +43,7 @@ export default function ContactCardSection() {
                 className='text-center'
               >
                 <h3 className='text-[24px] font-semibold text-white font-mulish'>Contact Email:</h3>
-                <p className="text-[#9e9e9e] text-[16px] font-[400]">youremail@example.com</p>
+                <p className="text-[#9ca4af] text-[16px] font-[400]">youremail@example.com</p>
               </motion.div>
 
               <motion.div
@@ -61,7 +62,7 @@ export default function ContactCardSection() {
                     <Instagram size={16} color="#ffffff" />
                   </Link>
                   <Link href="https://twitter.com" target="_blank" className="p-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors duration-500">
-                    <Twitter size={16} color="#ffffff" />
+                    <FaXTwitter size={16} color="#ffffff" />
                   </Link>
                   <Link href="https://linkedin.com" target="_blank" className="p-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors duration-500">
                     <Linkedin size={16} color="#ffffff" />
@@ -77,8 +78,8 @@ export default function ContactCardSection() {
                 className='text-center'
               >
                 <h3 className='text-[24px] font-semibold text-white mt-4'>Business Hours:</h3>
-                <p className="text-[#9e9e9e] text-[16px] font-[400]">9am - 5pm EST</p>
-                <p className="text-[#9e9e9e] text-[16px] font-[400]">Monday - Friday</p>
+                <p className="text-[#9ca4af] text-[16px] font-[400]">9am - 5pm EST</p>
+                <p className="text-[#9ca4af] text-[16px] font-[400]">Monday - Friday</p>
               </motion.div>
 
             </div>

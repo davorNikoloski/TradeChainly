@@ -30,7 +30,7 @@ export default function Integrations() {
           <p className="text-[16px] font-normal leading-[1.4] text-[#9ca3af] mt-0 mb-[10px] text-center md:w-[50%]">
             Connect effortlessly with the leading crypto exchanges to sync your trades, journal your activity, and stay organized—all in one place.
           </p>
-          <a href="" className="text-[16px] font-normal leading-[1.4] text-center flex items-center justify-center text-white">
+          <a href="/exchangeSupport" className="text-[16px] font-normal leading-[1.4] text-center flex items-center justify-center text-white">
             See All <FiArrowRight className="ml-2 h-[18px]" />
           </a>
         </motion.div>

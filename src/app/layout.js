@@ -2,11 +2,10 @@ import { Geist, Geist_Mono, Mulish, Inter } from "next/font/google";
 import "../styles/globals.css";
 import fs from "fs";
 import path from "path";
+import { headers } from "next/headers";
 
 // COMPONENTS
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import ConditionalComponents from "@/components/ConditionalComponents"; // Import the ConditionalComponents component
+import ConditionalComponents from "@/components/ConditionalComponents";
 
 const mulish = Mulish({
   subsets: ["latin"],
@@ -26,7 +25,6 @@ export const metadata = {
   description: "TradeChainly bla bla bla",
 };
 
-// Fetching FAQ data at build time
 async function getFaqData() {
   const filePath = path.join(process.cwd(), "src/data/faqContent.json");
   const jsonData = fs.readFileSync(filePath, "utf-8");
@@ -35,28 +33,17 @@ async function getFaqData() {
 }
 
 export default async function RootLayout({ children }) {
-  // Fetch the FAQ data once during build time
   const faqData = await getFaqData();
+  const headersList = headers();
+  const pathname = headersList.get("x-next-pathname") || "";
 
   return (
     <html lang="en" className={`${mulish.variable} ${inter.variable}`}>
       <body className="min-h-screen flex flex-col bg-[#010012] overflow-x-hidden">
-        {/* Navbar */}
-        <div className="fixed w-full flex justify-center h-[69.4px] md:h-[63.6px] bg-opacity-40 backdrop-blur-lg z-[999]">
-          <Navbar />
-        </div>
-
         <main className="flex-1">{children}</main>
 
-        {/* Conditional rendering for FAQ and CTA */}
-        <div>
-          <ConditionalComponents faqData={faqData} /> {/* Pass the FAQ data here */}
-        </div>
-
-        {/* Footer */}
-        <div className="pt-[100px]">
-          <Footer />
-        </div>
+        {/* Conditional rendering for Navbar, Footer, FAQ, and CTA */}
+        <ConditionalComponents faqData={faqData} />
       </body>
     </html>
   );

@@ -7,13 +7,16 @@ import { CheckCheck } from "lucide-react";
 
 export default function PricingCard({ data, isAnnual }) {
   const pricing = isAnnual ? data.pricing.annual : data.pricing.monthly;
+  const displayPrice = isAnnual ? "16" : "22";
+  const displayPeriod = isAnnual ? "month" : "month";
+  const displayText = isAnnual ? "per month" : "per month";
 
   return (
     <motion.div
       className="flex flex-wrap justify-center min-w-[349px] max-w-[349px] border border-white/10 rounded-[14px]"
       initial={{ opacity: 0, y: 20, padding: 6 }}
       whileInView={{ opacity: 1, y: 0 }}
-      whileHover={{ padding: 0 }} // Animate padding on hover
+      whileHover={{ padding: 0 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.1 }}
     >
@@ -21,27 +24,26 @@ export default function PricingCard({ data, isAnnual }) {
         <div className="flex flex-col items-start w-full justify-center">
           <h2 className="text-[18px] font-[500] text-[#FFFFFF99]">{data.planTitle}</h2>
 
-          {/* Pricing with Motion Animation */}
           <motion.p
-            key={isAnnual} // Key change triggers animation on toggle
+            key={isAnnual}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="text-[48px] font-[500] text-white pt-[24px] pb-[6px] leading-none"
           >
-            ${pricing.price}
+            ${displayPrice}
             <sup className="text-[16px] font-normal text-white align-super">99</sup>
             <span className="text-[16px] font-normal text-white">
-              per {isAnnual ? "year" : "month"}
+              {displayText}
             </span>
           </motion.p>
 
           <motion.p
-            key={`billing-${isAnnual}`} // Ensures smooth transition for billing text
+            key={`billing-${isAnnual}`}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="text-[15px] text-[#FFFFFF99]"
+            className="text-[15px] text-[#9ca4af]"
           >
             {pricing.billingText}
           </motion.p>
@@ -51,10 +53,8 @@ export default function PricingCard({ data, isAnnual }) {
           </div>
         </div>
 
-        {/* Separator Line */}
         <div className="w-full h-[1px] bg-gray-700"></div>
 
-        {/* Features Section */}
         <div className="w-full">
           <h3 className="text-[18px] font-[500] text-white py-[24px] text-start">
             {data.featuresTitle}

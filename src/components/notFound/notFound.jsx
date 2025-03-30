@@ -11,7 +11,7 @@ export default function NotFound() {
       </h1>
       <p className="text-2xl font-semibold mt-4">We couldn’t reach out to this page!</p>
       <p className="text-gray-400 mt-2 max-w-lg">
-        The Page you are looking for doesn’t exist or has been removed by the owner! Try Again later for the update in page.
+        The page you're looking for might have been moved or deleted. Please try again later or return to the homepage.
       </p>
       <div className="pt-[2rem]">
         <GetStartedButton href="/" text="Back To Home" showArrow={true} width="200px" />

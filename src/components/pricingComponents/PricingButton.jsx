@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function PricingButton({ onSelect }) {
-  const [selected, setSelected] = useState("Monthly");
+  const [selected, setSelected] = useState("Annually"); // Changed default to "Annually"
 
   const handleSelect = (plan) => {
     setSelected(plan);
@@ -15,7 +15,7 @@ export default function PricingButton({ onSelect }) {
       {["Monthly", "Annually"].map((plan) => (
         <label
           key={plan}
-          className=" flex items-center justify-center gap-2 text-white font-medium cursor-pointer transition-all duration-300 relative"
+          className="flex items-center justify-center gap-2 text-white font-medium cursor-pointer transition-all duration-300 relative"
         >
           <input
             type="radio"
