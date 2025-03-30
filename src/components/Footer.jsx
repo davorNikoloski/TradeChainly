@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6"; // This is the new X logo
 
 export default function Footer() {
   return (
@@ -50,8 +51,8 @@ export default function Footer() {
                     <Instagram size={16} color="#ffffff" />
                 </Link>
                 <Link href="https://twitter.com" target="_blank" className="p-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors duration-500">
-                    <Twitter size={16} color="#ffffff" fill="#ffffff" />
-                </Link>
+                    <FaXTwitter size={16} color="#ffffff" />
+                  </Link>
                 <Link href="https://linkedin.com" target="_blank" className="p-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors duration-500">
                     <Linkedin size={16} color="#ffffff" fill="#ffffff"/>
                 </Link>
