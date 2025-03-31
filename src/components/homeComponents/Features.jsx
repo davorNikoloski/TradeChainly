@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function Features() {
   return (
-    <div className="w-full h-full features-container overflow-visible md:p-[0px] px-[14px]">
+    <div className="w-full h-full features-container md:overflow-visible overflow-hidden md:p-[0px] px-[14px]">
       <div className="features-sub flex flex-col gap-[1rem] h-full justify-between items-center">
         {/* Header Section with motion */}
         <motion.div 

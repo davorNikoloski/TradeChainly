@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function Community() {
   return (
-    <div className="w-full h-full community-container overflow-visible md:p-[0px] px-[14px] md:pt-[28px]">
+    <div className="w-full h-full community-container md:overflow-visible overflow-hidden md:p-[0px] px-[14px] md:pt-[28px]">
       <div className="integrations-sub flex flex-col gap-[1rem] h-full justify-between items-center">
         
         {/* Header Section */}
@@ -35,7 +35,7 @@ export default function Community() {
         <div className="community-main pt-[40px] w-full h-full flex flex-col gap-[60px] items-center md:px-[4rem]">
           {/* Image with motion */}
           <motion.div 
-            initial={{ opacity: 0, x: "6rem" }}  // Starts 3rem to the right
+            initial={{ opacity: 0, x: "5rem" }}  // Starts 3rem to the right
             whileInView={{ opacity: 1, x: "0rem" }}  // Moves to original position
             transition={{ duration: 0.75, ease: "easeOut" }}  // Smooth 0.3s transition
             viewport={{ once: true, amount: 0.3 }}

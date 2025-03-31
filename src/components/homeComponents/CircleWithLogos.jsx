@@ -25,7 +25,7 @@ export default function CircleWithLogos() {
     logo: 75,
     center: 115,
     offset: 32,
-    glowSize: 10, // in rem
+    glowSize: 160, // px instead of rem for better consistency
     glowOpacity: 0.5
   });
 
@@ -39,7 +39,7 @@ export default function CircleWithLogos() {
           logo: 60,
           center: 90,
           offset: 30,
-          glowSize: 6,
+          glowSize: 96, // Adjusted for mobile (6rem * 16px)
           glowOpacity: 0.3
         };
       } else if (window.innerWidth < 1024) {
@@ -49,7 +49,7 @@ export default function CircleWithLogos() {
           logo: 70,
           center: 100,
           offset: 28,
-          glowSize: 8,
+          glowSize: 128, // Adjusted for tablets (8rem * 16px)
           glowOpacity: 0.4
         };
       } else {
@@ -59,7 +59,7 @@ export default function CircleWithLogos() {
           logo: 75,
           center: 115,
           offset: 32,
-          glowSize: 10,
+          glowSize: 160, // Adjusted for desktops (10rem * 16px)
           glowOpacity: 0.5
         };
       }
@@ -84,7 +84,6 @@ export default function CircleWithLogos() {
     };
   };
 
-  
   return (
     <div className="flex justify-center items-center w-full py-12">
       <motion.div 
@@ -100,8 +99,11 @@ export default function CircleWithLogos() {
       >
         {/* Static Glow - Now Perfectly Centered */}
         <div 
-          className="absolute w-[10rem] h-[10rem] bg-[#774af1] rounded-full opacity-50 blur-xl"
+          className="absolute bg-[#774af1] opacity-50 blur-lg"
           style={{
+            width: `${dimensions.glowSize}px`,
+            height: `${dimensions.glowSize}px`,
+            borderRadius: "50%", // Force it to always be a circle
             left: '50%',
             top: '50%',
             transform: 'translate(-50%, -50%)'
@@ -112,13 +114,16 @@ export default function CircleWithLogos() {
         {[1, 2, 3].map((i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full blur-xl"
+            className="absolute"
             style={{
               backgroundColor: "#774af1",
-              width: `${dimensions.glowSize}rem`,
-              height: `${dimensions.glowSize}rem`,
-              left: `calc(50% - ${dimensions.glowSize/2}rem)`,
-              top: `calc(50% - ${dimensions.glowSize/2}rem)`
+              width: `${dimensions.glowSize}px`,
+              height: `${dimensions.glowSize}px`,
+              borderRadius: "50%", // Ensuring it's always circular
+              left: `calc(50% - ${dimensions.glowSize / 2}px)`,
+              top: `calc(50% - ${dimensions.glowSize / 2}px)`,
+              filter: "blur(10px)", // Reduce blur strength
+              willChange: "transform, opacity",
             }}
             initial={{ scale: 1, opacity: dimensions.glowOpacity / i }}
             animate={{ scale: 3, opacity: 0 }}
@@ -134,7 +139,7 @@ export default function CircleWithLogos() {
 
         {/* Dotted Circle */}
         <div 
-          className="absolute border-2 border-dashed border-gray-300 dark:border-white rounded-full gradient-circle"
+          className="absolute border-2 border-dashed border-gray-300 dark:border-white rounded-full"
           style={{
             width: `${dimensions.circle}px`,
             height: `${dimensions.circle}px`,
@@ -167,8 +172,7 @@ export default function CircleWithLogos() {
 
         {/* Logos Around Circle */}
         {logos.map((logo, index) => {
-        const { x, y } = getLogoPosition(index);
-
+          const { x, y } = getLogoPosition(index);
 
           return (
             <motion.div

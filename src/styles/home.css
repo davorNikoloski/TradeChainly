@@ -1,4 +1,4 @@
 .gradient-bg {
-  background: radial-gradient(circle at center 20%, #3D3D91 0%, #010013 89%);
+  background: radial-gradient(circle at center 20%, #3D3D91 0vh, #010013 100vh);
   background-size: cover;
 }
