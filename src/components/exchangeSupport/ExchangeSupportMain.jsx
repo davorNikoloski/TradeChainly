@@ -60,7 +60,7 @@ export default function ExchangeSupportMain() {
             initial={{ opacity: 0, y: "1.5rem" }}
             animate={{ opacity: 1, y: "0rem" }}
             transition={{ duration: 0.75, ease: "easeOut", delay: 0.3 }}
-            className="pricing-main pt-[100px] w-full h-full flex flex-col items-center justify-center overflow-visible gap-[54px] max-w-[1200px]"
+            className="pricing-main md:pt-[100px] pt-[50px] w-full h-full flex flex-col items-center justify-center overflow-visible gap-[54px] max-w-[1200px]"
           >
             {/* Next.js Image Component */}
             <Image

@@ -22,8 +22,12 @@ const inter = Inter({
 
 export const metadata = {
   title: "TradeChainly",
-  description: "TradeChainly bla bla bla",
+  description: "Automated Crypto Trading Journal & Analytics Platform",
+  icons: {
+    icon: "/images/App Logo/favicon-32x32.png", // Path to your favicon
+  },
 };
+
 
 async function getFaqData() {
   const filePath = path.join(process.cwd(), "src/data/faqContent.json");

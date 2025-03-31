@@ -47,7 +47,7 @@ export default function PrivacyPolicyMain({ data }) {
             initial={{ opacity: 0, y: "1.5rem" }}
             animate={{ opacity: 1, y: "0rem" }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="privacyPolicy-main pt-[1rem] w-full h-full flex flex-col items-center justify-center overflow-visible gap-[7rem]"
+            className="privacyPolicy-main pt-[1rem] w-full h-full flex flex-col items-center justify-center overflow-visible"
           >
             {/* Display the Introduction */}
             <div className="introduction md:w-[80%] text-[18px] text-center" style={{ color: "rgb(156, 163, 175)" }}>
@@ -56,7 +56,7 @@ export default function PrivacyPolicyMain({ data }) {
             </div>
 
             {/* Display Privacy Policies with Numbering */}
-            <div className="policies w-full flex flex-col gap-[7rem] items-center">
+            <div className="policies w-full flex flex-col gap-[7rem] items-center md:pt-[100px] pt-[50px]">
               {data.policies.map((policy, index) => (
                 <div key={policy.id} className="policy-card w-full md:w-[80%] text-center space-y-[20px]">
                   <div className="flex items-center justify-center gap-[1rem]">

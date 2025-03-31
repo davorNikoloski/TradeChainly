@@ -31,7 +31,7 @@ export default function Features() {
         </motion.div>
 
         {/* Features Sections (Dynamically Rendered) */}
-        <div className="features-main pt-[40px] w-full h-full flex flex-col gap-[90px]">
+        <div className="features-main md:pt-[40px] pt-[30px] w-full h-full flex flex-col gap-[90px]">
           {featuresData.map((data, index) => (
             <FeatruesSections 
               key={index} 

@@ -32,7 +32,7 @@ export default function Benefits() {
         </motion.div>
 
         {/* Features Sections (Dynamically Rendered) */}
-        <div className="benefits-main pt-[40px] w-full h-full flex flex-col gap-[60px] gradient-bg-benefits">
+        <div className="benefits-main md:pt-[40px] pt-[30px] w-full h-full flex flex-col gap-[60px] gradient-bg-benefits">
           <BenefitsCards data={benefitsData} />
         </div>
       </div>

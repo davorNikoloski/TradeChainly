@@ -32,7 +32,7 @@ export default function Community() {
         </motion.div>
 
         {/* Main Content Section */}
-        <div className="community-main pt-[40px] w-full h-full flex flex-col gap-[60px] items-center md:px-[4rem]">
+        <div className="community-main md:pt-[40px] pt-[30px] w-full h-full flex flex-col gap-[60px] items-center md:px-[4rem]">
           {/* Image with motion */}
           <motion.div 
             initial={{ opacity: 0, x: "5rem" }}  // Starts 3rem to the right

@@ -1,6 +1,26 @@
 import ExchangeSupportMain from "@/components/exchangeSupport/ExchangeSupportMain";
 
+import { generateMetadata } from "@/components/SEO/Metadata";
+
 import "../../styles/features.css"; 
+
+export const metadata = generateMetadata({
+  title: "Exchange Support",
+  path: "/exchangeSupport",
+  description: "TradeChainly seamlessly integrates with Binance, Bybit, Coinbase, and other top crypto exchanges. Auto-sync your trades or upload files for comprehensive analysis.",
+  keywords: [
+    "Binance trade journal",
+    "Bybit trading analytics",
+    "Coinbase performance tracking",
+    "crypto exchange integration",
+    "automated trade sync",
+    "supported trading platforms",
+    "multi-exchange portfolio tracking",
+    "TradeChainly supported exchanges"
+  ],
+  ogTitle: "TradeChainly • Supported Crypto Exchanges",
+  ogDescription: "Connect your Binance, Bybit, Coinbase & other exchange accounts for automated trade tracking and analytics",
+});
 
 export default function exchangeSupport() {
   return (

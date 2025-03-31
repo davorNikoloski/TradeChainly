@@ -37,7 +37,7 @@ export default function TermsAndConditionsMain({ data }) {
             initial={{ opacity: 0, y: "1.5rem" }}
             animate={{ opacity: 1, y: "0rem" }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="termsAndConditions-main pt-[1rem] w-full h-full flex flex-col items-center justify-center overflow-visible gap-[7rem]"
+            className="termsAndConditions-main pt-[1rem] w-full h-full flex flex-col items-center justify-center overflow-visible "
           >
             {/* Display Note */}
             <div className="note max-w-[700px] text-[18px] text-center" style={{ color: "rgb(156, 163, 175)" }}>
@@ -45,7 +45,7 @@ export default function TermsAndConditionsMain({ data }) {
             </div>
 
             {/* Display Terms of Service */}
-            <div className="terms w-full flex flex-col gap-[7rem] items-center">
+            <div className="terms w-full flex flex-col gap-[7rem] items-center md:pt-[100px] pt-[50px]">
               {data.terms.map((term, index) => (
                 <div key={term.id} className="term-card w-full md:w-[80%] text-center space-y-[20px]">
                   <div className="flex items-center justify-center gap-[1rem]">

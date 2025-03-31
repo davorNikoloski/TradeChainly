@@ -2,8 +2,6 @@
 
 import "../../styles/hero.css"; 
 import FancyTitle from "@/components/homeComponents/FancyTitle";
-import FeatruesSections from "@/components/homeComponents/FeatruesSections";
-import featuresData from "../../data/featuresData.json";
 import CircleWithLogos from "@/components/homeComponents/CircleWithLogos";
 import { motion } from "framer-motion";
 import { FiArrowRight } from 'react-icons/fi';
@@ -36,7 +34,7 @@ export default function Integrations() {
         </motion.div>
 
         {/* Features Sections (Dynamically Rendered) */}
-        <div className="integrations-main pt-[40px] w-full h-full flex flex-col gap-[60px]">
+        <div className="integrations-main md:pt-[40px] pt-[30px] w-full h-full flex flex-col gap-[60px]">
         <CircleWithLogos/>
         </div>
       </div>

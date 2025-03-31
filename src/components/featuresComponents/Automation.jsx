@@ -28,7 +28,7 @@ export default function Automation() {
         </motion.div>
 
         {/* Features Sections (Dynamically Rendered) */}
-        <div className="analytics-main pt-[40px] w-full h-full flex md:flex-row flex-col gap-[38px] items-center justify-center ">
+        <div className="analytics-main md:pt-[40px] pt-[30px] w-full h-full flex md:flex-row flex-col gap-[38px] items-center justify-center ">
             {automationCardData.map((item) => (
                 <SubCardsComponent key={item.id} data={item} />
             ))}

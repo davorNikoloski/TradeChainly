@@ -6,7 +6,27 @@ import Analysis from "@/components/featuresComponents/Analysis";
 import Reporting from "@/components/featuresComponents/Reporting";
 import Forecast from "@/components/featuresComponents/Forecast";
 
+import { generateMetadata } from "@/components/SEO/Metadata";
+
 import "../../styles/features.css"; 
+
+export const metadata = generateMetadata({
+  title: "Features",
+  path: "/features",
+  description: "Discover TradeChainly's powerful trading tools: automated journaling, AI-driven analytics, performance tracking, and market forecasting to transform your crypto trading strategy.",
+  keywords: [
+    "crypto trading features",
+    "automated trade journal",
+    "trading analytics tools",
+    "crypto performance tracking",
+    "AI trading forecasts",
+    "risk management tools",
+    "trade automation software",
+    "crypto trading insights"
+  ],
+  ogTitle: "TradeChainly • Advanced Trading Features & Analytics",
+  ogDescription: "Boost your trading performance with automated journaling, real-time analytics, and AI-powered forecasting tools",
+});
 
 export default function Features() {
   return (
@@ -17,22 +37,22 @@ export default function Features() {
         <div className="w-full  ">
           <FeaturesMain />
         </div>
-        <div className="w-full">
+        <div className="w-full ">
           <FeaturesCards />
         </div>
-        <div className="w-full h-full pt-[100px]">
+        <div className="w-full h-full md:pt-[100px] pt-[50px]">
           <Analytics />
         </div>
-        <div className="w-full h-full pt-[100px]">
+        <div className="w-full h-full md:pt-[100px] pt-[50px]">
           <Automation />
         </div>
-        <div className="w-full h-full pt-[100px]">
+        <div className="w-full h-full md:pt-[100px] pt-[50px]">
           <Analysis />
         </div>
-        <div className="w-full h-full pt-[100px]">
+        <div className="w-full h-full md:pt-[100px] pt-[50px]">
           <Reporting />
         </div>
-        <div className="w-full h-full pt-[100px]">
+        <div className="w-full h-full md:pt-[100px] pt-[50px]">
           <Forecast />
         </div>
       </div>

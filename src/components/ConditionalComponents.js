@@ -25,19 +25,19 @@ export default function ConditionalComponents({ faqData }) {
       {!hideFaqAndCtaOnly && (
         <>
           {/* FAQ Section */}
-          <div className="pt-[100px]">
+          <div className="md:pt-[100px] pt-[50px]">
             <FaqServer faqData={faqData} />
           </div>
 
           {/* Call to Action */}
-          <div className="pt-[100px]">
+          <div className="md:pt-[100px] pt-[50px]">
             <Cta />
           </div>
         </>
       )}
 
       {/* Footer - Always visible except on 404 */}
-      <div className="pt-[100px]">
+      <div className="md:pt-[100px] pt-[50px]">
         <Footer />
       </div>
     </>

@@ -56,7 +56,7 @@ export default function PricingMain() {
             <GetStartedButton href="https://app.tradechainly.website/" text="Get Started" width="100%" />
           </motion.div>
 
-          <div className="pt-[100px] w-full flex items-center justify-center pb-[3rem]">
+          <div className="md:pt-[100px] pt-[50px] w-full flex items-center justify-center md:pb-[3rem] pb-[30px]">
             <PricingButton onSelect={(plan) => setIsAnnual(plan === "Annually")} defaultSelected="Annually" />
           </div>
           <motion.div

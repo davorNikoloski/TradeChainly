@@ -85,7 +85,7 @@ export default function CircleWithLogos() {
   };
 
   return (
-    <div className="flex justify-center items-center w-full py-12">
+    <div className="flex justify-center items-center w-full md:py-12 pt-[10px]">
       <motion.div 
         className="relative mx-auto"
         style={{

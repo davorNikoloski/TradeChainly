@@ -1,5 +1,27 @@
 import NotFound from "@/components/notFound/notFound";
 
+import { generateMetadata } from "@/components/SEO/Metadata";
+
+export const metadata = generateMetadata({
+  title: "Page Not Found",
+  path: "/404",
+  description: "The page you're looking for doesn't exist. Return to TradeChainly's homepage or try searching for what you need.",
+  keywords: [
+    "404 error",
+    "page not found",
+    "TradeChainly error",
+    "broken link",
+    "missing page",
+    "crypto tools",
+    "trading journal",
+    "return to homepage"
+  ],
+  ogTitle: "TradeChainly • Page Not Found",
+  ogDescription: "We couldn't find the page you requested. Browse our crypto trading tools instead.",
+  noIndex: true,
+  noFollow: true
+});
+
 export default function NotFoundPage() {
   return (
     <div className="home mx-auto w-full h-auto bg-opacity-0 flex items-center justify-center overflow-visible relative z-1 px-[14px]">
