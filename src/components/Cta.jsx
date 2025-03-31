@@ -65,7 +65,7 @@ export default function Cta() {
               transition={{ duration: 0.7 }}
             >
               <GetStartedButton
-                href="/XXX"
+                href="https://app.tradechainly.website/"
                 text="Get Started Today"
                 showArrow={false}
                 width="200px"
