@@ -118,7 +118,7 @@ export default function Hero() {
               <GetStartedButton href="https://app.tradechainly.website/" text="Get Started" width="100%" />
             </div>
           </motion.div>
-        </motion.div>
+        </motion.div> 
 
         {/* Hero Image (Slower Movement) */}
         <motion.div 

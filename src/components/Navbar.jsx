@@ -80,7 +80,7 @@ export default function Navbar() {
 
     {/* Desktop Buttons */}
     <div className="hidden sm:flex gap-[1rem]">
-      <LogInButton href="/login" text="Log In" />
+      <LogInButton href="https://app.tradechainly.website/" text="Log In" />
       <GetStartedButton href="https://app.tradechainly.website/" text="Get Started" />
     </div>
   </div>
