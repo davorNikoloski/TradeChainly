@@ -7,11 +7,10 @@ import FancyTitle from "@/components/homeComponents/FancyTitle";
 import PricingCard from "@/components/pricingComponents/PricingCard";
 import PricingButton from "@/components/pricingComponents/PricingButton";
 import PricingList from "@/components/pricingComponents/PricingList";
-import pricingListData from "../../data/pricingListData.json";
-import pricingCardData from "../../data/pricingCardData.json";
+
 import GetStartedButton from '../buttons/GetStartedButton';
 
-export default function PricingMain() {
+export default function PricingMain({ pricingListData, pricingCardData }) {
   const [isAnnual, setIsAnnual] = useState(true); // Changed default to true
 
   return (

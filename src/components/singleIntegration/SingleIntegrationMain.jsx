@@ -1,41 +1,36 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import "../../styles/exchangeCards.css";
 
 import FancyTitle from "@/components/homeComponents/FancyTitle";
-import exchangeCardsData from "../../data/exchangeCards.json";
-import integrationListData from "../../data/integrationListData.json";
 import GetStartedButton from "../buttons/GetStartedButton";
 import IntegrationList from "@/components/singleIntegration/IntegrationList";
 
-export default function SingleIntegration() {
+export default function SingleIntegrationMain({ 
+  initialExchange, 
+  initialIntegrationListData 
+}) {
   const router = useRouter();
-  const params = useParams();
-  const exchangeName = params?.id || params?.name; // Adjust based on route setup
-  const [loading, setLoading] = useState(true);
-
-  // Find the exchange data dynamically
-  const exchange = useMemo(() => {
-    return exchangeCardsData.find(
-      (ex) => ex.name.toLowerCase() === exchangeName?.toLowerCase()
-    );
-  }, [exchangeName]);
+  const [exchange, setExchange] = useState(initialExchange);
+  const [integrationListData, setIntegrationListData] = useState(initialIntegrationListData);
+  const [loading, setLoading] = useState(false);
 
   // Handle loading and redirect if exchange not found
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-      if (!exchange) {
+    if (!exchange) {
+      setLoading(true);
+      const timer = setTimeout(() => {
         router.replace("/404");
-      }
-    }, 1500); // Simulate loading delay before redirect
+      }, 1500);
+      
+      return () => clearTimeout(timer);
+    }
   }, [exchange, router]);
 
-  // Show inline loader while redirecting
   if (!exchange) {
     return (
       <div className="flex items-center justify-center h-screen text-white">
@@ -82,7 +77,6 @@ export default function SingleIntegration() {
             </motion.div>
           </div>
           
-
           <motion.div
             initial={{ opacity: 0, y: "1.5rem" }}
             animate={{ opacity: 1, y: "0rem" }}
@@ -94,7 +88,12 @@ export default function SingleIntegration() {
               <div className="flex items-center justify-center p-[1.3rem] gap-[2.2rem]">
                 {/* Exchange Logo */}
                 <div className="w-[76px] h-[76px] flex-shrink-0 border-2 rounded-[8px] border-[#7D4DFF] p-[8px]">
-                  <Image src={exchange.image} alt={exchange.name} width={76} height={76} />
+                  <Image 
+                    src={exchange.image} 
+                    alt={exchange.name} 
+                    width={76} 
+                    height={76} 
+                  />
                 </div>
 
                 {/* Exchange Name & Button */}
@@ -155,7 +154,10 @@ export default function SingleIntegration() {
               </motion.div>
             </div>
 
-            <IntegrationList data={integrationListData} selectedExchange={exchangeName} />
+            <IntegrationList 
+              data={integrationListData} 
+              selectedExchange={exchange.name.toLowerCase()} 
+            />
           </motion.div>
         </motion.div>
       </div>

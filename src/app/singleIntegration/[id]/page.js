@@ -1,9 +1,10 @@
 import SingleIntegrationMain from "@/components/singleIntegration/SingleIntegrationMain";
 import { generateMetadata as generateSeoMetadata } from "@/components/SEO/Metadata";
-import exchangeCardsData from "../../../data/exchangeCards.json";
 import "../../../styles/features.css";
 
 export async function generateMetadata({ params }) {
+  const { default: exchangeCardsData } = await import("../../../data/exchangeCards.json");
+  
   const exchangeName = params.id;
   const exchange = exchangeCardsData.find(
     (ex) => ex.name.toLowerCase() === exchangeName.toLowerCase()
@@ -37,13 +38,39 @@ export async function generateMetadata({ params }) {
   });
 }
 
-export default function SingleIntegration() {
+export async function generateStaticParams() {
+  const { default: exchangeCardsData } = await import("../../../data/exchangeCards.json");
+  
+  return exchangeCardsData.map((exchange) => ({
+    id: exchange.name.toLowerCase(),
+  }));
+}
+
+export default async function SingleIntegration({ params }) {
+  // Pre-fetch all data at build time
+  const [exchangeCardsData, integrationListData] = await Promise.all([
+    import("../../../data/exchangeCards.json").then(mod => mod.default),
+    import("../../../data/integrationListData.json").then(mod => mod.default)
+  ]);
+
+  const exchangeName = params.id;
+  const exchange = exchangeCardsData.find(
+    (ex) => ex.name.toLowerCase() === exchangeName.toLowerCase()
+  );
+
+  if (!exchange) {
+    return <div>Exchange not found</div>;
+  }
+
   return (
     <div className="home m-[2rem] pb-[0px] mx-auto w-full h-auto bg-opacity-0 flex items-center justify-center overflow-visible relative z-1">
       <div className="absolute w-full min-h-[130vh] h-auto gradient-bg top-0 z-[-1]"></div>
       <div className="home-cont w-full h-full pt-[100px] flex flex-col max-w-[1200px] items-center justify-start">
         <div className="w-full h-auto">
-          <SingleIntegrationMain />
+          <SingleIntegrationMain 
+            initialExchange={exchange}
+            initialIntegrationListData={integrationListData}
+          />
         </div>
       </div>
     </div>

@@ -22,15 +22,19 @@ export const metadata = generateMetadata({
   ogDescription: "Connect your Binance, Bybit, Coinbase & other exchange accounts for automated trade tracking and analytics",
 });
 
-export default function exchangeSupport() {
+// Fetch the JSON data at build time for SSG
+export default async function ExchangeSupport() {
+  const exchangeCardsData = (await import("../../data/exchangeCards.json")).default;
+
   return (
     <div className="home m-[2rem] pb-[0px] mx-auto w-full h-auto bg-opacity-0 flex items-center justify-center overflow-visible relative z-1">
       <div className="absolute w-full min-h-[130vh] h-auto gradient-bg top-0 z-[-1]"></div>
       <div className="home-cont w-full h-full pt-[100px] flex flex-col max-w-[1200px] items-center justify-start">
         <div className="w-full h-auto">
-          <ExchangeSupportMain />
+          {/* Pass the fetched data as props to ExchangeSupportMain */}
+          <ExchangeSupportMain exchangeCardsData={exchangeCardsData} />
         </div>
       </div>
     </div>
   );
-} 
+}

@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import "../../styles/exchangeSupport.css";
 import Image from "next/image";
@@ -9,10 +8,8 @@ import FancyTitle from "@/components/homeComponents/FancyTitle";
 import ExchangeCards from "@/components/exchangeSupport/ExchangeCards";
 
 // Import exchange cards data here
-import exchangeCardsData from "../../data/exchangeCards.json";
 
-export default function ExchangeSupportMain() {
-  const [isAnnual, setIsAnnual] = useState(false);
+export default function ExchangeSupportMain({ exchangeCardsData }) {
 
   return (
     <div className="w-full h-full exchangeS-container overflow-visible md:p-[0px] px-[14px] md:px-[28px]">

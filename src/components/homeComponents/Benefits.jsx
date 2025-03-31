@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import benefitsData from "../../data/benefitsData.json";
 
   
-export default function Benefits() {
+export default function Benefits({data}) {
   return (
     <div className="w-full h-full benefits-container overflow-visible md:p-[0px] px-[14px] md:pt-[28px] ">
       <div className="integrations-sub flex flex-col gap-[1rem] h-full justify-between items-center">
@@ -33,7 +33,7 @@ export default function Benefits() {
 
         {/* Features Sections (Dynamically Rendered) */}
         <div className="benefits-main md:pt-[40px] pt-[30px] w-full h-full flex flex-col gap-[60px] gradient-bg-benefits">
-          <BenefitsCards data={benefitsData} />
+          <BenefitsCards data={data} />
         </div>
       </div>
     </div>

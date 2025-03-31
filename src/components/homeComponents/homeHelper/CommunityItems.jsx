@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import communityData from "../../../data/communityData.json";
 
-export default function CommunityItems() {
+export default function CommunityItems({ data }) {
   return (
     <motion.div
       className="w-full md:px-[2rem] pt-[1rem]"
@@ -14,7 +14,7 @@ export default function CommunityItems() {
       viewport={{ once: true, amount: 0.2 }}
     >
       <div className="flex flex-wrap justify-center gap-[16px]">
-        {communityData.map((item, index) => (
+        {data.map((item, index) => (
           <motion.div
             key={item.id}
             className="flex-1 min-w-[220px] md:max-w-[300px] bg-opacity-0 p-[8px] flex flex-col items-center justify-center text-center"

@@ -1,8 +1,5 @@
 import TermsAndConditionsMain from "@/components/misc/TermsAndConditionsMain";
-import termsAndConditionsData from "../../data/termsAndConditionsData.json";
 import { generateMetadata } from "@/components/SEO/Metadata";
-
-
 import "../../styles/contact.css"; 
 
 export const metadata = generateMetadata({
@@ -21,18 +18,21 @@ export const metadata = generateMetadata({
   ],
   ogTitle: "TradeChainly • Terms & Conditions",
   ogDescription: "Legal terms and conditions for using TradeChainly's automated crypto trading journal and analytics platform",
-  noIndex: true // Recommended for legal pages
+  noIndex: true
 });
 
-export default function TermsAndConditions() {
+export default async function TermsAndConditions() {
+  // Dynamically import the terms data at build time
+  const termsAndConditionsData = (await import("../../data/termsAndConditionsData.json")).default;
+
   return (
     <div className="terms&conditions m-[2rem] pb-[0px] mx-auto w-full h-auto bg-opacity-0 flex items-center justify-center overflow-visible relative z-1">
       <div className="absolute w-full min-h-[130vh] h-auto gradient-bg top-0 z-[-1]"></div>
       <div className="terms&conditions-cont w-full h-full pt-[100px] flex flex-col max-w-[1200px] items-center justify-start">
-        <div className="w-full ">
+        <div className="w-full">
           <TermsAndConditionsMain data={termsAndConditionsData} />
         </div>
       </div>
     </div>
   );
-} 
+}

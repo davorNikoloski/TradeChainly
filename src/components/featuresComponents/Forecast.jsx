@@ -6,7 +6,7 @@ import SubCardsComponent from "@/components/featuresComponents/SubCardsComponent
 import { motion } from "framer-motion";
 import forecastCardData from "../../data/forecastCardData.json";
 
-export default function Forecast() {
+export default function Forecast({ data }) {
   return (
     <div className="w-full h-full analytics-container overflow-visible md:p-[0px] px-[14px]">
       <div className="analytics-sub flex flex-col gap-[1rem] h-full justify-between items-center">
@@ -29,7 +29,7 @@ export default function Forecast() {
 
         {/* Features Sections (Dynamically Rendered) */}
         <div className="analytics-main md:pt-[40px] pt-[30px] w-full h-full flex md:flex-row flex-col gap-[38px] items-center justify-center ">
-            {forecastCardData.map((item) => (
+            {data.map((item) => (
                 <SubCardsComponent key={item.id} data={item} />
             ))}
         </div>

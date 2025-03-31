@@ -21,6 +21,7 @@ const inter = Inter({
 });
 
 export const metadata = {
+  metadataBase: new URL('http://143.198.153.179'),
   title: "TradeChainly",
   description: "Automated Crypto Trading Journal & Analytics Platform",
   icons: {

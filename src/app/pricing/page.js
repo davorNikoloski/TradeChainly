@@ -22,15 +22,20 @@ export const metadata = generateMetadata({
   ogDescription: "Advanced trading tools starting at $16/month. Unlimited trades, automated journaling, AI forecasts & comprehensive analytics included.",
 });
 
-export default function Pricing() {
+// Fetch all JSON data at build time for SSG
+export default async function Pricing() {
+  const pricingListData = (await import("../../data/pricingListData.json")).default;
+  const pricingCardData = (await import("../../data/pricingCardData.json")).default;
+
   return (
     <div className="home m-[2rem] pb-[0px] mx-auto w-full h-auto bg-opacity-0 flex items-center justify-center overflow-visible relative z-1">
       <div className="absolute w-full min-h-[130vh] h-auto gradient-bg top-0 z-[-1]"></div>
       <div className="home-cont w-full h-full pt-[100px] flex flex-col max-w-[1200px] items-center justify-start">
-        <div className="w-full h-auto ">
-          <PricingMain />
+        <div className="w-full h-auto">
+          {/* Pass the fetched data as props to PricingMain */}
+          <PricingMain pricingListData={pricingListData} pricingCardData={pricingCardData} />
         </div>
       </div>
     </div>
   );
-} 
+}

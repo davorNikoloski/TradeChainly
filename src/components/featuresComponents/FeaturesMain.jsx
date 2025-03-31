@@ -3,7 +3,6 @@
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
 import "../../styles/features.css";
-import FirstButtonComponent from "@/components/homeComponents/FirstButtonComponent";
 import GetStartedButton from '../buttons/GetStartedButton';
 import FancyTitle from "@/components/homeComponents/FancyTitle";
 

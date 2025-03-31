@@ -6,7 +6,7 @@ import SubCardsComponent from "@/components/featuresComponents/SubCardsComponent
 import { motion } from "framer-motion";
 import reportingCardData from "../../data/reportingCardData.json";
 
-export default function Reporting() {
+export default function Reporting({ data }) {
   return (
     <div className="w-full h-full analytics-container overflow-visible md:p-[0px] px-[14px]">
       <div className="analytics-sub flex flex-col gap-[1rem] h-full justify-between items-center">
@@ -29,7 +29,7 @@ export default function Reporting() {
 
         {/* Features Sections (Dynamically Rendered) */}
         <div className="analytics-main md:pt-[40px] pt-[30px] w-full h-full flex md:flex-row flex-col gap-[38px] items-center justify-center ">
-            {reportingCardData.map((item) => (
+            {data.map((item) => (
                 <SubCardsComponent key={item.id} data={item} />
             ))}
         </div>

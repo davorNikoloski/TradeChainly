@@ -6,7 +6,7 @@ import CommunityItems from "@/components/homeComponents/homeHelper/CommunityItem
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export default function Community() {
+export default function Community({ data }) {
   return (
     <div className="w-full h-full community-container md:overflow-visible overflow-hidden md:p-[0px] px-[14px] md:pt-[28px]">
       <div className="integrations-sub flex flex-col gap-[1rem] h-full justify-between items-center">
@@ -50,7 +50,7 @@ export default function Community() {
           </motion.div>
 
           {/* Community Features */}
-          <CommunityItems />
+          <CommunityItems data={data} />
         </div>
       </div>
     </div>

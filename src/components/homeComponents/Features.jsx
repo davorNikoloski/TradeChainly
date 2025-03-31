@@ -6,7 +6,7 @@ import FeatruesSections from "@/components/homeComponents/FeatruesSections";
 import featuresData from "../../data/featuresData.json";
 import { motion } from "framer-motion";
 
-export default function Features() {
+export default function Features({ data }) {
   return (
     <div className="w-full h-full features-container md:overflow-visible overflow-hidden md:p-[0px] px-[14px]">
       <div className="features-sub flex flex-col gap-[1rem] h-full justify-between items-center">
@@ -32,7 +32,7 @@ export default function Features() {
 
         {/* Features Sections (Dynamically Rendered) */}
         <div className="features-main md:pt-[40px] pt-[30px] w-full h-full flex flex-col gap-[90px]">
-          {featuresData.map((data, index) => (
+          {data.map((data, index) => (
             <FeatruesSections 
               key={index} 
               title={data.title} 
