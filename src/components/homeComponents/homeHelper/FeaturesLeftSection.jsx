@@ -21,7 +21,7 @@ export default function FeaturesLeftSection({ title, description, features }) {
             {description}
           </p>
           <GetStartedButton
-            href="/contact"
+            href="https://app.tradechainly.website/"
             text="Get Started"
             showArrow={true}
             width="150px"

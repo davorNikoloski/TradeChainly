@@ -52,33 +52,36 @@ export default function SingleIntegration() {
     <div className="w-full h-full singleIntegration-container overflow-visible md:p-[0px] px-[14px] md:px-[28px]">
       <div className="singleIntegration-sub flex flex-col gap-[1rem] h-full justify-between items-center">
         <motion.div
-          className="singleIntegration-content flex flex-col gap-[1rem] items-center justify-center w-full"
+          className="singleIntegration-content flex flex-col items-center justify-center w-full"
           initial={{ opacity: 0, y: "1.5rem" }}
           animate={{ opacity: 1, y: "0rem" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="max-w-[1200px] w-full">
-            <FancyTitle title="Integration" />
-          </div>
-          <motion.div
-            initial={{ opacity: 0, y: "1.5rem" }}
-            animate={{ opacity: 1, y: "0rem" }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="title-content flex flex-col items-center max-w-[1050px] gap-[22px]"
-          >
-            <h1 className="font-[500] md:text-[65px] text-[35px] md:text-center text-start font-mulish text-white md:leading-[5rem] leading-10">
-              Integrating With {exchange.name}
-            </h1>
-          </motion.div>
+          <div className="flex flex-col gap-[1rem] items-center justify-center w-full">
+            <div className="max-w-[1200px] w-full">
+              <FancyTitle title="Integration" />
+            </div>
+            <motion.div
+              initial={{ opacity: 0, y: "1.5rem" }}
+              animate={{ opacity: 1, y: "0rem" }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="title-content flex flex-col items-center max-w-[1050px] gap-[22px]"
+            >
+              <h1 className="font-[500] md:text-[65px] text-[35px] md:text-center text-start font-mulish text-white md:leading-[5rem] leading-10">
+                Integrating With {exchange.name}
+              </h1>
+            </motion.div>
 
-          <motion.div 
-            initial={{ opacity: 0, y: "1.5rem" }} 
-            animate={{ opacity: 1, y: "0rem" }} 
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="btns-second md:w-fit w-full m-[0.6rem]"
-          >
-              <GetStartedButton href="https://app.tradechainly.website/" text="Get Started" width="100%" />
-          </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: "1.5rem" }} 
+              animate={{ opacity: 1, y: "0rem" }} 
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="btns-second md:w-fit w-full mt-[0.6rem]"
+            >
+                <GetStartedButton href="https://app.tradechainly.website/" text="Get Started" width="100%" />
+            </motion.div>
+          </div>
+          
 
           <motion.div
             initial={{ opacity: 0, y: "1.5rem" }}
