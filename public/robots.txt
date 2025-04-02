@@ -1,6 +1,14 @@
+# robots.txt for Next.js site
+
+# Allow all search engines to crawl the site
 User-agent: *
+Disallow: /_next/
 Disallow: /api/
 Disallow: /admin/
-Allow: /
 
+# Specific directives for Googlebot
+User-agent: Googlebot
+Disallow: /private/
+
+# Sitemap location
 Sitemap: http://143.198.153.179/sitemap.xml
