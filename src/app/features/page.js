@@ -46,19 +46,19 @@ export default async function Features() {
         <div className="w-full">
           <FeaturesCards data={featuresCardsData} />
         </div>
-        <div className="w-full h-full md:pt-[100px] pt-[50px]">
+        <div className="w-full h-full md:pt-[100px] pt-[80px]">
           <Analytics data={analyticsCardData} />
         </div>
-        <div className="w-full h-full md:pt-[100px] pt-[50px]">
+        <div className="w-full h-full md:pt-[100px] pt-[80px]">
           <Automation data={automationCardData} />
         </div>
-        <div className="w-full h-full md:pt-[100px] pt-[50px]">
+        <div className="w-full h-full md:pt-[100px] pt-[80px]">
           <Analysis data={analysisCardData} />
         </div>
-        <div className="w-full h-full md:pt-[100px] pt-[50px]">
+        <div className="w-full h-full md:pt-[100px] pt-[80px]">
           <Reporting data={reportingCardData} />
         </div>
-        <div className="w-full h-full md:pt-[100px] pt-[50px]">
+        <div className="w-full h-full md:pt-[100px] pt-[80px]">
           <Forecast data={forecastCardData} />
         </div>
       </div>

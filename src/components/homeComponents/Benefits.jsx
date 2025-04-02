@@ -9,7 +9,7 @@ import benefitsData from "../../data/benefitsData.json";
   
 export default function Benefits({data}) {
   return (
-    <div className="w-full h-full benefits-container overflow-visible md:p-[0px] px-[14px] md:pt-[28px] ">
+    <div className="w-full h-full benefits-container overflow-visible md:p-[0px] px-[14px] ">
       <div className="integrations-sub flex flex-col gap-[1rem] h-full justify-between items-center">
         {/* Header Section */}
         <motion.div 

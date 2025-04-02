@@ -37,7 +37,7 @@ export default function ConditionalComponents({ faqData }) {
       )}
 
       {/* Footer - Always visible except on 404 */}
-      <div className="md:pt-[100px] pt-[50px]">
+      <div className="md:pt-[100px] pt-[80px]">
         <Footer />
       </div>
     </>

@@ -56,7 +56,7 @@ export default function PrivacyPolicyMain({ data }) {
             </div>
 
             {/* Display Privacy Policies with Numbering */}
-            <div className="policies w-full flex flex-col gap-[7rem] items-center md:pt-[100px] pt-[50px]">
+            <div className="policies w-full flex flex-col gap-[7rem] items-center md:pt-[100px] pt-[80px]">
               {data.policies.map((policy, index) => (
                 <div key={policy.id} className="policy-card w-full md:w-[80%] text-center space-y-[20px]">
                   <div className="flex items-center justify-center gap-[1rem]">

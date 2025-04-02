@@ -22,7 +22,7 @@ export default function Automation({ data }) {
           <h1 className="md:text-[47px] text-[28px] font-[600] leading-[1.2] text-transparent bg-gradient-to-l from-white/35 via-white to-white/90 bg-clip-text m-0">
             Automated Trade Journaling
           </h1>
-          <p className="text-[16px] font-normal leading-[1.4] text-[#9ca3af] mt-0 mb-[10px] text-center md:w-[40%]">
+          <p className="text-[16px] font-normal leading-[1.4] text-[#9ca3af] mt-0 text-center md:w-[40%]">
             Seamlessly connect with top exchanges while we do the heavy lifting for you. From real-time synchronization to automated day logging, we simplify your trading process so you can focus on what matters most.
           </p>
         </motion.div>

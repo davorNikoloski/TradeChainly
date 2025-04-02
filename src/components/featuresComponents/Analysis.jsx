@@ -22,7 +22,7 @@ export default function Analysis({ data }) {
           <h1 className="md:text-[47px] text-[28px] font-[600] leading-[1.2] text-transparent bg-gradient-to-l from-white/35 via-white to-white/90 bg-clip-text m-0">
             All-In-One Trade Analysis
           </h1>
-          <p className="text-[16px] font-normal leading-[1.4] text-[#9ca3af] mt-0 mb-[10px] text-center md:w-[40%]">
+          <p className="text-[16px] font-normal leading-[1.4] text-[#9ca3af] mt-0 text-center md:w-[40%]">
             Break down every trade with complete clarity. Track key metrics, tag your trades, adjust profit targets and stop losses, and capture essential notes - all in one place.
           </p>
         </motion.div>

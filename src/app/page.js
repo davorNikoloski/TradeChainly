@@ -38,16 +38,16 @@ export default async function Home() {
         <div className="w-full">
           <Hero />
         </div>
-        <div className="w-full md:pt-[50px]">
+        <div className="w-full md:pt-[80px]">
           <Features data={featuresData} />
         </div>
-        <div className="w-full md:pt-[100px] pt-[50px]">
+        <div className="w-full md:pt-[100px] pt-[80px]">
           <Integrations />
         </div>
-        <div className="w-full md:pt-[100px] pt-[50px]">
+        <div className="w-full md:pt-[100px] pt-[80px]">
           <Benefits data={benefitsData} />
         </div>
-        <div className="w-full md:pt-[100px] pt-[50px]">
+        <div className="w-full md:pt-[100px] pt-[80px]">
           <Community data={communityData} />
         </div>
       </div>

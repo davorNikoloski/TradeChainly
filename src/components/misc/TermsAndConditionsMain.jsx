@@ -45,7 +45,7 @@ export default function TermsAndConditionsMain({ data }) {
             </div>
 
             {/* Display Terms of Service */}
-            <div className="terms w-full flex flex-col gap-[7rem] items-center md:pt-[100px] pt-[50px]">
+            <div className="terms w-full flex flex-col gap-[7rem] items-center md:pt-[100px] pt-[80px]">
               {data.terms.map((term, index) => (
                 <div key={term.id} className="term-card w-full md:w-[80%] text-center space-y-[20px]">
                   <div className="flex items-center justify-center gap-[1rem]">

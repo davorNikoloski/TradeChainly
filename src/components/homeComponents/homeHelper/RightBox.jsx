@@ -25,9 +25,9 @@ export default function RightBox({ width = "100%", minWidth = "100%", image, isE
             isMobile
               ? { top: "0rem", left: "0rem" }
               : { 
-                  top: "6rem", 
-                  left: isEven ? "6rem" : "-6rem",
-                  opacity: 0.75 
+                  top: "4rem", // Reduced initial offset
+                  left: isEven ? "4rem" : "-4rem",
+                  opacity: 0.85 
                 }
           }
           whileInView={
@@ -40,24 +40,24 @@ export default function RightBox({ width = "100%", minWidth = "100%", image, isE
                 }
           }
           transition={{
-            duration: 0.75,
-            ease: [0.16, 0.77, 0.47, 0.97], // Custom cubic-bezier curve for smoother motion
+            duration: 0.85, // Slightly longer duration
+            ease: [0.16, 0.77, 0.47, 0.97],
             opacity: {
-              duration: 0.75,
+              duration: 0.8,
               ease: "easeOut"
             }
           }}
-          viewport={{ once: true, amount: 0.2 }} // Slightly increased amount for earlier trigger
-          className="absolute w-full h-full will-change-transform" // Added will-change for performance
+          viewport={{ once: true, margin: "-100px 0px" }} // Triggers earlier
+          className="absolute w-full h-full will-change-transform"
           style={{ borderRadius: "16px" }}
         >
           <Image
             src={image.src}
             alt={image.alt}
             layout="fill"
-            objectFit="cover"
+            objectFit="fill"
             className={`rounded-[16px] ${image.className || ""}`}
-            priority={true} // Added priority for important above-the-fold images
+            priority={true}
           />
         </motion.div>
       )}

@@ -55,14 +55,14 @@ export default function PricingMain({ pricingListData, pricingCardData }) {
             <GetStartedButton href="https://app.tradechainly.website/" text="Get Started" width="100%" />
           </motion.div>
 
-          <div className="md:pt-[100px] pt-[50px] w-full flex items-center justify-center md:pb-[3rem] pb-[30px]">
+          <div className="md:pt-[100px] pt-[80px] w-full flex items-center justify-center md:pb-[3rem] pb-[30px]">
             <PricingButton onSelect={(plan) => setIsAnnual(plan === "Annually")} defaultSelected="Annually" />
           </div>
           <motion.div
             initial={{ opacity: 0, y: "1.5rem" }}
             animate={{ opacity: 1, y: "0rem" }}
             transition={{ duration: 0.75, ease: "easeOut", delay: 0.2 }}
-            className="pricing-main w-full h-full flex flex-col items-center justify-center overflow-visible gap-[54px]"
+            className="pricing-main w-full h-full flex flex-col items-center justify-center overflow-visible md:gap-[54px] gap-[18px]"
           >
             <PricingCard data={pricingCardData} isAnnual={isAnnual} />
             <h1 className="font-[500] md:text-[65px] text-[35px] md:text-center text-start pt-[2rem] font-mulish md:leading-[5rem] md:w-[60%] leading-[1.2] text-transparent bg-gradient-to-l from-white/35 via-white to-white/90 bg-clip-text">

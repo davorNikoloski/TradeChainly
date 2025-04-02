@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function Community({ data }) {
   return (
-    <div className="w-full h-full community-container md:overflow-visible overflow-hidden md:p-[0px] px-[14px] md:pt-[28px]">
+    <div className="w-full h-full community-container md:overflow-visible overflow-hidden md:p-[0px] px-[14px]">
       <div className="integrations-sub flex flex-col gap-[1rem] h-full justify-between items-center">
         
         {/* Header Section */}
@@ -32,7 +32,7 @@ export default function Community({ data }) {
         </motion.div>
 
         {/* Main Content Section */}
-        <div className="community-main md:pt-[40px] pt-[30px] w-full h-full flex flex-col gap-[60px] items-center md:px-[4rem]">
+        <div className="community-main md:pt-[40px] pt-[30px] w-full h-full flex flex-col md:gap-[60px] gap-[30px] items-center md:px-[4rem]">
           {/* Image with motion */}
           <motion.div 
             initial={{ opacity: 0, x: "5rem" }}  // Starts 3rem to the right

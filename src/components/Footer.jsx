@@ -29,7 +29,7 @@ export default function Footer() {
         <div className="flex items-start gap-[70px] text-[16px]">
           {/* Main Pages */}
           <div>
-            <div className="flex flex-col mt-2 gap-[12px]">
+            <div className="flex flex-col mt-2 gap-[12px] text-left md:text-left">
               <Link href="/features" className="text-gray-400 hover:text-white transition-colors duration-500">Features</Link>
               <Link href="/pricing" className="text-gray-400 hover:text-white transition-colors duration-500">Pricing</Link>
               <Link href="/exchangeSupport" className="text-gray-400 hover:text-white transition-colors duration-500">Exchange Support</Link>
@@ -40,7 +40,7 @@ export default function Footer() {
 
           {/* Social Media */}
           <div>
-            <div className="flex flex-col mt-2 gap-[12px]">
+            <div className="flex flex-col mt-2 gap-[12px] text-right md:text-left">
               <Link href="/termsAndConditions" className="text-gray-400 hover:text-white transition-colors duration-500">Terms & Conditions</Link>
               <Link href="/privacyPolicy" className="text-gray-400 hover:text-white transition-colors duration-500">Privacy Policy</Link>
               <div className="media-icons flex gap-2 mt-4">

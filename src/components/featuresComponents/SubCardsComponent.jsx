@@ -10,9 +10,9 @@ export default function SubCardsComponent({ data }) {
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ 
         duration: 0.75,
-        ease: [0.16, 0.77, 0.47, 0.97] // Custom smooth easing curve
+        ease: [0.16, 0.77, 0.47, 0.97]
       }}
-      viewport={{ once: true, margin: "0px 0px -30% 0px" }} // Triggers when 30% of element is visible
+      viewport={{ once: true, margin: "-20% 0px -10% 0px" }} // Changed margin to trigger earlier
     >
       <div className="absolute inset-0 bg-gradient-to-t from-[#A194C2] to-[#35335E]"></div>
 
@@ -23,10 +23,10 @@ export default function SubCardsComponent({ data }) {
         whileInView={{ opacity: 1 }}
         transition={{ 
           duration: 0.85,
-          delay: 0.10, // Slight delay after card appears
+          delay: 0.10,
           ease: "easeOut"
         }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "-20% 0px -10% 0px" }} // Consistent early trigger
       >
         <h3 className="text-[22px] font-normal text-white leading-[1.4]">
           {data.title}
@@ -36,16 +36,16 @@ export default function SubCardsComponent({ data }) {
         </p>
       </motion.div>
 
-      {/* Image - slides from right to left */}
+      {/* Image - slides from right to left (slower animation) */}
       <motion.div
         initial={{ x: 60, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{
-          duration: 0.75,
-          delay: 0.12, // Slight delay after text appears
-          ease: [0.16, 0.77, 0.47, 0.97] // Matches card easing
+          duration: 1, // Increased from 0.75 to make it slower
+          delay: 0.15, // Slightly increased delay
+          ease: [0.16, 0.77, 0.47, 0.97]
         }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "-20% 0px -10% 0px" }} // Consistent early trigger
         className="relative w-full h-full z-[1]"
       >
         <Image 
