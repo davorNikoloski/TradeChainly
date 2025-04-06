@@ -35,33 +35,34 @@ export default function IntegrationList({ data = {}, selectedExchange }) {
 
           {/* List Items */}
           <div className="flex flex-col w-full">
-            {section.items.map((item, index) => (
-              <motion.div
-                key={index}
-                className="flex items-center md:justify-start w-full text-white text-[18px] font-[400] pb-[24px] mb-[24px] border-b border-[#637792] gap-[1rem]"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.2 }}
-              >
-                {/* Left Side - Instruction Text */}
+            {section.items.map((item, index) => {
+              const isLastItem = index === section.items.length - 1;
 
-                {/* Numbered Circle */}
+              return (
                 <motion.div
-                  className="w-12 h-12 flex-shrink-0 flex items-center justify-center border-2 border-[#7247E7] bg-[#7247E7]/5 rounded-[8px] shadow-[inset_0_0_5px_#9B70FF]"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3 }}
+                  key={index}
+                  className={`flex items-center md:justify-start w-full text-white text-[18px] font-[400] pb-[24px] gap-[1rem] ${!isLastItem ? "mb-[24px]" : ""} border-b border-[#637792]`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  viewport={{ once: true, amount: 0.2 }}
                 >
-                  <span className="text-white font-semibold text-[18px]">
-                    {index + 1}
-                  </span>
+                  {/* Numbered Circle */}
+                  <motion.div
+                    className="w-12 h-12 flex-shrink-0 flex items-center justify-center border-2 border-[#7247E7] bg-[#7247E7]/5 rounded-[8px] shadow-[inset_0_0_5px_#9B70FF]"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <span className="text-white font-semibold text-[18px]">
+                      {index + 1}
+                    </span>
+                  </motion.div>
+
+                  <div className="text-left">{item}</div>
                 </motion.div>
-
-                <div className="text-left">{item}</div>
-
-              </motion.div>
-            ))}
+              );
+            })}
           </div>
         </div>
       ))}
