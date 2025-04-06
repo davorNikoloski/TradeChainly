@@ -15,49 +15,51 @@ export default function ExchangeSupportMain({ exchangeCardsData }) {
     <div className="w-full h-full exchangeS-container overflow-visible md:p-[0px] px-[14px] md:px-[28px]">
       <div className="exchangeS-sub flex flex-col gap-[1rem] h-full justify-between items-center">
         <motion.div
-          className="exchangeS-content flex flex-col gap-[1rem] md:items-center items-start justify-center w-full"
+          className="exchangeS-content flex flex-col md:items-center items-start justify-center w-full"
           initial={{ opacity: 0, y: "1.5rem" }}
           animate={{ opacity: 1, y: "0rem" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="max-w-[1200px] w-full">
-            <FancyTitle title="Integration" />
+          <div className="flex flex-col gap-[1rem] md:items-center items-start justify-center w-full">
+
+            <div className="max-w-[1200px] w-full">
+              <FancyTitle title="Integration" />
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: "1.5rem" }}
+              animate={{ opacity: 1, y: "0rem" }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="title-content flex flex-col items-center max-w-[1050px] gap-[22px]"
+            >
+              <h1 className="font-[500] md:text-[65px] text-[35px] md:text-center text-start font-mulish text-white md:leading-[5rem] leading-10">
+                Seamless Integration with Your Favorite Exchange
+              </h1>
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, y: "1.5rem" }}
+              animate={{ opacity: 1, y: "0rem" }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="text-[#BAB7C6] font-[400] text-[18px] max-w-[600px] md:text-center text-start "
+            >
+              Easily connect your exchange to sync your trades or upload your trade data - we've got you covered.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: "1.5rem" }}
+              animate={{ opacity: 1, y: "0rem" }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="w-full md:w-fit mt-[0.6rem]"
+            >
+              <GetStartedButton href="https://app.tradechainly.website/" text="Get Started" width="100%" />
+            </motion.div>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: "1.5rem" }}
-            animate={{ opacity: 1, y: "0rem" }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="title-content flex flex-col items-center max-w-[1050px] gap-[22px]"
-          >
-            <h1 className="font-[500] md:text-[65px] text-[35px] md:text-center text-start font-mulish text-white md:leading-[5rem] leading-10">
-              Seamless Integration with Your Favorite Exchange
-            </h1>
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, y: "1.5rem" }}
-            animate={{ opacity: 1, y: "0rem" }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="text-[#BAB7C6] font-[400] text-[18px] max-w-[600px] md:text-center text-start "
-          >
-            Easily connect your exchange to sync your trades or upload your trade data - we've got you covered.
-          </motion.p>
-
-           <motion.div
-            initial={{ opacity: 0, y: "1.5rem" }}
-            animate={{ opacity: 1, y: "0rem" }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="w-full md:w-fit mt-[0.6rem]"
-          >
-            <GetStartedButton href="https://app.tradechainly.website/" text="Get Started" width="100%" />
-          </motion.div>
-
           <motion.div
             initial={{ opacity: 0, y: "1.5rem" }}
             animate={{ opacity: 1, y: "0rem" }}
             transition={{ duration: 0.75, ease: "easeOut", delay: 0.3 }}
-            className="pricing-main md:pt-[100px] pt-[80px] w-full h-full flex flex-col items-center justify-center overflow-visible md:gap-[54px] gap-[20px] max-w-[1200px]"
+            className="pricing-main md:pt-[100px] pt-[50px] w-full h-full flex flex-col items-center justify-center overflow-visible md:gap-[54px] gap-[20px] max-w-[1200px]"
           >
             {/* Next.js Image Component */}
             <Image

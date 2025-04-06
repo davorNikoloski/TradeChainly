@@ -26,7 +26,7 @@ export default async function PrivacyPolicy() {
   const privacyPolicyData = (await import("../../data/privacyPolicyData.json")).default;
 
   return (
-    <div className="privacyPolicy m-[2rem] pb-[0px] mx-auto w-full h-auto bg-opacity-0 flex items-center justify-center overflow-visible relative z-1">
+    <div className="privacyPolicy mt-[2rem] pb-[0px] mx-auto w-full h-auto bg-opacity-0 flex items-center justify-center overflow-visible relative z-1">
       <div className="absolute w-full min-h-[130vh] h-auto gradient-bg top-0 z-[-1]"></div>
       <div className="privacyPolicy-cont w-full h-full pt-[100px] flex flex-col max-w-[1200px] items-center justify-start">
         <div className="w-full">

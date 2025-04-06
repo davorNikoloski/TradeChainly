@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import GetStartedButton from "./buttons/GetStartedButton";
@@ -10,7 +11,15 @@ export default function Cta() {
   const [hasAnimated, setHasAnimated] = useState(false);
   const [isTextVisible, setIsTextVisible] = useState(false);
   const imageRef = useRef(null);
+  const pathname = usePathname(); // <-- Get current route path
 
+  // Reset animation state on each page visit
+  useEffect(() => {
+    setHasAnimated(false);
+    setIsTextVisible(false);
+  }, [pathname]); // <-- Triggers on route change
+
+  // Trigger animation once per visit
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -57,7 +66,6 @@ export default function Cta() {
               </p>
             </div>
 
-            {/* Motion div to handle button visibility and position */}
             <motion.div
               className="cta-button-wrapper relative"
               initial={{ opacity: 0, bottom: -50 }}
@@ -73,7 +81,6 @@ export default function Cta() {
             </motion.div>
           </div>
 
-          {/* Motion div for image visibility and position */}
           <motion.div
             className="cta-image-container p-[9px] pr-[0px] m-[0.8px] md:h-full md:w-[80%] border border-[#2D2C2C] bg-[#18163e8f] rounded-tl-[12px] rounded-bl-[12px] overflow-hidden"
             ref={imageRef}

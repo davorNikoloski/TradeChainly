@@ -17,47 +17,57 @@ export default function PricingMain({ pricingListData, pricingCardData }) {
     <div className="w-full h-full pricingMain-container overflow-visible md:p-[0px] px-[14px]">
       <div className="pricingMain-sub flex flex-col gap-[1rem] h-full justify-between items-center">
         <motion.div
-          className="pricingMain-content flex flex-col gap-[1rem] md:items-center items-start justify-center w-full"
+          className="pricingMain-content flex flex-col md:items-center items-start justify-center w-full"
           initial={{ opacity: 0, y: "1.5rem" }}
           animate={{ opacity: 1, y: "0rem" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="max-w-[1200px] w-full">
-            <FancyTitle title="Pricing" />
+          <div className="flex flex-col gap-[1rem] md:items-center items-start justify-center w-full">
+            <div className="max-w-[1200px] w-full">
+              <FancyTitle title="Pricing" />
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: "1.5rem" }}
+              animate={{ opacity: 1, y: "0rem" }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="title-content flex flex-col items-center md:w-[75%] gap-[22px]"
+            >
+              <h1 className="font-[500] md:text-[65px] text-[35px] md:text-center text-start font-mulish text-white md:leading-[5rem] leading-10">
+                Simple Pricing
+              </h1>
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, y: "1.5rem" }}
+              animate={{ opacity: 1, y: "0rem" }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="text-[#BAB7C6] font-[400] text-[18px] max-w-[600px] md:text-center text-start"
+            >
+              One plan designed to meet all your trading needs, helping you grow and stay ahead in the market.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: "1.5rem" }}
+              animate={{ opacity: 1, y: "0rem" }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="w-full md:w-fit mt-[0.6rem]"
+            >
+              <GetStartedButton href="https://app.tradechainly.website/" text="Get Started" width="100%" />
+            </motion.div>
+
           </div>
+          
 
           <motion.div
             initial={{ opacity: 0, y: "1.5rem" }}
             animate={{ opacity: 1, y: "0rem" }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="title-content flex flex-col items-center md:w-[75%] gap-[22px]"
+            className="md:pt-[100px] pt-[50px] w-full flex items-center justify-center md:pb-[3rem] pb-[30px]"
           >
-            <h1 className="font-[500] md:text-[65px] text-[35px] md:text-center text-start font-mulish text-white md:leading-[5rem] leading-10">
-              Simple Pricing
-            </h1>
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, y: "1.5rem" }}
-            animate={{ opacity: 1, y: "0rem" }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="text-[#BAB7C6] font-[400] text-[18px] max-w-[600px] md:text-center text-start"
-          >
-            One plan designed to meet all your trading needs, helping you grow and stay ahead in the market.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: "1.5rem" }}
-            animate={{ opacity: 1, y: "0rem" }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="w-full md:w-fit mt-[0.6rem]"
-          >
-            <GetStartedButton href="https://app.tradechainly.website/" text="Get Started" width="100%" />
-          </motion.div>
-
-          <div className="md:pt-[100px] pt-[80px] w-full flex items-center justify-center md:pb-[3rem] pb-[30px]">
             <PricingButton onSelect={(plan) => setIsAnnual(plan === "Annually")} defaultSelected="Annually" />
-          </div>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: "1.5rem" }}
             animate={{ opacity: 1, y: "0rem" }}

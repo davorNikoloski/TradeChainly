@@ -81,7 +81,7 @@ export default function SingleIntegrationMain({
             initial={{ opacity: 0, y: "1.5rem" }}
             animate={{ opacity: 1, y: "0rem" }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="singleIntegration-main md:pt-[100px] pt-[80px] w-screen h-full flex flex-col items-center justify-center overflow-visible gap-[50px] max-w-[1200px]"
+            className="singleIntegration-main md:pt-[100px] pt-[50px] w-screen h-full flex flex-col items-center justify-center overflow-visible gap-[50px] max-w-[1200px]"
           >
             {/* Exchange Details Section */}
             <div className="tab flex flex-col w-fit h-full md:p-[2rem] pt-[0px] md:pt-[0px] rounded-lg">

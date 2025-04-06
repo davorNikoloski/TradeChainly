@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import fs from "fs";
 import path from "path";
 import { headers } from "next/headers";
+import { url } from "../../constants";
 
 // COMPONENTS
 import ConditionalComponents from "@/components/ConditionalComponents";
@@ -21,7 +22,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  metadataBase: new URL('http://143.198.153.179'),
+  metadataBase: new URL(url),
   title: "TradeChainly",
   description: "Automated Crypto Trading Journal & Analytics Platform",
   icons: {

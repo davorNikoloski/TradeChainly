@@ -73,7 +73,7 @@ export default function FeaturesMain() {
             initial={{ opacity: 0, y: "1.5rem" }} 
             animate={{ opacity: 1, y: "0rem" }} 
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} // Updated transition
-            className="btns-second md:w-fit w-full m-[0.6rem]"
+            className="btns-second md:w-fit w-full m-[0.6rem] mb-[0px]"
           >
               <GetStartedButton href="https://app.tradechainly.website/" text="Get Started" width="100%" />
           </motion.div>
