@@ -2,6 +2,9 @@ import { url } from "../../../constants";
 
 const BASE_URL = url || "http://143.198.153.179";
 
+// Default image path (should be in public folder)
+const DEFAULT_IMAGE = "/images/App Logo/HQTransparent_Mark.png";
+
 export const generateMetadata = ({
   // Basic metadata
   title = "TradeChainly",
@@ -15,13 +18,13 @@ export const generateMetadata = ({
   // OG/Twitter specific
   ogTitle,
   ogDescription,
-  ogImage = "/images/App Logo/android-chrome-512x512.png",
+  ogImage = DEFAULT_IMAGE, // Use default image if none provided
 
   // Twitter specific
   twitterImage,
 
   // URL handling
-  path = "", // New parameter for route paths
+  path = "",
   canonicalUrl,
 
   // Technical SEO
@@ -34,22 +37,29 @@ export const generateMetadata = ({
   // Extra
   ...rest
 }) => {
-  const fullTitle = title.includes("TradeChainly")
+  // Construct full title
+  const fullTitle = title === "TradeChainly" || title.includes("TradeChainly")
     ? title
     : `TradeChainly • ${title}`;
 
+  // Ensure canonical URL is properly formed
   const finalCanonicalUrl = canonicalUrl || `${BASE_URL}${path}`;
 
-  // Normalize image URLs (must be absolute for OG/Twitter)
-  const formatImageUrl = (url) =>
-    url.startsWith("http") ? url : `${BASE_URL}${url}`;
+  // Helper to format image URLs (must be absolute for OG/Twitter)
+  const formatImageUrl = (url) => {
+    if (!url) return `${BASE_URL}${DEFAULT_IMAGE}`;
+    return url.startsWith("http") ? url : `${BASE_URL}${url}`;
+  };
 
+  // Process images
   const formattedOgImage = formatImageUrl(ogImage);
-  const formattedTwitterImage = twitterImage
-    ? formatImageUrl(twitterImage)
+  const formattedTwitterImage = twitterImage 
+    ? formatImageUrl(twitterImage) 
     : formattedOgImage;
 
+  // Main metadata object
   const metadata = {
+    metadataBase: new URL(BASE_URL), // Important for Next.js 13+ to resolve relative URLs
     title: fullTitle,
     description,
     keywords,
@@ -73,10 +83,12 @@ export const generateMetadata = ({
       type: "website",
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image", // Important for proper image display
       title: ogTitle || fullTitle,
       description: ogDescription || description,
       images: [formattedTwitterImage],
+      site: "@TradeChainly", // Add your Twitter handle if you have one
+      creator: "@TradeChainly", // Add content creator if different
     },
     robots: {
       index: !noIndex,
@@ -94,6 +106,7 @@ export const generateMetadata = ({
     ...rest,
   };
 
+  // Add verification tags if present
   if (googleVerification || yandexVerification) {
     metadata.verification = {
       ...(googleVerification && { google: googleVerification }),
