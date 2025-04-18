@@ -1,7 +1,6 @@
-import { url as baseUrl } from "../../constants"; // adjust the path if needed
+import { url as baseUrl } from "../../constants"; // adjust the path as needed
 
-export default async function sitemap() {
-  // Static Routes
+export async function GET() {
   const staticRoutes = [
     "/",
     "/404",
@@ -18,15 +17,14 @@ export default async function sitemap() {
     lastModified: new Date().toISOString(),
   }));
 
-  // Dynamic Routes: Single Integrations
   const integrations = [
-    { id: 1, name: "Binance" },
-    { id: 2, name: "Bybit" },
-    { id: 3, name: "Coinbase" },
-    { id: 4, name: "Crypto.com" },
-    { id: 5, name: "Kraken" },
-    { id: 6, name: "KuCoin" },
-    { id: 7, name: "OKX" },
+    { name: "Binance" },
+    { name: "Bybit" },
+    { name: "Coinbase" },
+    { name: "Crypto.com" },
+    { name: "Kraken" },
+    { name: "KuCoin" },
+    { name: "OKX" },
   ];
 
   const dynamicRoutes = integrations.map(({ name }) => ({
@@ -34,5 +32,24 @@ export default async function sitemap() {
     lastModified: new Date().toISOString(),
   }));
 
-  return [...staticRoutes, ...dynamicRoutes];
+  const allRoutes = [...staticRoutes, ...dynamicRoutes];
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    ${allRoutes
+      .map(
+        ({ url, lastModified }) => `
+      <url>
+        <loc>${url}</loc>
+        <lastmod>${lastModified}</lastmod>
+      </url>`
+      )
+      .join("")}
+  </urlset>`;
+
+  return new Response(sitemap, {
+    headers: {
+      "Content-Type": "application/xml",
+    },
+  });
 }
